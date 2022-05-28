@@ -1,7 +1,7 @@
 # Grupo 6 - Gastronomía vegana 
 
 # URL Repositorio
-https://github.com/fpiaser/grupo-6/
+https://github.com/fpiaser/grupo_6_Gastronomia/
 
 # Descripción 
 Nuestro sitio estara dedicado a la venta de platos veganos. El publico objetivo es la gente que esta habituada a realizar compras online [16-50 años] y apegados a una cultura saludable. 
