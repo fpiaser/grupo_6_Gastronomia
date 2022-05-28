@@ -10,7 +10,7 @@ Nuestro sitio estara dedicado a la venta de platos veganos. El publico objetivo 
 Nosotros:
 - Andreiev
 - Christian
-- Estephany
+- Estephany: ¡Amante de los viajes, nuevas culturas y gastronomías diversas!
 - Francisco
 - Viviana
 
