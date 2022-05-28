@@ -1,10 +1,10 @@
-# Grupo 6 - Artasanías Latinoamericanas 
+# Grupo 6 - Gastronomía vegana 
 
 # URL Repositorio
 https://github.com/fpiaser/grupo-6/
 
 # Descripción 
-Nuestro sitio sera el punto de partida para descubrir las formas de arte tradicionales de los distintos pueblos de america latina, vinculando a los artesanos con los amantes del arte y el buen diseño de todo el mundo.
+Nuestro sitio estara dedicado a la venta de platos veganos. El publico objetivo es la gente que esta habituada a realizar compras online [16-50 años] y apegados a una cultura saludable. 
 
 # Descripcion integrantes del grupo [COMPLETAR]
 Nosotros:
@@ -16,20 +16,20 @@ Nosotros:
 
 # Sitios de referencia [COMPLETAR]
 
-1- https://www.artesaniasdecolombiatienda.com.co/ // Idea original, nos gusto la estructura. 
+1- https://www.tortasytortas.com.co/ 
 
-2-
+2- https://tortasdelgordo.com.co/catalogo/
 
-3-
+3- https://nicolukas.com/catalogo/
 
-4-
+4- 
 
 5-
 
 # Wireframes [COMPLETAR]
-○ Home
-○ Detalle de producto
-○ Carrito de compras
-○ Formulario de registro
-○ Formulario de login
+○ Home [Francisco]
+○ Detalle de producto [Estephany]
+○ Carrito de compras [Viviana]
+○ Formulario de registro [Christian]
+○ Formulario de login [Andreiev]
 ★ Opcional: Boceto o diseño gráfico del sitio (logo, colores, tipografías, etc).
