@@ -9,7 +9,7 @@ Nuestro sitio estara dedicado a la venta de platos veganos. El publico objetivo 
 # Descripcion integrantes del grupo [COMPLETAR]
 Nosotros:
 - Andreiev
-- Christian
+- Christian  Soy estudiante de imagen y sonido, tengo 27 años y vivo en Merlo.
 - Estephany: ¡Amante de los viajes, nuevas culturas y gastronomías diversas!
 - Francisco
 - Viviana
