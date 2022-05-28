@@ -12,7 +12,7 @@ Nosotros:
 - Christian  ¡Soy estudiante de imagen y sonido, tengo 27 años y vivo en Merlo!
 - Estephany: ¡Amante de los viajes, nuevas culturas y gastronomías diversas!
 - Francisco
-- Viviana
+- Viviana: ¡Soy Ingeniera de Sistemas, Lider de proyectos, me gusta viajar!
 
 # Sitios de referencia [COMPLETAR]
 
