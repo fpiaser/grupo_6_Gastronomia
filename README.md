@@ -11,16 +11,16 @@ Nosotros:
 - Andreiev
 - Christian  ¡Soy estudiante de imagen y sonido, tengo 27 años y vivo en Merlo!
 - Estephany: ¡Amante de los viajes, nuevas culturas y gastronomías diversas!
-- Francisco
+- Francisco: ¡Aprendiendo algo nuevo cada dia!
 - Viviana: ¡Soy Ingeniera de Sistemas, Lider de proyectos, me gusta viajar!
 
 # Sitios de referencia [COMPLETAR]
 
-1- https://www.tortasytortas.com.co/ 
+1- https://holaveggie.com.ar/
 
-2- https://tortasdelgordo.com.co/catalogo/
+2- https://www.dieteticastomy.com.ar/
 
-3- https://nicolukas.com/catalogo/
+3- 
 
 4- 
 
