@@ -8,7 +8,7 @@ Nuestro sitio estara dedicado a la venta de platos veganos. El publico objetivo 
 
 # Descripcion integrantes del grupo [COMPLETAR]
 Nosotros:
-- Andreiev
+- Andreiev  !Integrador Linuxero y ahora desarrollador!
 - Christian  ¡Soy estudiante de imagen y sonido, tengo 27 años y vivo en Merlo!
 - Estephany: ¡Amante de los viajes, nuevas culturas y gastronomías diversas!
 - Francisco: ¡Aprendiendo algo nuevo cada dia!
@@ -20,9 +20,9 @@ Nosotros:
 
 2- https://www.dieteticastomy.com.ar/
 
-3- 
+3- https://fithub.com.co/
 
-4- 
+4- https://www.elartesano.com.co/
 
 5-
 
