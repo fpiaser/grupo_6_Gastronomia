@@ -26,10 +26,6 @@ Nosotros:
 
 5- https://vivetmarket.com/
 
-# Wireframes [Armonizar headers y footers y agregar logo]
-○ Home [Francisco]
-○ Detalle de producto [Estephany]
-○ Carrito de compras [Viviana]
-○ Formulario de registro [Christian]
-○ Formulario de login [Andreiev]
-★ Opcional: Boceto o diseño gráfico del sitio (logo, colores, tipografías, etc).
+# Tablero de trabajo
+
+Trello: https://trello.com/b/UXyVJKSh/sprints
