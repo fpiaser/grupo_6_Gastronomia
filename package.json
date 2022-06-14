@@ -1,0 +1,23 @@
+{
+  "name": "grupo_6_gastronomia",
+  "version": "1.0.0",
+  "description": "https://github.com/fpiaser/grupo_6_Gastronomia/",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fpiaser/grupo_6_Gastronomia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fpiaser/grupo_6_Gastronomia/issues"
+  },
+  "homepage": "https://github.com/fpiaser/grupo_6_Gastronomia#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
