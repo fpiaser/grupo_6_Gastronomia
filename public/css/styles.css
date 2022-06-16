@@ -17,6 +17,21 @@ p {
 }
 
 /* Header */
+.cabecera {
+    border: 0.1rem solid #000;
+    display: flex;
+    justify-content: space-around;
+    /* padding-top: 5rem; */
+}
+
+.cabecera input {
+    margin: 2%;
+}
+
+.cabecera .menu {
+    width: 40%;
+}
+
 
 
 /* General */
