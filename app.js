@@ -23,4 +23,4 @@ app.get('/registro', (req, res) => {
     res.sendFile(path.join(__dirname, './views/registro.html'))
 });
 
-app.listen(PORT, () => console.log('http://localhost:', PORT));
+app.listen(PORT, () => console.log('http://localhost:'+PORT));
