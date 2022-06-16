@@ -8,9 +8,12 @@ html {
 }
 
 body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Lobster Two';
     font-size: 1.6rem;
     line-height: 2;
+}
+p {
+    font-family: 'Lato';
 }
 
 /* Header */
@@ -23,6 +26,24 @@ a {
     color: #000;
 }
 
+
+
+/* Footer */
+
+.redes-sociales {
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .redes-sociales a {
+    
+} */
+
+
+
+
 /* Formulario Ingreso */
 .formulario {
     width: 60rem;
@@ -30,15 +51,17 @@ a {
 }
 
 .formulario fieldset {
-    border: 1px solid ##809A6F;
+    border: 1px solid #809A6F;
 }
 
 .formulario legend {
-    background-color: #9EB23B;
+    background-color: #9FC088;
     color: #fff;
     width: 100%;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 3rem;
     margin-bottom: 4rem;
 }
 
@@ -60,11 +83,12 @@ a {
 }
 .btn {
     
-        background-color: #809A6F;
+        font-family: 'Lobster Two', cursive;
+        /* background-color: #D57E7E; */
         display: block;
-        color: #FFF;
+        color: #D57E7E;
         text-transform: uppercase;
-        font-weight: 900;
+        font-weight: 700;
         margin-top: 0.5rem;
         padding: 1rem;
         transition: background-color .3s ease-out ;
@@ -74,21 +98,8 @@ a {
 }
 
 .btn:hover {
-    background-color: #A25B5B;
+    background-color: #FFE1AF;
 } 
-
-/* Footer */
-
-.redes-sociales {
-    width: 40%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-}
-
-.redes-sociales a {
-    
-}
 
 
 
