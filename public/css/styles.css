@@ -6,6 +6,12 @@ html {
 *, *:before, *:after {
     box-sizing: inherit;
 }
+/* General */
+
+a {
+    text-decoration: none;
+    color: #000;
+}
 
 body {
     font-family: 'Lobster Two';
@@ -18,7 +24,7 @@ p {
 
 /* Header */
 .cabecera {
-    border: 0.1rem solid #000;
+    /* border: 0.1rem solid #000; */
     display: flex;
     justify-content: space-around;
     /* padding-top: 5rem; */
@@ -29,20 +35,28 @@ p {
 }
 
 .cabecera .menu {
+    font-size: x-large;
+    display: flex;
+    justify-content: space-around;
     width: 40%;
+    align-items: center;
 }
 
-
-
-/* General */
-
-a {
-    text-decoration: none;
-    color: #000;
+.menu-inicio a {
+    color: #9EB23B;
 }
 
+.menu-productos a {
+    color: #CC9C75;
+}
 
+.menu-registro a {
+    color: #D57E7E;
+}
 
+.menu-login a {
+    color: #809A6F
+}
 /* Footer */
 
 .redes-sociales {
