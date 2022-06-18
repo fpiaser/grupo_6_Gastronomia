@@ -25,6 +25,10 @@ p {
 /* Header */
 .cabecera {
     display: flex;
+    justify-content: space-between;
+    width: 20%;
+    align-items: center;
+    font-size: x-large;
 }
 .cabecera img {
     width: 70px;
@@ -43,6 +47,11 @@ p {
 
 
 @media (min-width: 720px ) {
+    .cabacera {
+        display: flex;
+        justify-content: space-around;
+        
+    }
     .cabecera img {
         width: 120px;
         display: block; 
