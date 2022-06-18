@@ -1,0 +1,134 @@
+.cabecera {
+    /* border: 0.1rem solid #000; */
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+    /* padding-top: 5rem; */
+}
+
+.cabecera input {
+    margin: 2%;
+}
+
+/* .cabecera .burguer-menu {
+    display: block;
+    
+    
+    /* font-size: x-large;
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+    align-items: center; 
+}*/ 
+
+.menu-inicio a {
+    color: #9EB23B;
+}
+
+.menu-productos a {
+    color: #CC9C75;
+}
+
+.menu-registro a {
+    color: #D57E7E;
+}
+
+.menu-login a {
+    color: #809A6F
+} 
+
+@media (min-width: 320px){
+    /* .logo img{
+        width: 70px;
+    } */
+    .menu{
+        display: none;
+    }
+    div.burger-menu{
+        display: block;
+    }
+}
+
+@media (min-width: 720px) {
+    .menu{
+        display: block;
+    }
+
+    div.burger-menu{
+        display: none;
+    }
+}
+
+/* Footer */
+
+.redes-sociales {
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .redes-sociales a {
+    
+} */
+
+
+
+
+/* Formulario Ingreso */
+.formulario {
+    width: 60rem;
+    margin: 0 auto;
+}
+
+.formulario fieldset {
+    border: 1px solid #809A6F;
+}
+
+.formulario legend {
+    background-color: #9FC088;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+}
+
+.campo {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.campo label {
+    flex-basis: 15rem;
+}
+
+.campo input {
+    flex: 1;
+    border: 1px solid #9EB23B;
+}
+.campo input::first-line{
+    border: 1px solid #CC9C75;
+}
+.btn {
+    
+        font-family: 'Lobster Two', cursive;
+        /* background-color: #D57E7E; */
+        display: block;
+        color: #D57E7E;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-top: 0.5rem;
+        padding: 1rem;
+        transition: background-color .3s ease-out ;
+        text-align: center;
+        border: none;
+        width: 100%;
+}
+
+.btn:hover {
+    background-color: #FFE1AF;
+} 
+
