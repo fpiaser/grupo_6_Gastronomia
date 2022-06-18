@@ -51,8 +51,24 @@ p {
         display: none;
     }
     .menu{
-        display: block;
+        display: flex;
+        justify-content: space-around;
     }
+    .menu-inicio a {
+        color: #9EB23B;
+    }
+    
+    .menu-productos a {
+        color: #CC9C75;
+    }
+    
+    .menu-registro a {
+        color: #D57E7E;
+    }
+    
+    .menu-login a {
+        color: #809A6F
+    } 
 
 }
 
