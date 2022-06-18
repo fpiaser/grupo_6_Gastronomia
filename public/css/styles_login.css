@@ -1,0 +1,54 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; 
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+body {
+    font-family: 'Lobster Two';
+    font-size: 1.6rem;
+    line-height: 2;
+}
+p {
+    font-family: 'Lato';
+}
+
+.cabecera {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cabecera .menu {
+    font-size: x-large;
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    align-items: center;
+}
+
+.menu-inicio a {
+    color: #9EB23B;
+}
+
+.menu-productos a {
+    color: #CC9C75;
+}
+
+.menu-registro a {
+    color: #D57E7E;
+}
+
+.menu-login a {
+    color: #809A6F
+}
+.formulario {
+    width: 60rem;
+    margin: 0 auto;
+}
+
+.formulario fieldset {
+    border: 1px solid #809A6F;
+}
