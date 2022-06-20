@@ -6,52 +6,73 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <script src="https://kit.fontawesome.com/e6277f39af.js" crossorigin="anonymous"></script>
         <title>VeganMeals</title>
+        <!--<link rel="stylesheet" href="/css/registro.css"> para cabecera y footer -->
         <link rel="stylesheet" href="css/carrito.css">
     </head>
     <body>
-        <header>
+        <header class="cabecera">
             <!--<h1>Vegan;VeganMeals;comidas veganas</h1> -->
-            <nav class="menu-p">
-                <div .img>logo_imagen</div>
-                <ul>
-                    <li>Nosotros</li>
-                    <li>Productos</li>
-                    <li>Contactanos</li>
-                    <li>Login</li>
-                </ul>
-            </nav>
-            <div class="burger-menu">
-                <i class="fa fa-bars burger"></i>
+            <div class="logo">
+                <img src="/images/logo-vegan.png" alt="Vegan Meal" >
             </div>
-            <input type="text">
-            <div .img>carrito_imagen</div>
+            <div class="navegacion">
+                <div class="burger-menu">
+                    <i class="fa fa-bars burger"></i>
+                </div>
+                <nav class="menu">
+                    <div class="menu-inicio">
+                        <a href="/">Inicio</a>
+                    </div>
+                    <div class="menu-productos">
+                        <a href="detalle">Productos</a>
+                    </div>
+                    <div class="menu-registro">
+                        <a href="registro">Registro</a>
+                    </div>
+                    <div class="menu-login">
+                        <a href="login">Login</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="busqueda">
+                    <i class="fa-solid fa-cart-shopping">Carrito </i>
+            </div>
         </header>
         <form action="/" method="get" class="carrito">
             <main>
-                <section class="">
+                <section>
                     <h3>Productos seleccionados</h3>
-                    <div class="product">
-                        <article>
+                    <div>
+                        <article class="producto">
                             <img src="images/pan_artesanal.jpg" alt="Producto 1" class="product_img">
                             <div class="main-article">
-                                <i class="fas fa-truck"></i>
-                                <p class="price">$1111111</p>                            
-                                <h4 class="description">Pan artesanal</h4>
-                                <!--span class="a-button-inner"><span class="a-button-text a-declarative" data-csa-c-func-deps="aui-da-a-dropdown-button" data-csa-c-type="widget" data-csa-interaction-events="click" data-action="a-dropdown-button" aria-hidden="true" id="a-autoid-0-announce" data-csa-c-id="5hov2e-emgnok-7u1zex-3e5tfv"><span class="a-dropdown-label">Cant.:<span class="sc-offscreen-label" aria-label="Cant."></span></span><span class="a-dropdown-prompt">1</span></span><i class="a-icon a-icon-dropdown"></i></span!-->
-                                <label for="Cantidad" class="description">Cantidad: </label>
-                                <select name="Cantidad" class="description">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                                <br>
-                                <label for="Eliminar" class="description">Eliminar: </label>
-                                <span class="material-symbols-outlined">
-                                    delete
-                                    </span>
+                                <div class="img_carrito">
+                                    <i class="fas fa-truck"></i>
+                                </div>
+                                <div class="price">
+                                    <label for="price">Precio: </label>
+                                    <p name="price">$1111111</p>
+                                </div>
+                                <div class="description">
+                                    <label for="description">Descripción: </label>
+                                    <h4 name="description">Pan artesanal</h4>
+                                </div>
+                                <div>
+                                    <label for="Cantidad" class="description">Cantidad: </label>
+                                    <select name="Cantidad" class="description">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="Eliminar" class="description">Eliminar: </label>
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </div>
                             </div>
                         </article>
                     </div>
@@ -59,15 +80,19 @@
             </main>
         </form>
         
-        <footer>
-            <div .img>logo_imagen</div>
-            <div>100% ORIGEN VEGETAL</div>
-            <ul>
-                <li>Seguinos</li>
-                <li .img>Facebook</li>
-                <li .img>Instagram</li>
-                <li .img>Twitter</li>
-            </ul>
+        <footer class="footer">
+            <div class="logo-footer">   
+                <img src="/images/logo-vegan.png" alt="Vegan Meal">
+               
+            </div>
+            <h3>100% Natural</h3>
+           <div class="redes-sociales">
+                <h3>Siguenos en redes sociales</h3>
+                <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-square"></i>Facebook</a>
+                <a href="https://www.facebook.com/"><i class="fa-brands fa-instagram-square"></i></i>Instagram</a>
+                <a href="https://www.facebook.com/"><i class="fa-brands fa-twitter-square"></i></i>Twitter</a>
+           </div>
+    
         </footer>
     </body>
 </html>
