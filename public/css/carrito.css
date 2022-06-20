@@ -112,6 +112,9 @@ h4 .description{
     .cabecera .navegacion .burger-menu{
         display: block;
     }
+    .cabecera .navegacion .cart{
+        border-top: 5px;
+    }
 }
 
 @media (min-width: 720px){
@@ -149,12 +152,14 @@ h4 .description{
         flex-direction: row;
         justify-content: space-around;
         
-    }
-
-   
+    } 
 
     .busqueda .fa-solid {
         font-size: large;
+    }
+
+    .cart{
+        border-top: 5px;
     }
 }
 
