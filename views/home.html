@@ -4,62 +4,109 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e6277f39af.js" crossorigin="anonymous"></script>
+    <!-- google fonts lato parrafos y lobster titulos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/home.css">
+        <!-- <link rel="stylesheet" href="/css/registro.css"> -->
     <title>VeganMeals</title>
 </head>
 <body>
-    <header>
+    <header class="cabecera">
         <!--<h1>Vegan;VeganMeals;comidas veganas</h1> -->
-        <nav>
-            <div .img>logo_imagen</div>
-            <ul>
-                <li>Nosotros</li>
-                <li>Productos</li>
-                <li><a href="/registro">Registrate</a>  </li>
-                <li>Login</li>
-            </ul>
-        </nav>
-        <input type="text">
-        <div .img>carrito_imagen</div>
+        <div class="logo">
+            <a href="/"><img src="/images/logo-vegan.png" alt="Vegan Meal" ></a>
+        </div>
+        <div class="navegacion">
+        
+            <div class="burguer-menu">
+                <i class="fa fa-bars burger"></i>
+            </div>
+        
+            <nav class="menu">
+        
+                <div class="menu-inicio">
+                    <a href="/">Inicio</a>
+                </div>
+                <div class="menu-productos">
+                    <a href="/detalle">Productos</a>
+                </div>
+                <div class="menu-registro">
+                    <a href="/registro">Registro</a>
+                </div>
+                <div class="menu-login">
+                    <a href="/login">Login</a>
+                </div>
+            </nav>
+        </div>
+        
+        <div class="busqueda"> 
+            <input type="text" placeholder="Búsqueda" id="busqueda">
+        </div>
+        <div class="cart">
+                <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>   
+        </div>
     </header>
     <main>
         <section>
-            <div>Carrousel<div>
-                <ul>
-                    <li>Imagen 1</li>
-                    <li>Imagen 2</li>
-                    <li>Imagen 3</li>
-                </ul>
+            <div class="carrousel"><!--placeholder carrousel-->
+                <img src="/images/carrousel_placeholder.jpeg" alt="Comidas Veganas">
+            </div>
         </section>
         <section>
             <h2>Destacados</h2>
-            <ul>
-                <li>Imagen 1</li>
-                    <p>Descripcion 1</p>
-                <li>Imagen 2</li>
-                    <p>Descripcion 2</p>
-                <li>Imagen 3</li>
-                    <p>Descripcion 3</p>
-            </ul>
+            <div class="destacados">
+                <div class="destacado1">
+                    <img src="/images/ofertas.jpg" alt="ofertas">
+                    <p>Cuidá tu cuerpo y tu bolsillo con estas increibles ofertas!</p>
+                </div>
+                <div class="destacado2">
+                    <img src="/images/guia_vegana.png" alt="guia_vegana">
+                    <p>Quisiera ser vegano, pero por donde empiezo?</p>
+                </div>
+                <div class="destacado3">
+                    <img src="/images/organico.jpg" alt="organico">
+                    <p>Conocé mas sobre la agricultura orgánica y sus beneficios para tu salud y el planeta</p>
+                </div>
+            </div>
         </section>
         <section>
-            <h2>Categorias</h2>
-            <ul>
-                <li>Categoria 1</li>
-                <li>Categoria 2</li>
-                <li>Categoria 3</li>
-                <li>Categoria 4</li>
-            </ul>
+            <h2>Categorías</h2>
+            <div class="categorias">
+                <div class="frescos">
+                    <img src="/images/huerta.jpeg" alt="huerta">
+                    <p>Nuestra Huerta</p>
+                </div>
+                <div class="congelados">
+                    <img src="/images/congelados.jpg" alt="congelados">
+                    <p>Congelados</p>
+                </div>
+                <div class="viandas">
+                    <img src="/images/viandas.jpg" alt="viandas saludables">
+                    <p>Viandas Saludables</p>
+                </div>
+                <div class="harinas">
+                    <img src="/images/frutos_secos.jpg" alt="frutos secos">
+                    <p>Harinas y Frutos Secos</p>
+                </div>
+            </div>
         </section>
     </main>
-    <footer>
-        <div .img>logo_imagen</div>
-        <div>100% ORIGEN VEGETAL</div>
-        <ul>
-            <li>Seguinos</li>
-            <li .img>Facebook</li>
-            <li .img>Instagram</li>
-            <li .img>Twitter</li>
-        </ul>
+    <footer class="footer">
+        <div class="logo-footer">   
+            <img src="/images/logo-vegan.png" alt="Vegan Meal">
+           
+        </div>
+        <h3>100% Natural</h3>
+       <div class="redes-sociales">
+            <h3>Siguenos en redes sociales</h3>
+            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-square"></i>Facebook</a>
+            <a href="https://www.facebook.com/"><i class="fa-brands fa-instagram-square"></i></i>Instagram</a>
+            <a href="https://www.facebook.com/"><i class="fa-brands fa-twitter-square"></i></i>Twitter</a>
+       </div>
+
     </footer>
 </body>
 </html>
