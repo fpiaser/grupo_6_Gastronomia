@@ -4,66 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <link rel="stylesheet" href="css/styles_login.css">
-    <!--Letras sacadas de goolge-->
+    <script src="https://kit.fontawesome.com/e6277f39af.js" crossorigin="anonymous"></script>
+    <!-- google fonts lato parrafos y lobster titulos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    
+        <link rel="stylesheet" href="/css/registro.css"><!-- para cabecera y footer -->
+        
+    <title>Registro - Vegan/Meat</title>
 </head>
-
 <body>
     <header class="cabecera">
-            <div class="logo">
-                <img src="images/logo-vegan.png" alt="logo"  width="110px">
-            </div>
-        <nav class="menu">
-            <div class="menu-inicio">
-                <a href="/" >Inicio</a>
-            </div>
-            <div class="menu-productos">
-                <a href="detalle">Productos</a>
-            </div>
-            <div class="menu-registro">
-                <a href="/registro">Registro</a>
-            </div>
-            <div class="menu-login">
-                <a href="#">Login</a>            
-            </div>
-        </nav>
-            <div class="busqueda">
-                <input type="text">
-            </div>
+        <!--<h1>Vegan;VeganMeals;comidas veganas</h1> -->
+        <div class="logo">
+            <img src="/images/logo-vegan.png" alt="Vegan Meal" >
+        </div>
+        <div class="navegacion">
+        
+            <!-- <div class="burguer-menu">
+                <i class="fa fa-bars burger"></i>
+            </div> -->
+        
+            <nav class="menu">
+        
+                <div class="menu-inicio">
+                    <a href="/">Inicio</a>
+                </div>
+                <div class="menu-productos">
+                    <a href="detalle">Productos</a>
+                </div>
+                <div class="menu-registro">
+                    <a href="#">Registro</a>
+                </div>
+                <div class="menu-login">
+                    <a href="#">Login</a>
+                </div>
+            </nav>
+        </div>
+        
+        <div class="busqueda">
+                   
+                <i class="fa-solid fa-cart-shopping">Carrito </i>
+            
+        </div>
     </header>
     <main>
-        <form action="" class="formulario">
-                <fieldset>
-                    <legend>      Ingrese sus datos</legend>
+        <form class="formulario">
+            <fieldset>
+                <legend>Ingrese a su Cuenta</legend>
                     <div class="campo">
-                        <label for="">     Ingrese su nombre o e-mail</label>
-                        <input type="email" placeholder="nombre@tucorreo">
+                        <label for="nombre">Nombre Completos</label>
+                        <input type="text" placeholder="Coloca tu nombre" id="nombre">
                     </div>
-                    <br>
+                    
                     <div class="campo">
-                        <label for="">Ingrese su contraseña</label>
-                        <input type="password" placeholder="Contraseña">
+                        <label for="password">Contraseña</label>
+                        <input type="password" placeholder="Tu contraseña" id="password">
                     </div>
-                    </fieldset>
-                    <input type="submit" value="Ingreso" class="btn">
-           
+                    
+                    
+            </fieldset>
+            
+            <input type="submit" value="Ingreso" class="btn">
+            
+        </form>
 
-                </fieldset>
-            </form>
-               
+    
     </main>
-    <footer>
+    <footer class="footer">
         <div class="logo-footer">   
-            <img src="/images/logo-vegan.png" alt="Vegan Meal" width="110">
+            <img src="/images/logo-vegan.png" alt="Vegan Meal">
            
         </div>
-       
-       
         <h3>100% Natural</h3>
        <div class="redes-sociales">
             <h3>Siguenos en redes sociales</h3>
@@ -71,10 +83,7 @@
             <a href="https://www.facebook.com/"><i class="fa-brands fa-instagram-square"></i></i>Instagram</a>
             <a href="https://www.facebook.com/"><i class="fa-brands fa-twitter-square"></i></i>Twitter</a>
        </div>
+
     </footer>
-   
-
-
-    
 </body>
 </html>
