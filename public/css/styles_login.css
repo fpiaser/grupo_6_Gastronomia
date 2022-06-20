@@ -1,3 +1,10 @@
+*{
+    margin: 0px;
+    padding: 0px;    
+    box-sizing: border-box;
+}
+
+
 html {
     box-sizing: border-box;
     font-size: 62.5%; 
@@ -19,8 +26,12 @@ p {
 .cabecera {
     display: flex;
     justify-content: space-around;
+    border: 1px solid #809A6F;
+    margin-bottom: 30px;
 }
-
+.cabecera .menu {
+    font-size: 1.8rem;
+}
 .cabecera .menu {
     font-size: x-large;
     display: flex;
@@ -51,4 +62,48 @@ p {
 
 .formulario fieldset {
     border: 1px solid #809A6F;
+}
+.formulario legend {
+    background-color: #9FC088;
+    color: #fff;
+    width: 80%;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+}
+.campo {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.campo input {
+    flex: 1;
+    border: 1px solid #9EB23B;
+}
+.btn {
+    font-family: 'Lobster Two', cursive;
+    /* background-color: #D57E7E; */
+    display: block;
+    color: #D57E7E;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    transition: background-color .3s ease-out;
+    text-align: center;
+    border: none;
+    width: 100%;
+}
+footer {
+    border: 1px solid #809A6F;
+    padding: 0 1rem;
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }

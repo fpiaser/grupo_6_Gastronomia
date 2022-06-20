@@ -1,3 +1,9 @@
+*{
+    margin: 0px;
+    padding: 0px;    
+    box-sizing: border-box;
+}
+
 html {
     box-sizing: border-box;
     font-size: 62.5%; /* 1REM = 10px */
