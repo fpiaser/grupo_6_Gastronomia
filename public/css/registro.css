@@ -1,6 +1,7 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%; 
+    background-color: #f5ebcb;
 }
 a {
     text-decoration: none;
