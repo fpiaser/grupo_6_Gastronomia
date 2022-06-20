@@ -1,0 +1,69 @@
+*{
+    margin: 0px;
+    padding: 0px;    
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+}
+
+h3{
+    font-size: 24px;
+}
+
+
+div.top-header{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5%;
+}
+
+header div.top-header p{
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+header{
+    background-color: greenyellow;
+}
+
+main section div .product{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    border-top: 1px solid #ebebeb;
+    position: relative;
+    padding: 15px;
+}
+
+.price{
+    font-size: 15px;
+    width: 30%;
+}
+h4 .description{
+    font-size: 20px;
+    font-weight: normal;
+}
+
+
+@media (min-width: 320px){
+    .menu-p{
+        display: none;
+    }
+    div.burger-menu{
+        display: block;
+    }
+}
+
+@media (min-width: 620px){
+    .menu-p{
+        display: block;
+    }
+    div.burger-menu{
+        display: none;
+    }
+}
