@@ -163,9 +163,9 @@ p {
 .btn {
     
         font-family: 'Lobster Two', cursive;
-        /* background-color: #D57E7E; */
+        background-color: #9FC088;
         display: block;
-        color: #D57E7E;
+        color: #fff;
         text-transform: uppercase;
         font-weight: 700;
         margin-top: 0.5rem;
