@@ -1,7 +1,7 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%; 
-    background-color: #f5ebcb;
+    background-color: #f5ebcb; 
 }
 a {
     text-decoration: none;
@@ -22,11 +22,14 @@ p {
         font-size: 1.6rem;
     }
     
+    
 }
 
 
-
 /* Header */
+header{
+    font-size: 25px;
+}
 .cabecera {
     
     border: 1px solid #809A6F;
@@ -122,7 +125,6 @@ p {
 /*main*/
 main{
     font-size: 13px;
-
 }
 
 .bloque_1{
@@ -144,16 +146,22 @@ main{
     text-align: justify;
 }
 
+.carrito{
+    display: flex; 
+}
+
+
 .subtotal{
     color: rgb(15, 105, 38);
     text-align: justify;
 }
 
 main input{
-    background-color: rgb(62, 185, 62);
-    width: 60%;
+    background-color: rgb(216, 250, 153);
+    width: 190%;
     font-weight: bold;
-    padding: 3px
+    padding: 3px;
+    margin-left: 30px ;
    
 }
 
