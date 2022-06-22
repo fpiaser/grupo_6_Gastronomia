@@ -119,10 +119,16 @@ p {
 
 }
 
+/*main*/
+main{
+    font-size: 13px;
+
+}
 
 .bloque_1{
     text-align: center;
-    
+    margin-top: 30px;
+   
 }
 
 .bloque_2{
@@ -143,16 +149,38 @@ p {
     text-align: justify;
 }
 
-.carrito{
-    background-color: rgb(47, 83, 56);
+main input{
+    background-color: rgb(62, 185, 62);
     width: 60%;
-    margin: auto;
+    font-weight: bold;
+    padding: 3px
+   
 }
 
 .alerta{
-    border: solid 3px rgb(9, 36, 9);
-    background-color: rgb(162, 214, 175);
+    border: dashed 3px rgb(78, 138, 78);
+    font-weight: bold
+   
 }
+
+
+@media (min-width: 720px){
+    main{
+        display: flex;
+        justify-content: space-around;
+        font-size: 18px;
+    }
+
+    .bloque_1{
+        margin-right: 50px;
+    }
+
+    main input{
+        padding: 5px
+    }
+}
+
+
 
 
 /* Footer */
@@ -175,4 +203,5 @@ p {
     .logo-footer img {
         max-width: 10rem;
     }
+
 }
