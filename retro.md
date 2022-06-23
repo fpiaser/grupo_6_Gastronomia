@@ -8,6 +8,6 @@
     3. Continuar haciendo.
         - Division de tareas. 
     4. Hacer menos.
-        - 
+        - Por el momento no hay nada para agregar
     5. Dejar de hacer.
-        - 
+        - Dejar de usar archivos CSS separados para cada vista

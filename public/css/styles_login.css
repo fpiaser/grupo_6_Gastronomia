@@ -29,6 +29,9 @@ p {
 }
 
 /* Header */
+header{
+    font-size: 25px;
+}
 .cabecera {
     display: flex;
     justify-content: space-between;

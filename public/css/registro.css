@@ -25,6 +25,9 @@ p {
 }
 
 /* Header */
+header{
+    font-size: 25px;
+}
 .cabecera {
     border: 1px solid #809A6F;
     padding: 0 1rem;
@@ -109,7 +112,7 @@ p {
         display: none;
     }
     .cabecera .menu {
-        font-size: 1.8rem;
+        font-size: 25px;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -198,6 +201,11 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    
+
 }
 
 .logo-footer img {
@@ -209,5 +217,6 @@ p {
 @media (min-width: 720px) {
     .logo-footer img {
         max-width: 10rem;
+        margin-top: 10px;
     }
 }

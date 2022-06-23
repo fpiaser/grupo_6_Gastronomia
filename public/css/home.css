@@ -25,6 +25,9 @@ p {
 }
 
 /* Header */
+header{
+    font-size: 25px;
+}
 
 .cabecera {
     
@@ -185,5 +188,6 @@ img{
 @media (min-width: 720px) {
     .logo-footer img {
         max-width: 10rem;
+        margin-top: 10px;
     }
 }

@@ -21,6 +21,9 @@ body{
 }
 
 /* Header */
+header{
+    font-size: 25px;
+}
 .cabecera {
     border: 1px solid #809A6F;
     padding: 0 1rem;
@@ -115,6 +118,10 @@ h4 .description{
     .cabecera .navegacion .cart{
         border-top: 5px;
     }
+    .product_img{
+        width: 100%;
+    }
+
 }
 
 @media (min-width: 720px){
@@ -147,7 +154,7 @@ h4 .description{
     }
     
     .cabecera .menu {
-        font-size: 1.8rem;
+        font-size: 25px;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -161,6 +168,10 @@ h4 .description{
     .cart{
         border-top: 5px;
     }
+    .product_img{
+        width: 26%;
+    }
+
 }
 
 /* Footer */
@@ -185,5 +196,6 @@ h4 .description{
 @media (min-width: 720px) {
     .logo-footer img {
         max-width: 10rem;
+        margin-top: 10px;
     }
 }

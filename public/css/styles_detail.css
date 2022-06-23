@@ -27,7 +27,9 @@ p {
 
 
 /* Header */
-
+header{
+    font-size: 25px;
+}
 .cabecera {
     
     border: 1px solid #809A6F;
@@ -123,6 +125,7 @@ p {
 /*main*/
 main{
     font-size: 13px;
+    
 }
 
 .bloque_1{
@@ -184,25 +187,30 @@ main input{
     main input{
         padding: 5px
     }
+
+   
+
 }
 
-
-
-
 /* Footer */
-.footer {
+
+@media (min-width: 320px){
+    .footer{
     border: 1px solid #809A6F;
     padding: 0 1rem;
-    margin-top: 2.5rem;
+    margin-top: 50px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+
+    }
 }
 
 .logo-footer img {
     text-align: center;
     max-width: 5rem;
     margin: 0 auto;
+    margin-top: 10px;
 }
 
 @media (min-width: 720px) {
@@ -210,4 +218,16 @@ main input{
         max-width: 10rem;
     }
 
+    .footer {
+        border: 1px solid #809A6F;
+        padding: 0 1rem;
+        margin-top: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        position:absolute;
+        bottom: 0;
+        width: 100%;
+       
+    }
 }
