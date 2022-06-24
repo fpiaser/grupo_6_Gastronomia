@@ -194,16 +194,15 @@ main input{
 
 /* Footer */
 
-@media (min-width: 320px){
-    .footer{
+.footer {
     border: 1px solid #809A6F;
     padding: 0 1rem;
-    margin-top: 50px;
+    margin-top: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-
-    }
+   
+   
 }
 
 .logo-footer img {
@@ -218,16 +217,5 @@ main input{
         max-width: 10rem;
     }
 
-    .footer {
-        border: 1px solid #809A6F;
-        padding: 0 1rem;
-        margin-top: 2.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        position:absolute;
-        bottom: 0;
-        width: 100%;
-       
-    }
+   
 }
