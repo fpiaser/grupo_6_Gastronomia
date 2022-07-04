@@ -3,27 +3,14 @@ const path = require('path');
 const app = express();
 
 const PORT= process.env.PORT || 3000
+const mainRoutes = require('./routes/mainRoutes');
 
-app.use(express.static('public'));
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './views/home.html'))
-});
+app.use('/', mainRoutes);
 
-app.get('/carrito', (req, res) => {
-    res.sendFile(path.join(__dirname, './views/productCart.html'))
-});
-
-app.get('/detalle', (req, res) => {
-    res.sendFile(path.join(__dirname, './views/productDetail.html'))
-});
-
-app.get('/registro', (req, res) => {
-    res.sendFile(path.join(__dirname, './views/register.html'))
-});
-
-app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, './views/login.html'))
-});
+// configuarcion de public static
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(PORT, () => console.log('http://localhost:'+PORT));
