@@ -1,18 +1,4 @@
-html {
-    box-sizing: border-box;
-    font-size: 62.5%; 
-    background-color: #f5ebcb; 
-}
-a {
-    text-decoration: none;
-    color: #000;
-}
 
-body {
-    font-family: 'Lobster Two';
-    font-size: 1rem;
-    line-height: 2;
-}
 p {
     font-family: 'Lato';
 }
@@ -25,58 +11,6 @@ p {
     
 }
 
-
-/* Header */
-header{
-    font-size: 25px;
-}
-.cabecera {
-    
-    border: 1px solid #809A6F;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-    background-color: #f5ebcb;
-}
-
-.cabecera .logo,
-.cabecera .busqueda {
-    flex-basis: calc(30% - 1rem);
-}
-.cabecera .navegacion {
-    flex-basis: calc(30% - 1rem);/* Doy mas espacio a el nav de menu */
-}
-.logo img {
-    text-align: center;
-    max-width: 5rem;
-    margin: 0 auto;
-}
-.navegacion .burguer-menu {
-    display: block;
-    align-items: center;
-    color: #9EB23B;
-    font-size: 2.5rem;
-}
-
-.cabecera .menu {
-    display: none;
-}
-
-.cabecera .busqueda {
-    width:  4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-}
-
-.busqueda .fa-solid {
-    font-size: smaller;
-} 
-
-.cabecera .busqueda:nth-child(2) {
-    align-items: center;
-}
 @media (min-width: 720px) {
     .cabecera {
         padding: 0 5rem;
@@ -190,32 +124,4 @@ main input{
 
    
 
-}
-
-/* Footer */
-
-.footer {
-    border: 1px solid #809A6F;
-    padding: 0 1rem;
-    margin-top: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-   
-   
-}
-
-.logo-footer img {
-    text-align: center;
-    max-width: 5rem;
-    margin: 0 auto;
-    margin-top: 10px;
-}
-
-@media (min-width: 720px) {
-    .logo-footer img {
-        max-width: 10rem;
-    }
-
-   
 }

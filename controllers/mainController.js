@@ -30,6 +30,18 @@ const mainController = {
             //path.join(__dirname,'../views/products/productCart.html')
             res.render('../views/products/productCart',{})
         );
+    },
+    newProduct: (req, res) => {
+        res.sendFile(
+            //path.join(__dirname,'../views/products/productCart.html')
+            res.render('../views/products/NewProduct',{})
+        );
+    },
+    ModProduct: (req, res) => {
+        res.sendFile(
+            //path.join(__dirname,'../views/products/productCart.html')
+            res.render('../views/products/ModProduct',{})
+        );
     }
 }
 
