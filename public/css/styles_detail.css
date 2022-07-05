@@ -12,17 +12,7 @@ p {
 }
 
 @media (min-width: 720px) {
-    .cabecera {
-        padding: 0 5rem;
-        align-items: center;     
-    }
-    .cabecera .logo,
-    .cabecera .busqueda {
-        flex-basis: calc(20% - 1rem);
-    }
-    .cabecera .navegacion {
-        flex-basis: calc(60% - 1rem);/* Doy mas espacio a el nav de menu */
-    }
+  
 
     .logo img {
         max-width: 10rem;
