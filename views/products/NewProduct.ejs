@@ -11,27 +11,44 @@
     <main>
         <form class="formulario" action="/" method="get">
             <fieldset>
-                <legend>Crear Cuenta</legend>
+                <legend>Nuevo Producto</legend>
                     <div class="campo">
-                        <label for="nombre">Nombre Completos</label>
-                        <input type="text" placeholder="Coloca tu nombre" id="nombre">
+                        <label for="nombre">Nombre de Producto</label>
+                        <input type="text" placeholder="Nombre de producto a mostrar" id="nombreProd">
                     </div>
                     <div class="campo">
-                        <label for="email">Correo electronico</label>
-                        <input type="email" placeholder="nombre@tucorreo" id="email">
+                        <label for="descripcion">Descripción</label>
+                        <input type="text" placeholder="Descripción del Producto" id="descrProd">
                     </div>
                     <div class="campo">
-                        <label for="password">Contraseña</label>
-                        <input type="password" placeholder="Tu contraseña" id="password">
+                        <label for="uom">Unidad de Medida</label>
+                        <input type="radio" name="uom" value="Kg">
+                        <input type="radio" name="uom" value="mg">
+                        <input type="radio" name="uom" value="Unidad">
                     </div>
                     <div class="campo">
-                        <label for="password">Repetir Contraseña</label>
-                        <input type="password" placeholder="Tu contraseña" id="password">
+                        <label for="categoria">Categoría</label>
+                        <input type="radio" name="categoria" value="Frescos">
+                        <input type="radio" name="categoria" value="Congelados">
+                        <input type="radio" name="categoria" value="Viandas">
+                        <input type="radio" name="categoria" value="Harinas y Frutos Secos">
+                    </div>
+                    <div class="campo">
+                        <label for="precio">Precio</label>
+                        <input type="number">
+                    </div>
+                    <div class="campo">
+                        <label for="">Nombre de Producto</label>
+                        <input type="text" placeholder="Nombre de producto a mostrar" id="nombreProd">
+                    </div>
+                    <div class="campo">
+                        <label for="nombre">Nombre de Producto</label>
+                        <input type="text" placeholder="Nombre de producto a mostrar" id="nombreProd">
                     </div>
                     
             </fieldset>
             
-            <input type="submit" value="Crear Cuenta" class="btn">
+            <input type="submit" value="Crear Nuevo Producto" class="btn">
             
         </form>
 
