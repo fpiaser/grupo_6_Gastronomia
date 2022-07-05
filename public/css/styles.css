@@ -147,11 +147,11 @@ header{
 .footer {
     border: 1px solid #809A6F;
     padding: 0 1rem;
-    margin-top: 2.5rem;
+    margin-top: 12%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
