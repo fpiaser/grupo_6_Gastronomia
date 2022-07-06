@@ -2,6 +2,7 @@
 <html lang="en">
     <!-- Page head -->
     <%- include('../partials/head') %>
+    <link rel="stylesheet" href="css/forms.css">
     <body>
         <!-- header -->
         
@@ -24,18 +25,18 @@
                         <label for="descripcion">Descripción</label>
                         <input type="text" placeholder="Descripción del Producto" id="descrProd">
                     </div>
-                    <div class="campo">
+                    <div class="radio">
                         <label for="uom">Unidad de Medida</label>
-                        <input type="radio" name="uom" value="Kg">
-                        <input type="radio" name="uom" value="mg">
-                        <input type="radio" name="uom" value="Unidad">
+                        <p><input type="radio" name="uom" value="Kg">Kg</p>
+                        <p><input type="radio" name="uom" value="mg">mg</p>
+                        <p><input type="radio" name="uom" value="Unidad">Unidad</p>
                     </div>
-                    <div class="campo">
+                    <div class="radio">
                         <label for="categoria">Categoría</label>
-                        <input type="radio" name="categoria" value="Frescos">
-                        <input type="radio" name="categoria" value="Congelados">
-                        <input type="radio" name="categoria" value="Viandas">
-                        <input type="radio" name="categoria" value="Harinas y Frutos Secos">
+                        <p><input type="radio" name="categoria" value="Frescos">Frescos</p>
+                        <p><input type="radio" name="categoria" value="Congelados">Congelados</p>
+                        <p><input type="radio" name="categoria" value="Viandas">Viandas</p>
+                        <p><input type="radio" name="categoria" value="Harinas y Frutos Secos">Harinas y Frutos Secos</p>
                     </div>
                     <div class="campo">
                         <label for="precio">Precio</label>

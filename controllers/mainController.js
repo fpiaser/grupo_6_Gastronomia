@@ -33,13 +33,13 @@ const mainController = {
     },
     newProduct: (req, res) => {
         res.sendFile(
-            //path.join(__dirname,'../views/products/productCart.html')
+            //path.join(__dirname,'../views/products/newproduct.html')
             res.render('../views/products/NewProduct',{})
         );
     },
     ModProduct: (req, res) => {
         res.sendFile(
-            //path.join(__dirname,'../views/products/productCart.html')
+            //path.join(__dirname,'../views/products/modproduct.html')
             res.render('../views/products/ModProduct',{})
         );
     }
