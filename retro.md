@@ -25,3 +25,19 @@
         - Tener menos entregables pendientes de completar los dias previos a la entrega del sprint. 
     5. Dejar de hacer.
         - Atrasarse con las clases.
+
+# Retrospectiva Sprint 3
+
+    1. Comenzar a hacer.
+        - Planificar el uso del tiempo disponible en el sprint. 
+        - Estar al dia con la plataforma del Playground.
+    2. Hacer más.
+        - Trabajar mas en la estetica del sitio. 
+        - Mas compromiso de parte de todos.
+    3. Continuar haciendo.
+        - Division de tareas. 
+        - Coordinacion de trabajo sobre el repo. 
+    4. Hacer menos.
+        - Tener menos entregables pendientes de completar los dias previos a la entrega del sprint. 
+    5. Dejar de hacer.
+        - Atrasarse con las clases.
