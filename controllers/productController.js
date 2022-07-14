@@ -1,11 +1,16 @@
 const path = require('path');
 
 const productController = {
+    product: (req, res)=>{
+        res.send('AQUÍ VA LA LISTA DE LOS PRODUCTOS');
+},
+
     productDetail:(req, res)=>{
-        res.render('../views/products/productDetail',{
+        let id= req.params.id;
+        res.send("ESTE ES EL DETALLE DEL PRODUCTO" + ' ' + id),{
             pagina: "Detalles de Producto",
             styles: "/css/styles_detail.css"
-        })
+        }
         
     },    
     productCart: (req, res) => {
