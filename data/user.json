@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1, 
+        "nombre": "Pepito",
+        "Apellido": "Perez",
+        "Email": "notengoemail@gmail.com",
+        "Contrasenia":"1234567890",
+        "Categoria": 1,
+        "imagen": ""
+    },
+    {
+        "id": 2, 
+        "nombre": "Alan",
+        "Apellido": "Sandoval",
+        "Email": "sitengomail@gmail.com",
+        "Contrasenia": "superdificil",
+        "Categoria": 2, 
+        "imagen": ""
+    }
+]

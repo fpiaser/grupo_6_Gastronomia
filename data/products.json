@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nombre": "Galleta raices de chocolate",
+    "descripcion": "Galleta vegana con sabor a cacao, con nueces, proteina y sin azucar",
+    "uom": 3,
+    "categoria": "4",
+    "precio": "US 5",
+    "imagen": "./images/galletas-Veganas.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Pan Artesanal",
+    "descripcion": "Pan con semillas de trigo",
+    "uom": "3",
+    "categoria": "4",
+    "precio": "US 15",
+    "imagen": "./images/pan_artesanal.jpg"
+  }
+]

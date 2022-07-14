@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Page head -->
+    <%- include('../partials/head') %>
+    <body>
+        <!-- header -->
+        
+      <%- include('../partials/header') %>
+      <!-- Page content -->
+
+      <main>
+        <div>
+            <% for(let index=0; index < products.length; index++) { %>
+                <a href="/products/<%= products[index].id %>">
+                <label for="nombre" class="nombre">nombre: </label>
+                <h4 id="nombre"><%= products[index].nombre %></h4>
+                </a> 
+                <p class="ps-text-grey">
+                <label for="precio" class="precio">Precio: </label><%= products[index].precio %>
+                <img src="<%= products[index].imagen %>" width="90%" height="250px"></img>
+                </p>
+               
+                <!-- eliminar producto -->
+                <!-- <form
+                  action="/products/?_method=DELETE" 
+                  method="post"
+                >
+                  <button type="submit" 
+                    class="ps-btn ps-btn-danger"
+                  >Eliminar</button>
+                </form> -->
+                <br />
+              <% } %>
+        </div>
+        <h4><%= [0].nombre %></h4>>
+            
+      </main>
+      <%- include('../partials/footer') %>
+    </body>
+
+</html>

@@ -1,13 +1,20 @@
+const fs = require('fs');
 const path = require('path');
+const productListPath = path.resolve(__dirname, '../data/products.json');
+const productList = JSON.parse(fs.readFileSync(productListPath, 'utf8'));
 
 const productController = {
     product: (req, res)=>{
-        res.send('AQUÍ VA LA LISTA DE LOS PRODUCTOS');
+        res.render('../views/products/product',{
+            pagina: "Productos",
+            styles: "/css/styles_detail.css",
+            products: productList
+        });
 },
 
     productDetail:(req, res)=>{
         let id= req.params.id;
-        res.send("ESTE ES EL DETALLE DEL PRODUCTO" + ' ' + id),{
+        res.send('../views/products/productDetail' + ' ' + id),{
             pagina: "Detalles de Producto",
             styles: "/css/styles_detail.css"
         }
