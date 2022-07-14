@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
     <!-- Page head -->
-    
     <%- include('../partials/head') %>
     
     <body>
         <!-- header -->
+        
         <%- include('../partials/header') %>
         <!-- Page content -->
-        <!-- <form action="/" method="get" class="carrito"> -->
+        
     <main>
         <form class="formulario" action="/" method="get">
             <fieldset>
-                <legend>Modificar Producto</legend>
+                <legend>Nuevo Producto</legend>
                     <div class="campo">
                         <label for="nombre">Nombre de Producto</label>
                         <input type="text" placeholder="Nombre de producto a mostrar" id="nombreProd">
@@ -25,13 +25,13 @@
                         <label for="descripcion">Descripción</label>
                         <input type="text" placeholder="Descripción del Producto" id="descrProd">
                     </div>
-                    <div class="radio-unidad-medida">
+                    <div class="radio unidad-medida" >
                         <label for="uom">Unidad de Medida</label>
                         <p><input type="radio" name="uom" value="Kg">Kg</p>
                         <p><input type="radio" name="uom" value="mg">mg</p>
                         <p><input type="radio" name="uom" value="Unidad">Unidad</p>
                     </div>
-                    <div class="radio-categoria">
+                    <div class="radio categoria">
                         <label for="categoria">Categoría</label>
                         <p><input type="radio" name="categoria" value="Frescos">Frescos</p>
                         <p><input type="radio" name="categoria" value="Congelados">Congelados</p>
@@ -48,7 +48,7 @@
                     </div>
             </fieldset>
             
-            <input type="submit" value="Modificar Producto" class="btn">
+            <input type="submit" value="Crear Nuevo Producto" class="btn">
             
         </form>
 

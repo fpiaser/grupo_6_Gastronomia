@@ -38,11 +38,11 @@
 .campo input::first-line{
     border: 1px solid #CC9C75;
 }
-.radio-unidad-medida {
+.unidad-medida {
     display: flex;
     justify-items: auto;
 }
-.radio-categoria {
+.categoria {
     display: flex;
     justify-content: auto;
 }
