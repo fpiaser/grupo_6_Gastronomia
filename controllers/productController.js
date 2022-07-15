@@ -6,7 +6,7 @@ const productList = JSON.parse(fs.readFileSync(productListPath, 'utf8'));
 const productController = {
     product: (req, res)=>{
         res.render('../views/products/product',{
-            pagina: "Productos",
+            pagina: "Pagina",
             styles: "/css/styles_detail.css",
             products: productList
         });

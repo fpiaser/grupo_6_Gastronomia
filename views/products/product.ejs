@@ -9,17 +9,24 @@
       <!-- Page content -->
 
       <main>
-        <div>
-            <% for(let index=0; index < products.length; index++) { %>
-                <a href="/product/<%= products[index].id %>">
-                <label for="nombre" class="nombre"></label>
-                <h4 id="nombre"><%= products[index].nombre %></h4>
-                </a> 
-                <p class="ps-text-grey">
-                <label for="precio" class="precio">Precio: </label><%= products[index].precio %>
-                <img src="<%= products[index].imagen %>" width="86%" height="250px"></img>
-                </p>
-               
+        
+
+              <div class="flex_container">
+                 
+                      <% for(let index=0; index < products.length; index++) { %>
+                       <div class="zoom">
+                        <div class="productos_flex" >   
+                            <a href="/product/<%= products[index].id %>">
+                      
+                            <h4 id="nombre"><%= products[index].nombre %></h4>
+                            </a> 
+                          <p class="contenedor_precio">
+                           <label for="precio" class="precio">Precio: </label><%= products[index].precio %>
+                         </p>
+                      <img class="img" id="img" src="<%= products[index].imagen %>" width="86%" height="250px"></img>
+                </div>
+              </div>
+              
                 <!-- eliminar producto -->
                 <!-- <form
                   action="/products/?_method=DELETE" 
@@ -32,8 +39,9 @@
                 <br />
               <% } %>
         </div>
-        <h4><%= [0].nombre %></h4>>
-            
+ 
+        
+          
       </main>
       <%- include('../partials/footer') %>
     </body>
