@@ -11,13 +11,14 @@
 
 <main>
     <div class="bloque_1"> 
-        <img src= "<%= product.imagen %>" width="90%" height="250px"></img>
-        <h4> <%- product.nombre  %>  </h4>
+        <img src= "<%= product.imagen %>"  height="250px"></img>
+        <h4> Categoría: <%- product.categoria  %>  </h4>
         <p><%- product.descripcion  %></p>
     </div>  
     <div class="bloque_2">
         <h2><%- product.nombre  %></h2>
         <p>Ingredientes 100% naturales</p>
+        <h4>Cantidad :<%- product.uom  %></h4>
 
         
 
@@ -41,7 +42,7 @@
            <button type="reset"><i class="fa-solid fa-trash-can"></i></button>
         </div>
     </form>
-        <a href="/product/carritos"> <input type="submit" value="Agregar al carrito"> </a>
+        <a href="/product/carrito"> <input type="submit" value="Agregar al carrito"> </a>
     </div>
 
 

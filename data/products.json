@@ -3,18 +3,72 @@
     "id": 1,
     "nombre": "Galleta raices de chocolate",
     "descripcion": "Galleta vegana con sabor a cacao, con nueces, proteina y sin azucar",
-    "uom": 3,
+    "uom": "1 unidad",
     "categoria": "Harinas y Frutos Secos",
-    "precio": "US 5",
-    "imagen": "../images/galletas-Veganas.jpg"
+    "precio": "US 2",
+    "imagen": "../images/galleta-chocolate.jpg"
   },
   {
     "id": 2,
     "nombre": "Pan Artesanal",
     "descripcion": "Pan con semillas de trigo",
-    "uom": "3",
+    "uom": "1 unidad",
     "categoria": "Harinas y Frutos Secos",
-    "precio": "US 15",
+    "precio": "US 5",
     "imagen": "../images/pan_artesanal.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Queso de soya",
+    "descripcion": "elaborado con frijol de soja de alta calidad, sal marina y cloruro de calcio, un compuesto natural que sirve para potencializar su sabor",
+    "uom": "1 unidad",
+    "categoria": "Vianda Saludable",
+    "precio": "US 8",
+    "imagen": "../images/queso_soya.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Yogurt Vegano de Coco",
+    "descripcion": "yogurt con probióticos. Con frutas naturales. Sin lácteos, sin azúcar sin gluten y sin frutos secos. Elaborado a base de cocos y almidón de maíz.",
+    "uom": "1 unidad",
+    "categoria": "Vianda Saludable",
+    "precio": "US 5",
+    "imagen": "../images/yogurt.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Albondigas de Quinua",
+    "descripcion": "Albondigas con Quinua, elaboradas con arvejas verdes, quinua, lentejas, mandioca, cúrcuma, achiote, apio, sal marina, cilantro y especias naturales. Pueden ser freídas o calentar al horno. Sin gluten ni soya.",
+    "uom": "12 unidades",
+    "categoria": "Congelados",
+    "precio": "US 10",
+    "imagen": "../images/albondigas.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Perniles de Gluten",
+    "descripcion": "Los Perniles de Gluten, están elaborados con sémola de trigo, ajonjolí, achiote, especias naturales, laurel, tomillo y albahaca y sal marina. Vienen precocidos y adobados, listos para asar o freír.,.",
+    "uom": "6 unidades",
+    "categoria": "Congelados",
+    "precio": "US 15",
+    "imagen": "../images/pernil.jpeg"
+  },
+  {
+    "id": 7,
+    "nombre": "Nuez Moscada Molida",
+    "descripcion": "La Nuez Moscada Molida, es la semilla de un fruto tipo nut finamente molida, esta nuez tiene su origen de la Indonesia. Usa solo una o dos pizcas en la preparación de tus tortas, postres o recetas exclusivas de platos principales.",
+    "uom": "25g",
+    "categoria": "Nuestra huerta",
+    "precio": "US 3",
+    "imagen": "../images/nuez-moscada.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Albahaca Molida",
+    "descripcion": "La Albahaca Molida, son hojas secas de esta aromática planta, finamente molidas. Utilízala para tu digestión en aromática, también para darle un toque de sabor y un aroma delicioso a tus platos y recetas.",
+    "uom": "30g",
+    "categoria": "Nuestra huerta",
+    "precio": "US 4",
+    "imagen": "../images/albahaca.jpg"
   }
 ]

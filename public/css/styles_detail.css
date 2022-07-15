@@ -1,50 +1,4 @@
 
-p {
-    font-family: 'Lato';
-}
-
-@media (min-width: 720px) {
-    body {
-        font-size: 1.6rem;
-    }
-    
-    
-}
-
-@media (min-width: 720px) {
-  
-
-    .logo img {
-        max-width: 10rem;
-    }
-    .navegacion .burguer-menu {
-        display: none;
-    }
-    .cabecera .menu {
-        display: flex;
-        justify-content: space-around;
-        
-    }
-    .menu-inicio a {
-        color: #9EB23B;
-    }
-    
-    .menu-productos a {
-        color: #CC9C75;
-    }
-    
-    .menu-registro a {
-        color: #D57E7E;
-    }
-    
-    .menu-login a {
-        color: #809A6F
-    } 
-    .busqueda .fa-solid {
-        font-size: large;
-    }
-
-}
 
 /*main*/
 main{
@@ -53,8 +7,10 @@ main{
 }
 
 .bloque_1{
+    width: 45%;
     text-align: center;
     margin-top: 30px;
+    
    
 }
 
