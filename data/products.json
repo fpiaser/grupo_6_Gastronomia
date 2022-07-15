@@ -4,17 +4,17 @@
     "nombre": "Galleta raices de chocolate",
     "descripcion": "Galleta vegana con sabor a cacao, con nueces, proteina y sin azucar",
     "uom": 3,
-    "categoria": "4",
+    "categoria": "Harinas y Frutos Secos",
     "precio": "US 5",
-    "imagen": "./images/galletas-Veganas.jpg"
+    "imagen": "../images/galletas-Veganas.jpg"
   },
   {
     "id": 2,
     "nombre": "Pan Artesanal",
     "descripcion": "Pan con semillas de trigo",
     "uom": "3",
-    "categoria": "4",
+    "categoria": "Harinas y Frutos Secos",
     "precio": "US 15",
-    "imagen": "./images/pan_artesanal.jpg"
+    "imagen": "../images/pan_artesanal.jpg"
   }
 ]
