@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 
 app.use('/', mainRoutes);
 app.use('/user', userRoutes);
-app.use('/', productRoutes);
+app.use('/product', productRoutes);
 
 // configuarcion de public static
 app.use(express.static(path.join(__dirname, 'public')));

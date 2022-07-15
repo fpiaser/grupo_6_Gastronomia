@@ -14,7 +14,7 @@ const productController = {
 
     productDetail:(req, res)=>{
         let id= req.params.id;
-        res.send('../views/products/productDetail' + ' ' + id),{
+        res.render('../views/products/productDetail' + ' ' + id),{
             pagina: "Detalles de Producto",
             styles: "/css/styles_detail.css"
         }
