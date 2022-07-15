@@ -15,21 +15,21 @@ const productController = {
     /* productDetail:(req, res)=>{
         let id= req.params.id;
         producto = productList.find(producto => producto.id == id)
-        res.render('../views/products/productDetail'),{
-            // pagina: "Detalles de Producto",
-            styles: "/css/styles_detail.css",
-            products: producto
+        res.send('producto'+id),{
+            
         }
         
-    } */
+    }, */
     
     productDetail: (req, res) => {
         let id = req.params.id;
-        res.render('../views/products/productDetail'), {
+        producto = productList.find(producto => producto.id == id)
+        res.render('products/productDetail', {
             pagina: "Detalles de Producto",
-            styles: "/css/styles_detail.css"
-        }
-    },    
+            styles: "/css/styles_detail.css",
+            product: producto
+        })
+    },   
     productCart: (req, res) => {
         res.render('../views/products/productCart',{
             pagina: "Carrito de Compras",
