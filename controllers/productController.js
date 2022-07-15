@@ -12,13 +12,23 @@ const productController = {
         });
 },
 
-    productDetail:(req, res)=>{
+    /* productDetail:(req, res)=>{
         let id= req.params.id;
-        res.render('../views/products/productDetail' + ' ' + id),{
+        producto = productList.find(producto => producto.id == id)
+        res.render('../views/products/productDetail'),{
+            // pagina: "Detalles de Producto",
+            styles: "/css/styles_detail.css",
+            products: producto
+        }
+        
+    } */
+    
+    productDetail: (req, res) => {
+        let id = req.params.id;
+        res.render('../views/products/productDetail'), {
             pagina: "Detalles de Producto",
             styles: "/css/styles_detail.css"
         }
-        
     },    
     productCart: (req, res) => {
         res.render('../views/products/productCart',{
