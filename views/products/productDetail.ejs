@@ -11,21 +11,17 @@
 
 <main>
     <div class="bloque_1"> 
-        <img src="/images/galletas-Veganas.jpg" width="90%" height="250px"></img>
+        <img src= "<%= product.imagen %>" width="90%" height="250px"></img>
         <h4> <%- product.nombre  %>  </h4>
-        <p>Galleta vegana con sabor a cacao, con nueces, proteina y sin azucar</p>
+        <p><%- product.descripcion  %></p>
     </div>  
     <div class="bloque_2">
-        <h2>Galleta raices de chocolate</h2>
+        <h2><%- product.nombre  %></h2>
         <p>Ingredientes 100% naturales</p>
 
-        <ul>
-            <li>Libre de gluten y soya</li>
-            <li>Endulzado con stevia</li>
-            <li>Sin grasas trans</li>
-        </ul>
+        
 
-        <h2 class="precio">$ 11111</h2>
+        <h2 class="precio"><%- product.precio %></h2>
 
     <div class="carrito">
         <div>
@@ -45,11 +41,11 @@
            <button type="reset"><i class="fa-solid fa-trash-can"></i></button>
         </div>
     </form>
-        <a href="/carrito"> <input type="submit" value="Agregar al carrito"> </a>
+        <a href="/product/carritos"> <input type="submit" value="Agregar al carrito"> </a>
     </div>
 
 
-        <h4 class="subtotal">Subtotal $ 11111</h4>
+        <h4 class="subtotal">Subtotal <%- product.precio %> </h4>
 
         <p class="alerta">Importante: Chequea en la imagen del producto si debe ser refrigerado</p>
 
