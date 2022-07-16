@@ -15,6 +15,7 @@ main{
 .img{
     display: flex;
     justify-content: center;
+    
 }
 
 .flex_container{
@@ -27,14 +28,13 @@ main{
 .flex_container div{
     margin-top: 30px;
     padding: 5px;
-    background-color: rgb(116, 209, 127);
+    background-color: #809A6F;
     border-radius: 8px;
-    flex-wrap: wrap;
-   
-    
+    flex-wrap: wrap;    
 }
 
 .productos_flex h4{
+    color: whitesmoke;
     display: flex;
     font-size: 25px;
     justify-content: center;
@@ -43,9 +43,10 @@ main{
 }
 
 h4:hover{
-    color:brown;
+    color:whitesmoke;
     transition: 0.5s;
-    background-color: aquamarine;
+    background-color: #D57E7E;
+    border-radius: 3rem;
 }
 
 .zoom{
@@ -57,23 +58,19 @@ h4:hover{
 
 }
 
-img{
+.product-img{
+    border: 2px solid #D57E7E;
+    border-radius: 30rem;
+    display: block;
+    margin: 0px auto;
     width: 500;
-    height: 300;
-   
+    height: 300;   
 }
-
-
-
-
-
 
 .bloque_1{
     width: 45%;
     text-align: center;
-    margin-top: 30px;
-    
-   
+    margin-top: 30px;   
 }
 
 .bloque_2{
@@ -84,8 +81,14 @@ img{
     text-align: justify;
 }
 
+.contenedor_precio {
+    color: whitesmoke;
+    margin: 2%;
+}
 .precio{
-    color: red;
+    color: #D57E7E;
+    font-weight: bold;
+    font-size: 25px;
     text-align: justify;
 }
 
@@ -107,8 +110,6 @@ main input{
     margin-left: 30px ;
    
 }
-
-
 
 .alerta{
     border: dashed 3px rgb(78, 138, 78);
