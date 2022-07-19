@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const productListPath = path.resolve(__dirname, '../data/products.json');
 const productList = JSON.parse(fs.readFileSync(productListPath, 'utf8'));
- const { v4: uuidv4 } = require('uuid');
+const { v4: uuidv4 } = require('uuid');
 
 const productController = {
     product: (req, res)=>{
@@ -61,12 +61,34 @@ const productController = {
     },
 
     modProduct: (req, res) => {
+        let id = req.params.id;
+        let product = productList.find(product => product.id == id)
         res.render('../views/products/modProduct',{
             pagina: "Modificar Producto",
-            styles: "/css/registro.css"
+            styles: "/css/registro.css",
+            product: product
         })
         
-    }
+    },
+    updateProduct: (req, res) => {
+        let id = req.params.id;
+        let newProduct = req.body
+        newProduct.id = id
+
+        for (let index = 0; index< productList.length; index++){
+            const element = productList[index];
+            if (element.id == id) {
+                productList[index] = newProduct;
+            }
+        }
+        
+        fs.writeFileSync(productListPath, JSON.stringify(productList, null, 2));
+        
+        
+        
+        res.redirect('/products')        
+    },
+
 }
 
 module.exports =productController;

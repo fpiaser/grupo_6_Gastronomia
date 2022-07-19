@@ -10,37 +10,51 @@
         <!-- Page content -->
         
     <main>
-        <form class="formulario" action="/product" method="post">
+        <form class="formulario" action="/product/modificarProducto/<%= product.id ?? ''%>?_method=PUT" method="post">
             <fieldset>
                 <legend>Modificar Producto</legend>
                     <div class="campo">
                         <label for="nombre">Nombre de Producto</label>
-                        <input type="text" placeholder="Nombre de producto a mostrar" name="nombreProd">
-                    </div>
-                    <div class="campo">
-                        <label for="sku">SKU</label>
-                        <input type="number" placeholder="SKU">
+                        <input type="text" 
+                        placeholder="Nombre de producto a mostrar" 
+                        name="nombre"
+                        value=" <%= product.nombre ?? '' %>"
+                        >
                     </div>
                     <div class="campo">
                         <label for="descripcion">Descripción</label>
-                        <input type="text" placeholder="Descripción del Producto" id="descrProd">
+                        <input type="text" placeholder="Descripción del Producto" name="descripcion" value="<%= product.descripcion ?? '' %>">
                     </div>
                     <div class="radio unidad-medida">
                         <label for="uom">Unidad de Medida</label>
-                        <p><input type="radio" name="uom" value="Kg">Kg</p>
-                        <p><input type="radio" name="uom" value="mg">mg</p>
-                        <p><input type="radio" name="uom" value="Unidad">Unidad</p>
+                        <p><input type="radio" name="uom" value="Kg"<% if (product.uom == "Kg") { %>
+                            checked
+                        <% } %>>Kg</p>
+                        <p><input type="radio" name="uom" value="mg" <% if (product.uom == "mg") { %>
+                            checked
+                        <% } %>>mg</p>
+                        <p><input type="radio" name="uom" value="Unidad" <% if (product.uom == "unidad") { %>
+                            checked
+                        <% } %> >Unidad</p>
                     </div>
                     <div class="radio categoria">
                         <label for="categoria">Categoría</label>
-                        <p><input type="radio" name="categoria" value="Frescos">Frescos</p>
-                        <p><input type="radio" name="categoria" value="Congelados">Congelados</p>
-                        <p><input type="radio" name="categoria" value="Viandas">Viandas</p>
-                        <p><input type="radio" name="categoria" value="Harinas y Frutos Secos">Harinas y Frutos Secos</p>
+                        <p><input type="radio" name="categoria" value="Frescos" <% if (product.categoria == "frescos") { %>
+                         checked
+                        <% } %>>Frescos</p>
+                        <p><input type="radio" name="categoria" value="Congelados" <% if (product.categoria == "Congelados") { %>
+                         checked
+                        <% } %>>Congelados</p>
+                        <p><input type="radio" name="categoria" value="Viandas" <% if (product.categoria == "Viandas") { %>
+                            checked
+                           <% } %>>Viandas</p>
+                        <p><input type="radio" name="categoria" value="Harinas y Frutos Secos" <% if (product.categoria == "Harinas y Frutos Secos") { %>
+                            checked
+                           <% } %>>Harinas y Frutos Secos</p>
                     </div>
                     <div class="campo">
                         <label for="precio">Precio</label>
-                        <input type="number">
+                        <input type="text" name="precio" value="<%= product.precio ?? '' %>">
                     </div>
                     <div class="campo">
                         <label for="imagen">Subir una foto</label>
