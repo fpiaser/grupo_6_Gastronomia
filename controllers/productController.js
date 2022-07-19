@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const productListPath = path.resolve(__dirname, '../data/products.json');
 const productList = JSON.parse(fs.readFileSync(productListPath, 'utf8'));
+ const { v4: uuidv4 } = require('uuid');
 
 const productController = {
     product: (req, res)=>{
@@ -43,13 +44,29 @@ const productController = {
         })
         
     },
+    
+// //POST QUE RECIBE Y PROCESA NUEVO PRODUCTO
+     storeProduct: (req, res) => {
+         let product = req.body;
+         product.id = uuidv4();
+
+        productList.push(product);
+        // console.log(product);
+        // console.log(productList);
+
+        fs.writeFileSync(productListPath, JSON.stringify(productList, null, 2));
+         res.redirect('/product');
+        
+
+    },
+
     modProduct: (req, res) => {
         res.render('../views/products/modProduct',{
             pagina: "Modificar Producto",
             styles: "/css/registro.css"
         })
         
-    } 
+    }
 }
 
 module.exports =productController;

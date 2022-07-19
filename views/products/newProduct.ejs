@@ -10,37 +10,37 @@
         <!-- Page content -->
         
     <main>
-        <form class="formulario" action="/" method="get">
+        <form class="formulario" action="/product" method="post">
             <fieldset>
                 <legend>Nuevo Producto</legend>
                     <div class="campo">
                         <label for="nombre">Nombre de Producto</label>
-                        <input type="text" placeholder="Nombre de producto a mostrar" id="nombreProd">
+                        <input type="text" placeholder="Nombre de producto a mostrar" name="nombre">
                     </div>
                     <div class="campo">
                         <label for="descripcion">Descripción</label>
-                        <input type="text" placeholder="Descripción del Producto" id="descrProd">
+                        <input type="text" placeholder="Descripción del Producto" name="descripcion">
                     </div>
                     <div class="radio unidad-medida" >
                         <label for="uom">Unidad de Medida</label>
-                        <p><input type="radio" name="uom" value=1>Kg</p>
-                        <p><input type="radio" name="uom" value=2>mg</p>
-                        <p><input type="radio" name="uom" value=3>Unidad</p>
+                        <p><input type="radio" name="uom" value=Kg>Kg</p>
+                        <p><input type="radio" name="uom" value=mg>mg</p>
+                        <p><input type="radio" name="uom" value=Unidad>Unidad</p>
                     </div>
                     <div class="radio categoria">
                         <label for="categoria">Categoría</label>
-                        <p><input type="radio" name="categoria" value=1>Frescos</p>
-                        <p><input type="radio" name="categoria" value=2>Congelados</p>
-                        <p><input type="radio" name="categoria" value=3>Viandas</p>
-                        <p><input type="radio" name="categoria" value=4>Harinas y Frutos Secos</p>
+                        <p><input type="radio" name="categoria" value=frescos>Frescos</p>
+                        <p><input type="radio" name="categoria" value=Congelados>Congelados</p>
+                        <p><input type="radio" name="categoria" value=Viandas>Viandas</p>
+                        <p><input type="radio" name="categoria" value=Harinas>Harinas y Frutos Secos</p>
                     </div>
                     <div class="campo">
                         <label for="precio">Precio</label>
-                        <input type="number">
+                        <input type="number" name="precio">
                     </div>
                     <div class="campo">
                         <label for="imagen">Subir una foto</label>
-                        <input type="file" name="fotoProducto" accept=".jpg" multiple>
+                        <input type="file" name="imagen" accept=".jpg" multiple>
                     </div>
             </fieldset>
             
