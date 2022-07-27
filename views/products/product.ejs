@@ -29,15 +29,9 @@
 
 
                 <!-- eliminar producto -->
-                 <form
-                 action="/product/<%= products[index].id %>?_method=DELETE" 
-                 method="post"
-                >
-                  <button type="submit" 
-                    class="ps-btn ps-btn-danger"
-                  >Eliminar</button>
-                </form> -->
-                <br />
+                <form action="/product/<%= products[index].id %>?_method=DELETE"   method="post" class="container_boton_eliminar">
+                  <button type="submit"  class="boton_eliminar">Eliminar</button>
+                </form> 
               <% } %>
         </div>
  

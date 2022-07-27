@@ -76,11 +76,27 @@ header{
 .menu-login a {
     color: #809A6F
 } 
+
+
+
+.boton_eliminar{
+    
+    background-color: #D57E7E;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Lobster Two';
+    font-size: 16px;
+
+
+}
 .cabecera .busqueda {
+    
     width:  4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
 
 }
 
