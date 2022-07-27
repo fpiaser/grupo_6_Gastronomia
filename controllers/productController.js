@@ -48,7 +48,21 @@ const productController = {
 // //POST QUE RECIBE Y PROCESA NUEVO PRODUCTO
      storeProduct: (req, res) => {
          let product = req.body;
+         let image = req.file;
+        //  let images = req.files;
+
+         if (image) {
+            product.imagen = image.filename;
+        } 
+        
+        // else if (images) {
+        //     product.imagen = images.map(image => image.filename);
+        // }
+
+         
          product.id = uuidv4();
+
+        
 
         productList.push(product);
         // console.log(product);
@@ -71,8 +85,27 @@ const productController = {
         
     },
     updateProduct: (req, res) => {
+        
         let id = req.params.id;
-        let newProduct = req.body
+        let oldProduct= productList.find(product => product.id == id)
+        let newProduct={
+            id, 
+            nombre: req.body.nombre,
+            descripcion:req.body.descripcion,
+            uom:req.body.uom,
+            categoria: req.body.categoria,
+            precio: req.body.precio,
+            imagen: oldProduct.imagen 
+        }
+        console.log(oldProduct, newProduct)
+
+        let image= req.file
+
+        if (image) {
+            product.imagen = image.filename;
+            // console.log("updateProduct", product.imagen);
+        } 
+
         newProduct.id = id
 
         for (let index = 0; index< productList.length; index++){
@@ -86,9 +119,24 @@ const productController = {
         
         
         
-        res.redirect('/products')        
+        res.redirect('/product')        
     },
+
+    deleteProduct: (req, res) => {
+        let id = req.params.id;
+        console.log("deleteProduct", id);
+        for (let index = 0; index < productList.length; index++) {
+            const element = productList[index];
+            if (element.id == id) {
+                productList.splice(index, 1);
+            }
+        }
+
+        fs.writeFileSync(productListPath, JSON.stringify(productList, null, 2));
+
+        res.redirect('/product');
+    }
 
 }
 
-module.exports =productController;
+module.exports=productController;

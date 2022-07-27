@@ -23,14 +23,15 @@
                           <p class="contenedor_precio">
                            <label for="precio" class="precio">Precio: </label><%= products[index].precio %>
                          </p>
-                      <img class="product-img" id="img" src="<%= products[index].imagen %>" width="86%" height="250px"></img>
+                      <img class="product-img" id="img" src="/images/<%= products[index].imagen %>" width="86%" height="250px"></img>
                 </div>
               </div>
-              
+
+
                 <!-- eliminar producto -->
-                <!-- <form
-                  action="/products/?_method=DELETE" 
-                  method="post"
+                 <form
+                 action="/product/<%= products[index].id %>?_method=DELETE" 
+                 method="post"
                 >
                   <button type="submit" 
                     class="ps-btn ps-btn-danger"

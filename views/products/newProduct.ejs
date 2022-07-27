@@ -10,7 +10,7 @@
         <!-- Page content -->
         
     <main>
-        <form class="formulario" action="/product" method="post">
+        <form class="formulario" action="/product" method="post" enctype="multipart/form-data">
             <fieldset>
                 <legend>Nuevo Producto</legend>
                     <div class="campo">
@@ -40,7 +40,7 @@
                     </div>
                     <div class="campo">
                         <label for="imagen">Subir una foto</label>
-                        <input type="file" name="imagen" accept=".jpg" multiple>
+                        <input type="file" name="imagen"  multiple>
                     </div>
             </fieldset>
             

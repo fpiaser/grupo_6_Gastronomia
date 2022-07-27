@@ -1,30 +1,29 @@
 [
   {
-    "id": 1,
-    "nombre": "Galleta raices de chocolate",
+    "nombre": " Galleta Raiz de Chocolate",
     "descripcion": "Galleta vegana con sabor a cacao, con nueces, proteina y sin azucar",
-    "uom": "unidad",
+    "uom": "Unidad",
     "categoria": "Harinas y Frutos Secos",
     "precio": "US 2",
-    "imagen": "../images/galleta-chocolate.jpg"
+    "imagen": "galleta-chocolate.jpg",
+    "id": "1"
   },
   {
-    "id": 2,
-    "nombre": "Pan Artesanal",
+    "nombre": " Pan Artesanal",
     "descripcion": "Pan con semillas de trigo",
-    "uom": "unidad",
+    "uom": "1 Unidad",
     "categoria": "Harinas y Frutos Secos",
     "precio": "US 5",
-    "imagen": "../images/pan_artesanal.jpg"
+    "imagen": "pan_artesanal.jpg",
+    "id": "2"
   },
   {
-    "id": 3,
-    "nombre": "Queso de soya",
+    "id": "3",
+    "nombre": " Queso de Soya",
     "descripcion": "elaborado con frijol de soja de alta calidad, sal marina y cloruro de calcio, un compuesto natural que sirve para potencializar su sabor",
-    "uom": "unidad",
-    "categoria": "Vianda Saludable",
+    "uom": "Unidad",
     "precio": "US 8",
-    "imagen": "../images/queso_soya.jpg"
+    "imagen": "queso_soya.jpg"
   },
   {
     "id": 4,
@@ -33,7 +32,7 @@
     "uom": "unidad",
     "categoria": "Vianda Saludable",
     "precio": "US 5",
-    "imagen": "../images/yogurt.jpg"
+    "imagen": "yogurt.jpg"
   },
   {
     "id": 5,
@@ -42,16 +41,16 @@
     "uom": "unidad",
     "categoria": "Congelados",
     "precio": "US 10",
-    "imagen": "../images/albondigas.jpg"
+    "imagen": "albondigas.jpg"
   },
   {
-    "id": 6,
-    "nombre": "Perniles de Gluten",
+    "id": "6",
+    "nombre": " Perniles de gluten",
     "descripcion": "Los Perniles de Gluten, están elaborados con sémola de trigo, ajonjolí, achiote, especias naturales, laurel, tomillo y albahaca y sal marina. Vienen precocidos y adobados, listos para asar o freír.,.",
-    "uom": "unidad",
+    "uom": "Unidad",
     "categoria": "Congelados",
     "precio": "US 15",
-    "imagen": "../images/pernil.jpeg"
+    "imagen": "pernil.jpeg"
   },
   {
     "id": 7,
@@ -60,7 +59,7 @@
     "uom": "mg",
     "categoria": "Nuestra huerta",
     "precio": "US 3",
-    "imagen": "../images/nuez-moscada.jpg"
+    "imagen": "nuez-moscada.jpg"
   },
   {
     "id": 8,
@@ -69,15 +68,6 @@
     "uom": "mg",
     "categoria": "Nuestra huerta",
     "precio": "US 4",
-    "imagen": "../images/albahaca.jpg"
-  },
-  {
-    "nombre": "tortilla Marañon",
-    "descripcion": "Totritals de marañon palamano",
-    "uom": "mg",
-    "categoria": "Viandas",
-    "precio": "25",
-    "imagen": "",
-    "id": "8456b36d-e293-4368-afe1-aa301e63729f"
+    "imagen": "albahaca.jpg"
   }
 ]

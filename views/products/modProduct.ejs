@@ -10,7 +10,7 @@
         <!-- Page content -->
         
     <main>
-        <form class="formulario" action="/product/modificarProducto/<%= product.id ?? ''%>?_method=PUT" method="post">
+        <form class="formulario" action="/product/<%= product.id ?? ''%>?_method=PUT" method="post">
             <fieldset>
                 <legend>Modificar Producto</legend>
                     <div class="campo">
@@ -58,7 +58,7 @@
                     </div>
                     <div class="campo">
                         <label for="imagen">Subir una foto</label>
-                        <input type="file" name="fotoProducto" accept=".jpg" multiple>
+                        <input type="file" name="imagen" accept=".jpg" multiple>
                     </div>
             </fieldset>
             
