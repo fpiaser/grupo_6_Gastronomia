@@ -75,6 +75,7 @@ h4:hover{
 
 .bloque_2{
     text-align: center;
+    margin-top: 10px
 }
 
 .bloque_2 ul{
@@ -90,16 +91,19 @@ h4:hover{
     font-weight: bold;
     font-size: 25px;
     text-align: justify;
+    margin-top: 20px
 }
 
 .carrito{
     display: flex; 
+    margin-top: 20px
 }
 
 
 .subtotal{
     color: rgb(15, 105, 38);
     text-align: justify;
+    margin-top: 40px
 }
 
 main input{
@@ -113,7 +117,8 @@ main input{
 
 .alerta{
     border: dashed 3px rgb(78, 138, 78);
-    font-weight: bold
+    font-weight: bold;
+    margin-top: 60px
    
 }
 
