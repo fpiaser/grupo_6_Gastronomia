@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- Page head -->
-    <%- include('../partials/head') %>
-    <body>
-        <!-- header -->
-        
-      <%- include('../partials/header') %>
-      <!-- Page content -->
+<!-- Page head -->
+<%- include('../partials/head') %>
 
+  <body>
+    <!-- header -->
+
+    <%- include('../partials/header') %>
+      <!-- Page content -->
+      <a href="/product/nuevoProducto" class="boton_eliminar">Añadir Producto</a>
+      
       <main>
         
+        <div class="flex_container">
 
-              <div class="flex_container">
-                 
-                      <% for(let index=0; index < products.length; index++) { %>
-                       <div class="zoom">
-                        <div class="productos_flex" >   
-                            <a href="/product/<%= products[index].id %>">
-                      
-                            <h4 id="nombre"><%= products[index].nombre %></h4>
-                            </a> 
-                          <p class="contenedor_precio">
-                           <label for="precio" class="precio">Precio: </label><%= products[index].precio %>
-                         </p>
-                      <img class="product-img" id="img" src="/images/<%= products[index].imagen %>" width="86%" height="250px"></img>
-                </div>
+          <% for(let index=0; index < products.length; index++) { %>
+            <div class="zoom">
+              <div class="productos_flex">
+                <a href="/product/<%= products[index].id %>">
+
+                  <h4 id="nombre">
+                    <%= products[index].nombre %>
+                  </h4>
+                </a>
+                <p class="contenedor_precio">
+                  <label for="precio" class="precio">Precio: </label>
+                  <%= products[index].precio %>
+                </p>
+                <img class="product-img" id="img" src="/images/<%= products[index].imagen %>" width="86%"
+                  height="250px"></img>
               </div>
 
-
                 <!-- eliminar producto -->
-                 <form
-                 action="/product/<%= products[index].id %>?_method=DELETE" 
-                 method="post"
-                >
-                  <button type="submit" 
-                    class="ps-btn ps-btn-danger"
-                  >Eliminar</button>
-                </form> 
-                <br />
-              <% } %>
+              <form action="/product/<%= products[index].id %>?_method=DELETE" method="post">
+                <button type="submit" class="boton_eliminar">Eliminar</button>
+              </form>
+            
+            </div>          
+
+          <% } %>
         </div>
- 
-        
-          
+
+
+
       </main>
       <%- include('../partials/footer') %>
-    </body>
+  </body>
 
 </html>

@@ -117,6 +117,23 @@ main input{
    
 }
 
+.boton_eliminar{
+    
+    background-color: #D57E7E;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Lobster Two';
+    font-size: 16px;
+
+
+}
+
+.boton_eliminar:hover {
+    transition: 0.5s;
+    background-color: #f44336;
+
+}
 
 @media (min-width: 720px){
     main{
