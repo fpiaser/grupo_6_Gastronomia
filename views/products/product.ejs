@@ -8,7 +8,7 @@
 
     <%- include('../partials/header') %>
       <!-- Page content -->
-      <a href="/product/nuevoProducto" class="boton_eliminar">Añadir Producto</a>
+      <a href="/product/nuevoProducto" class="boton_eliminar">Añadir Producto </a>
       
       <main>
         
@@ -24,7 +24,7 @@
                   </h4>
                 </a>
                 <p class="contenedor_precio">
-                  <label for="precio" class="precio">Precio: </label>
+                  <label for="precio" class="precio">USD $ </label>
                   <%= products[index].precio %>
                 </p>
                 <img class="product-img" id="img" src="/images/<%= products[index].imagen %>" width="86%"
@@ -33,8 +33,11 @@
 
                 <!-- eliminar producto -->
               <form action="/product/<%= products[index].id %>?_method=DELETE" method="post">
-                <button type="submit" class="boton_eliminar">Eliminar</button>
+                <button type="submit" class="boton_eliminar"><i class="fa-solid fa-trash-can"></i></button> <a href="/product/modificarProducto/<%= products[index].id %>" class="boton_eliminar"><i class="fa-solid fa-pen-to-square"></i></a> 
               </form>
+
+
+              
             
             </div>          
 
