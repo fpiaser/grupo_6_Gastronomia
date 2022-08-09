@@ -2,19 +2,17 @@
     {
         "id": 1, 
         "nombre": "Pepito",
-        "Apellido": "Perez",
-        "Email": "notengoemail@gmail.com",
-        "Contrasenia":"1234567890",
-        "Categoria": 1,
+        "apellido": "Perez",
+        "email": "notengoemail@gmail.com",
+        "password":"1234567890",
         "imagen": ""
     },
     {
         "id": 2, 
         "nombre": "Alan",
-        "Apellido": "Sandoval",
-        "Email": "sitengomail@gmail.com",
-        "Contrasenia": "superdificil",
-        "Categoria": 2, 
+        "apellido": "Sandoval",
+        "email": "sitengomail@gmail.com",
+        "password": "superdificil", 
         "imagen": ""
     }
 ]

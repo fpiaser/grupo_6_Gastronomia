@@ -4,30 +4,33 @@
 
 <%- include('../partials/head') %> 
 
-
 <body>
     <!-- header -->
     <%- include('../partials/header') %>
     <!-- Page content -->
     <main>
-        <form class="formulario" action="/" method="get">
+        <form class="formulario" action="/" method="post" enctype="multipart/form-data">
             <fieldset>
                 <legend>Crear Cuenta</legend>
                     <div class="campo">
-                        <label for="nombre">Nombre Completos</label>
-                        <input type="text" placeholder="Coloca tu nombre" id="nombre">
+                        <label for="nombre">Nombre </label>
+                        <input type="text" placeholder="Coloca tu nombre" id="nombre" name="nombre">
                     </div>
                     <div class="campo">
-                        <label for="email">Correo electronico</label>
-                        <input type="email" placeholder="nombre@tucorreo" id="email">
+                        <label for="Apellido">Apellido </label>
+                        <input type="text" placeholder="Coloca tu apellido" id="apellido" name="apellido">
+                    </div>
+                    <div class="campo">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" placeholder="nombre@tucorreo" id="email" name="email">
                     </div>
                     <div class="campo">
                         <label for="password">Contraseña</label>
-                        <input type="password" placeholder="Tu contraseña" id="password">
+                        <input type="password" placeholder="Tu contraseña" id="password" name="password">
                     </div>
                     <div class="campo">
-                        <label for="password">Repetir Contraseña</label>
-                        <input type="password" placeholder="Tu contraseña" id="password">
+                        <label for="imagen">Subir una foto </label>
+                        <input type="file"  id="imagen" name="imagen" multiple>
                     </div>
                     
             </fieldset>
