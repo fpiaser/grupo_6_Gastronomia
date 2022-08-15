@@ -8,19 +8,22 @@
         
    <%- include('../partials/header') %>
     <main>
-        <form class="formulario" action="/" method="get">
+        <form class="formulario" action="/user/login" method="post">
             <fieldset>
                 <legend>Ingrese a su Cuenta</legend>
                     <div class="campo">
-                        <label for="nombre">Nombre Completos</label>
-                        <input type="text" placeholder="Coloca tu nombre" id="nombre">
+                        <label for="email">Email</label>
+                        <input type="email" placeholder="Coloca tu email" name="email" required>
                     </div>
                     
                     <div class="campo">
                         <label for="password">Contraseña</label>
-                        <input type="password" placeholder="Tu contraseña" id="password">
+                        <input type="password" placeholder="Tu contraseña" name="password" required>
                     </div>
-                    
+                    <label for="remember">
+                        Recordarme
+                        <input type="checkbox" name="remember">
+                    </label>
                     
             </fieldset>
             

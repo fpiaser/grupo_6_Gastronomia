@@ -7,5 +7,6 @@ router.get('/registro', userController.register);
 router.post('/', uploadFile.single('imagen'), userController.saveRegister);
 
 router.get('/login', userController.login);
+router.post('/login', userController.processLogin);
 
 module.exports = router;
