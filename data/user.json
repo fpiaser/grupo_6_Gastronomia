@@ -1,18 +1,34 @@
 [
-    {
-        "id": 1, 
-        "nombre": "Pepito",
-        "apellido": "Perez",
-        "email": "notengoemail@gmail.com",
-        "password":"1234567890",
-        "imagen": ""
-    },
-    {
-        "id": 2, 
-        "nombre": "Alan",
-        "apellido": "Sandoval",
-        "email": "sitengomail@gmail.com",
-        "password": "superdificil", 
-        "imagen": ""
-    }
-]
+  {
+    "nombre": "Pepito",
+    "apellido": "Perez",
+    "email": "notengoemail@gmail.com",
+    "password": "1234567890",
+    "imagen": "",
+    "id": "1"
+  },
+  {
+    "nombre": "Alan",
+    "apellido": "Sandoval",
+    "email": "sitengomail@gmail.com",
+    "password": "superdificil",
+    "imagen": "",
+    "id": "2"
+  },
+  {
+    "nombre": "Viviana Andrea",
+    "apellido": "Maya",
+    "email": "vperez864@gmail.com",
+    "password": "1234567890'",
+    "imagen": "1660577335311.CR2",
+    "id": "4bbe3de1-26f7-4dea-a247-068f58dcd2b2"
+  },
+  {
+    "nombre": "Andrew",
+    "apellido": "Valencia",
+    "email": "andreivalse@gmail.com",
+    "password": "1234567890",
+    "imagen": "1660577448155.CR2",
+    "id": "9428deed-ff88-4344-b88f-2d775fe79743"
+  }
+ ]

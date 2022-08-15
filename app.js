@@ -10,7 +10,7 @@ const mainRoutes = require('./routes/mainRoutes');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const logMiddleware = require('./middlewares/logMiddleware');
-const session = require('express-session');
+//const session = require('express-session');
 app.use(session({secret: 'secreto'}));
 
 
