@@ -26,7 +26,7 @@ const User = {
     },
     validateUser: (viewUser) => {
         let userList = User.getAll();
-        console.log('userList: ' + JSON.stringify(userList));
+        //console.log('userList: ' + JSON.stringify(userList));
         let currentUser = userList.find(user => {
             if (user.email == viewUser.email) {
                 //&& 

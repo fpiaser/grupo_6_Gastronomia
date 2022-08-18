@@ -1,8 +1,12 @@
+const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
+const bcrypt = require('bcrypt');
 const registerListPath = path.resolve(__dirname, '../data/user.json');
 const registerList = JSON.parse(fs.readFileSync(registerListPath, 'utf8'));
 const { v4: uuidv4 } = require('uuid');
+let usuarioALoguearse = 0;
+let loggedIn = 0;
 
 const userModel = require('../models/UserModel');
 
@@ -21,7 +25,7 @@ const userController =
         res.clearCookie('user');
         res.redirect("/");
     }, //validacion del logeo
-    processLogin: (req, res) => {
+    /* processLogin: (req, res) => {
         try {
             let currentUser = {
                 email: req.body.email,
@@ -47,7 +51,57 @@ const userController =
                 error: error.message
             });
         }
+    }, */
+
+    processLogin: function(req,res) {
+        /* let errors = validationResult(req);
+
+        if (errors.isEmpty()) { */
+            let usersJSON = fs.readFileSync(registerListPath, 'utf8')
+            let users;
+            if (usersJSON == "") {
+                users = [];
+            } else {
+                users = JSON.parse(usersJSON);
+            }
+
+            for (let i=0; i < users.length; i++) {
+                if (users[i].email == req.body.email) {
+                    console.log ('User OK');
+                    if (req.body.password == users[i].password){
+                        console.log ('Validacion OK');
+                        usuarioALoguearse = users[i];
+                        loggedIn = 1;
+                        console.log (usuarioALoguearse)
+                        console.log (loggedIn)
+                        break;
+                    }
+                }
+            }
+            console.log ('for OK')
+            console.log (usuarioALoguearse)
+            console.log (loggedIn)
+            //req.session.usuarioLogueado = usuarioALoguearse;
+
+            if (usuarioALoguearse == 0) {
+                return res.render('../views/users/login',{
+                    pagina: "Ingreso",
+                    styles: "/css/registro.css"
+                })
+                // AGREGAR MENSAJE CREDENCIALES INVALIDAS
+
+
+
+            } else return res.redirect ('/');
+            //AGREGAR MENSAJE BIENVENIDO USUARIO X AL HEADER
+            
+        
+        
+
+
     },
+
+
     register:(req, res)=>{
         res.render('../views/users/register',{
             pagina: "Registro",

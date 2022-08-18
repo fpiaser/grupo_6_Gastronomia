@@ -4,14 +4,14 @@ const app = express();
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const bcrypt = require('bcrypt');
 
 const PORT= process.env.PORT || 3000
 const mainRoutes = require('./routes/mainRoutes');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const logMiddleware = require('./middlewares/logMiddleware');
-//const session = require('express-session');
-app.use(session({secret: 'secreto'}));
+//app.use(session({secret: 'secreto'}));
 
 
 app.set('views', path.join(__dirname, 'views'));

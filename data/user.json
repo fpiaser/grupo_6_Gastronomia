@@ -30,5 +30,13 @@
     "password": "1234567890",
     "imagen": "1660577448155.CR2",
     "id": "9428deed-ff88-4344-b88f-2d775fe79743"
+  },
+  {
+    "nombre": "Francisco",
+    "apellido": "Piaser",
+    "email": "fpiaser@hotmail.com",
+    "password": "Pancho66",
+    "imagen": "1660830323217.jpeg",
+    "id": "5e3d53d2-5e1a-48a9-bcd1-84a36635dbdc"
   }
- ]
+]
