@@ -2,18 +2,21 @@ const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productController');
 const uploadFile=  require('../middlewares/multer');
+const authMiddleware = require('../middlewares/authMiddleware');
+const guestMiddleware = require('../middlewares/guestMiddleware')
 
 //Ruta productos
 // ACCESIBLE POR CUALQUIERA
 router.get('/', productController.product);
 
 //Ruta ver carrito
-// ACCESIBLE SOLO CON LOGIN (sino redirige al login)
+// ACCESIBLE POR CUALQUIERA
 router.get('/carrito', productController.productCart);
+
 
 //Ruta crear producto
 // ACCESIBLE SOLO CON LOGIN (sino redirige al login)
-router.get('/nuevoProducto', productController.newProduct);
+router.get('/nuevoProducto',authMiddleware, productController.newProduct);
 router.post('/', uploadFile.single('imagen'), productController.storeProduct);
 
 //Ruta editar Producto

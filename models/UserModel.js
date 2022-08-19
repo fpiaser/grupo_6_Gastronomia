@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const bcrypt = require('bcryptjs');
 const uuid = require('uuid');
 
 const userListPath = path.resolve(__dirname, '../data/user.json');

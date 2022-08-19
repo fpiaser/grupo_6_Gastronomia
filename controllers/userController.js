@@ -81,7 +81,10 @@ const userController =
             console.log ('for OK')
             console.log (usuarioALoguearse)
             console.log (loggedIn)
-            //req.session.usuarioLogueado = usuarioALoguearse;
+            
+            req.session.usuarioLogueado = usuarioALoguearse;
+
+            console.log(req.session.usuarioLogueado)
 
             if (usuarioALoguearse == 0) {
                 return res.render('../views/users/login',{
@@ -111,15 +114,16 @@ const userController =
     },
 //POST QUE RECIBE Y PROCESA REGISTROS
     saveRegister:(req, res)=>{
-        let register = req.body;
         let image = req.file;
-       //  let images = req.files;
-        console.log(register);
-        if (image) {
-            register.imagen = image.filename;
-       } 
-   
-        register.id = uuidv4();
+        let register = {
+            id: uuidv4(),//genera automaticamenete un id
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.password, 10),
+            image: image.filename,
+            isAdmin: false,
+        };
 
        registerList.push(register);
        
@@ -127,5 +131,6 @@ const userController =
         res.redirect('/');
     }
 }
+
 
 module.exports = userController;

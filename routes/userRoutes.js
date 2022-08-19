@@ -14,4 +14,13 @@ router.post('/', uploadFile.single('imagen'), userController.saveRegister);
 router.get('/login', userController.login);
 router.post('/login', userController.processLogin);
 
+//Check
+router.get('/check', function(req,res){
+    if (req.session.usuarioLogueado == undefined) {
+        res.send('no estas logueado');
+    } else {
+        res.send('el usuario logueado es ' + req.session.usuarioLogueado.email)
+    }
+})
+
 module.exports = router;
