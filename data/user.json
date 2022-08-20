@@ -96,5 +96,14 @@
     "password": "$2b$10$rVGW6wnQ/ULU/Y9VEYG87OJlynTnTOlYn1MP/LIc0pUoJ2wB0m1JK",
     "image": "1660867667017.jpeg",
     "isAdmin": false
+  },
+  {
+    "id": "952e6a80-6cfe-4543-a7a3-5164ded7ee7f",
+    "nombre": "Jose",
+    "apellido": "Lopez ",
+    "email": "asd@asd.com",
+    "password": "$2b$10$XYh/oo8zQoLKXSFSsob5mu6b0SDoSo1NThY4QIpJDDyDl2l4sFyDu",
+    "image": "1660950002197.jpeg",
+    "isAdmin": false
   }
 ]

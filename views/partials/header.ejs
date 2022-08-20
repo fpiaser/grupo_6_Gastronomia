@@ -13,12 +13,19 @@
             <div class="menu-productos">
                 <a href="/product">Productos</a>
             </div>
+            <% if(!locals.user) {%>
             <div class="menu-registro">
                 <a href="/user/registro">Registro</a>
             </div>
             <div class="menu-login">
                 <a href="/user/login">Login</a>
             </div>
+            <% } else {%>
+            <h3><%= 'Bienvenido ' + user.nombre + ' ' + user.apellido %></h3>
+            <form action="/user/logout" method="GET">
+                <button type="submit">Cerrar Sesion</button>
+              </form>
+            <% } %>
         </nav>
     </div>
     <div class="busqueda"> 

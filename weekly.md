@@ -57,3 +57,14 @@ Solución
 
 Solución
 -Compartimos pantalla y entre todos revisamos cada uno de los códigos, solicitamos ayuda del profesor y recibimos asesoría.
+
+18/08/2022
+
+¿Qué se hizo?
+-Se resolvieron problemas de validacion de login y se implementaron middlewares para separar rutas con y sin login. Se implemento variable session con datos de usuario logueado. Se agrego encriptado de contraseña al registro y login. 
+
+¿Impedimentos?
+-No tener claro algunos temas nos retraso considerablemente para alcanzar la solucion.  
+
+Solución
+-Compartimos pantalla y entre todos revisamos cada uno de los códigos, solicitamos ayuda del profesor y recibimos asesoría.
