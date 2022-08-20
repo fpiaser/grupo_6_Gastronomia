@@ -1,109 +1,11 @@
 [
   {
-    "nombre": "Pepito",
-    "apellido": "Perez",
-    "email": "notengoemail@gmail.com",
-    "password": "1234567890",
-    "imagen": "",
-    "id": "1"
-  },
-  {
-    "nombre": "Alan",
-    "apellido": "Sandoval",
-    "email": "sitengomail@gmail.com",
-    "password": "superdificil",
-    "imagen": "",
-    "id": "2"
-  },
-  {
-    "nombre": "Viviana Andrea",
-    "apellido": "Maya",
-    "email": "vperez864@gmail.com",
-    "password": "1234567890'",
-    "imagen": "1660577335311.CR2",
-    "id": "4bbe3de1-26f7-4dea-a247-068f58dcd2b2"
-  },
-  {
-    "nombre": "Andrew",
-    "apellido": "Valencia",
-    "email": "andreivalse@gmail.com",
-    "password": "1234567890",
-    "imagen": "1660577448155.CR2",
-    "id": "9428deed-ff88-4344-b88f-2d775fe79743"
-  },
-  {
+    "id": "05056cfa-b495-44bd-b1cd-5bd524a7b049",
     "nombre": "Francisco",
     "apellido": "Piaser",
     "email": "fpiaser@hotmail.com",
-    "password": "Pancho66",
-    "imagen": "1660830323217.jpeg",
-    "id": "5e3d53d2-5e1a-48a9-bcd1-84a36635dbdc"
-  },
-  {
-    "id": "06261517-91cb-435d-b993-aea0c95442e4",
-    "email": "admin@admin.com",
-    "password": "$2b$10$QiMXA/p8pO3EceM42c7CJOaDC7BntoClzfMy0kMvK09r3FiRmjErO"
-  },
-  {
-    "id": "e0ed1560-89ca-402c-a59c-d577c6dab86f",
-    "nombre": "sarasa",
-    "apellido": "sssssss",
-    "email": "admin@admin.com",
-    "password": "$2b$10$T1RpIdP54wrzbszAKQblhufQeUc.637JvOsGvn8eH570hiNPgRlEK",
-    "isAdmin": false
-  },
-  {
-    "id": "d19b0a1a-9add-4218-8557-4e0be26d085a",
-    "nombre": "12232312",
-    "apellido": "eooreoroe",
-    "email": "ads@asdas.co",
-    "password": "$2b$10$9qdkqxuKRhvRv6GZ56FS6O1mNVTUoLqDsNuHd5GYQm9Fwb1lZs1R.",
-    "imagen": {
-      "fieldname": "imagen",
-      "originalname": "photo-1544502062-f82887f03d1c.jpeg",
-      "encoding": "7bit",
-      "mimetype": "image/jpeg",
-      "destination": "/Users/fpiaser/Desktop/DH - Fullstack/Grupo 6 - Gastronomia/grupo_6_Gastronomia/public/images",
-      "filename": "1660866633171.jpeg",
-      "path": "/Users/fpiaser/Desktop/DH - Fullstack/Grupo 6 - Gastronomia/grupo_6_Gastronomia/public/images/1660866633171.jpeg",
-      "size": 17887
-    },
-    "isAdmin": false
-  },
-  {
-    "id": "b9271d86-d59b-418a-8d74-00cd85da6cad",
-    "nombre": "123434",
-    "apellido": "34324324",
-    "email": "admin@asdsa.com",
-    "password": "$2b$10$ZQP2yiqYwgfnbjR1MohsXe6RaB2m0rpKTqHi6y5ESuE3GD9UU.3yS",
-    "image": {
-      "fieldname": "imagen",
-      "originalname": "photo-1544502062-f82887f03d1c.jpeg",
-      "encoding": "7bit",
-      "mimetype": "image/jpeg",
-      "destination": "/Users/fpiaser/Desktop/DH - Fullstack/Grupo 6 - Gastronomia/grupo_6_Gastronomia/public/images",
-      "filename": "1660867445177.jpeg",
-      "path": "/Users/fpiaser/Desktop/DH - Fullstack/Grupo 6 - Gastronomia/grupo_6_Gastronomia/public/images/1660867445177.jpeg",
-      "size": 17887
-    },
-    "isAdmin": false
-  },
-  {
-    "id": "5ba05dcd-2c14-42fc-a243-503ec309e256",
-    "nombre": "12323213",
-    "apellido": "312312323",
-    "email": "asd@asdasd.com",
-    "password": "$2b$10$rVGW6wnQ/ULU/Y9VEYG87OJlynTnTOlYn1MP/LIc0pUoJ2wB0m1JK",
-    "image": "1660867667017.jpeg",
-    "isAdmin": false
-  },
-  {
-    "id": "952e6a80-6cfe-4543-a7a3-5164ded7ee7f",
-    "nombre": "Jose",
-    "apellido": "Lopez ",
-    "email": "asd@asd.com",
-    "password": "$2b$10$XYh/oo8zQoLKXSFSsob5mu6b0SDoSo1NThY4QIpJDDyDl2l4sFyDu",
-    "image": "1660950002197.jpeg",
-    "isAdmin": false
+    "password": "$2b$10$7mFIzORjLYoPEABFfadI8.JitGPkKnDc2Z34Fw8klA.dvMJq9Dlnm",
+    "image": "1660957103978.jpeg",
+    "isAdmin": true
   }
 ]
