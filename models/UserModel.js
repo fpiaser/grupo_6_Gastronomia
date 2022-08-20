@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const bcrypt = require('bcryptjs');
 const uuid = require('uuid');
+const bcrypt = require('bcrypt');
 
 const userListPath = path.resolve(__dirname, '../data/user.json');
 
@@ -26,15 +26,16 @@ const User = {
     },
     validateUser: (viewUser) => {
         let userList = User.getAll();
-        console.log('userList: ' + JSON.stringify(userList));
+        //console.log('userList: ' + JSON.stringify(userList));
         let currentUser = userList.find(user => {
-            if (user.email == viewUser.email) {
-                //&& 
-                //bcrypt.compareSync(
-                //viewUser.password == user.password//)
+            if (user.email == viewUser.email
+                && 
+                bcrypt.compareSync(
+                viewUser.password, user.password)){
                 return user;
-            }
-        });
+                }
+            });
+        
 
         if (currentUser) {
             return currentUser;

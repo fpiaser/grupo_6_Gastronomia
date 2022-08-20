@@ -6,12 +6,22 @@ const { v4: uuidv4 } = require('uuid');
 
 const productController = {
     product: (req, res)=>{
+        if (req.session.user){
         res.render('../views/products/product',{
             pagina: "Pagina",
             styles: "/css/styles_detail.css",
-            products: productList
+            products: productList,
+            user: req.session.user,
         });
-},
+    } else {
+        res.render('../views/products/product',{
+            pagina: "Pagina",
+            styles: "/css/styles_detail.css",
+            products: productList,
+});
+}
+    },
+
 
     /* productDetail:(req, res)=>{
         let id= req.params.id;
@@ -32,11 +42,20 @@ const productController = {
         })
     },   
     productCart: (req, res) => {
+        if (req.session.user){
         res.render('../views/products/productCart',{
             pagina: "Carrito de Compras",
-            styles: "/css/carrito.css"
-        })
-    },
+            styles: "/css/carrito.css",
+            user: req.session.user,
+        });
+    
+    } else {
+        res.render('../views/products/productCart',{
+            pagina: "Carrito de Compras",
+            styles: "/css/carrito.css",
+        });
+    }
+},
     newProduct: (req, res) => {
         res.render('../views/products/newProduct',{
             pagina: "Nuevo Producto",
