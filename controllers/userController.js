@@ -138,7 +138,7 @@ const userController =
        registerList.push(register);
        
        fs.writeFileSync(registerListPath, JSON.stringify(registerList, null, 2));
-        res.redirect('/');
+        res.redirect('/user/login');
     }
 }
 

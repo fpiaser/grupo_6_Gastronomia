@@ -7,5 +7,14 @@
     "password": "$2b$10$7mFIzORjLYoPEABFfadI8.JitGPkKnDc2Z34Fw8klA.dvMJq9Dlnm",
     "image": "1660957103978.jpeg",
     "isAdmin": true
+  },
+  {
+    "id": "7c0b4ef5-6027-481b-99bc-fc10196f8092",
+    "nombre": "Andreiev",
+    "apellido": "Valencia",
+    "email": "andreivalse@gmail.com",
+    "password": "$2b$10$0gGXQdZfgDNy/YP6OLJqq.uS0jFEiYLuDp2XHg96p9T2/YdIBiOdW",
+    "image": "1661205268997.jpeg",
+    "isAdmin": false
   }
 ]
