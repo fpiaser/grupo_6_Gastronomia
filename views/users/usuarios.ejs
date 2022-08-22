@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Page head -->
+  <%- include('../partials/head') %>
+  
+<body>
+   <!-- header -->
+        
+   <%- include('../partials/header') %>
+    <main>
+        
+      <div class="flex_container">
+        <% for(let index=0; index < userList.length; index++) { %>
+          <div class="zoom">
+            <div class="productos_flex">
+              <img class="product-img" id="img" src="/images/<%= userList[index].image %>" width="86%"
+                height="250px"></img>    
+              <h4 id="nombre">
+                  <%= userList[index].nombre %> <%= userList[index].apellido %>
+                </h4>
+              
+              <p class="contenedor_precio">
+                <label for="precio" class="precio">Email </label>
+                <%= userList[index].email %>
+              </p>
+              <p class="contenedor_precio">
+                <% if (userList[index].isAdmin) { %>
+                  Es administrador
+                <% } else { %>
+                  No es administrador
+                 <% } %>
+              </p>
+              
+            </div>
+
+              <!-- eliminar producto -->
+            
+            </form>
+
+
+            
+          
+          </div>          
+
+        <% } %>
+        
+      </div>
+
+
+    
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

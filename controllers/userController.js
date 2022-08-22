@@ -12,6 +12,14 @@ const userModel = require('../models/UserModel');
 
 const userController = 
 {
+    users: (req, res)=>{
+        res.render('../views/users/usuarios',{
+            pagina: "Usuarios sistema",
+            styles: "/css/styles_detail.css",
+            userList: registerList, 
+        })        
+    },
+    
     //Llamado al formulario de login
     login: (req, res)=>{
         res.render('../views/users/login',{

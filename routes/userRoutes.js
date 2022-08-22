@@ -6,6 +6,10 @@ const {body} = require('express-validator')
 const authMiddleware = require('../middlewares/authMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware')
 
+
+//Ruta ves usuarios
+router.get('/users', userController.users)
+
 //Ruta crear usuario
 // ACCESIBLE SOLO SIN LOGIN (sino redirige al perfil)
 router.get('/registro',guestMiddleware, userController.register);
