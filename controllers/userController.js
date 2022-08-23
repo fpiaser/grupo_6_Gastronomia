@@ -15,7 +15,7 @@ const userController =
     users: (req, res)=>{
         res.render('../views/users/usuarios',{
             pagina: "Usuarios sistema",
-            styles: "/css/styles_detail.css",
+            styles: "/css/users.css",
             userList: registerList, 
         })        
     },

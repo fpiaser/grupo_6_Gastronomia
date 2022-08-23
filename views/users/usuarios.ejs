@@ -9,21 +9,22 @@
    <%- include('../partials/header') %>
     <main>
         
-      <div class="flex_container">
+      <div class="usuario-container">
         <% for(let index=0; index < userList.length; index++) { %>
-          <div class="zoom">
-            <div class="productos_flex">
-              <img class="product-img" id="img" src="/images/<%= userList[index].image %>" width="86%"
-                height="250px"></img>    
-              <h4 id="nombre">
-                  <%= userList[index].nombre %> <%= userList[index].apellido %>
-                </h4>
+          
+            <div class="usuario-bloques">
               
-              <p class="contenedor_precio">
-                <label for="precio" class="precio">Email </label>
+                <img src="/images/<%= userList[index].image %>"></img>
+              
+              <h4 >
+                  <%= userList[index].nombre %> <%= userList[index].apellido %>
+              </h4>
+              
+              <p>
+                <label for="precio">Email </label>
                 <%= userList[index].email %>
               </p>
-              <p class="contenedor_precio">
+              <p>
                 <% if (userList[index].isAdmin) { %>
                   Es administrador
                 <% } else { %>
@@ -35,12 +36,9 @@
 
               <!-- eliminar producto -->
             
-            </form>
-
-
-            
+                
           
-          </div>          
+                 
 
         <% } %>
         
