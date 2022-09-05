@@ -7,5 +7,14 @@
     "password": "$2b$10$7mFIzORjLYoPEABFfadI8.JitGPkKnDc2Z34Fw8klA.dvMJq9Dlnm",
     "image": "1660957103978.jpeg",
     "isAdmin": true
+  },
+  {
+    "id": "34077ed2-7b33-49c1-9a39-a3ceee7f26e4",
+    "nombre": "Estephany",
+    "apellido": "Gonzalez",
+    "email": "estefanygonzalez999@gmail.com",
+    "password": "$2b$10$I9YPWVw7eacoaai9gUKZ8.mRnxakuGGANdMxqB70oLB7cw8MGv71q",
+    "image": "1662391360791.jpg",
+    "isAdmin": false
   }
 ]
