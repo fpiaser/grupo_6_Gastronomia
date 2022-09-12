@@ -22,7 +22,13 @@ module.exports = (sequelize, dataTypes) => {
     };
     const Unidad_Medida = sequelize.define(alias, cols, config);
 
+    Unidad_Medida.associate = function(models){
 
+        Unidad_Medida.hasMany(models.Products,{
+            as:'Products',
+            foreignKey: 'iuom'
+        })
+    }
 
 
     return Unidad_Medida;

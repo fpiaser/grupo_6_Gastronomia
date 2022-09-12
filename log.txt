@@ -2508,3 +2508,16 @@ Se ingresó a la página /images/pernil.jpeg
 Se ingresó a la página /images/nuez-moscada.jpg
 Se ingresó a la página /images/albahaca.jpg
 Se ingresó a la página /images/
+Se ingresó a la página /
+Se ingresó a la página /css/styles.css
+Se ingresó a la página /css/home.css
+Se ingresó a la página /images/logo-vegan.png
+Se ingresó a la página /images/carrousel_placeholder.jpeg
+Se ingresó a la página /images/ofertas.jpg
+Se ingresó a la página /images/guia_vegana.png
+Se ingresó a la página /images/organico.jpg
+Se ingresó a la página /images/huerta.jpeg
+Se ingresó a la página /images/congelados.jpg
+Se ingresó a la página /images/viandas.jpg
+Se ingresó a la página /images/frutos_secos.jpg
+Se ingresó a la página /favicon.ico
