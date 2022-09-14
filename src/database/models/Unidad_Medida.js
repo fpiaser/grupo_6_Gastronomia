@@ -26,7 +26,7 @@ module.exports = (sequelize, dataTypes) => {
 
         Unidad_Medida.hasMany(models.Products,{
             as:'Products',
-            foreignKey: 'iuom'
+            foreignKey: 'uom'
         })
     }
 

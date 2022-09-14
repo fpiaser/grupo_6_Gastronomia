@@ -26,17 +26,18 @@ module.exports = (sequelize, dataTypes) => {
         precio:{
             type: dataTypes.INTEGER,
             allowNull: false
-        },
+        }/*,
         image:{
+            type: dataTypes.STRING(100),
             allowNull: false
-        }
+        }*/
         
     };
     let config = {
-        timestamps: true,
+        timestamps: false/*,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
-        deletedAt: 'delete_at'
+        deletedAt: 'delete_at'*/
     };
     const Products = sequelize.define(alias, cols, config);
     

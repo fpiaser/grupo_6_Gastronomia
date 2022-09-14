@@ -23,16 +23,16 @@
                     </div>
                     <div class="radio unidad-medida" >
                         <label for="uom">Unidad de Medida</label>
-                        <p><input type="radio" name="uom" value=Kg>Kg</p>
-                        <p><input type="radio" name="uom" value=mg>mg</p>
-                        <p><input type="radio" name="uom" value=Unidad>Unidad</p>
+                        <p><input type="radio" name="uom" value=1>Unidad</p>
                     </div>
                     <div class="radio categoria">
                         <label for="categoria">Categoría</label>
-                        <p><input type="radio" name="categoria" value=frescos>Frescos</p>
-                        <p><input type="radio" name="categoria" value=Congelados>Congelados</p>
-                        <p><input type="radio" name="categoria" value=Viandas>Viandas</p>
-                        <p><input type="radio" name="categoria" value=Harinas>Harinas y Frutos Secos</p>
+                        <select name="id_categoria" id="" required>
+                            <option value="" disabled selected>- select category - </option>
+                            <% allCategorias.forEach(categoria => { %>
+                            <option value="<%= categoria.id %>"><%= categoria.nombre %></option>
+                            <% }); %>
+                        </select>
                     </div>
                     <div class="campo">
                         <label for="precio">Precio</label>

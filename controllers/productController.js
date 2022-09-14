@@ -4,42 +4,43 @@ const productListPath = path.resolve(__dirname, '../data/products.json');
 const productList = JSON.parse(fs.readFileSync(productListPath, 'utf8'));
 const { v4: uuidv4 } = require('uuid');
 
+const db = require('../src/database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+const Products = require('../src/database/models/Products');
+const Categoria = require('../src/database/models/Categoria');
+const Unidad_Medida = require('../src/database/models/Unidad_Medida');
+
+const product = db.Products;
+const categoria = db.Categoria;
+const oum = db.Unidad_Medida;
+
+
 const productController = {
     product: (req, res)=>{
-        if (req.session.user){
-        res.render('../views/products/product',{
-            pagina: "Pagina",
-            styles: "/css/styles_detail.css",
-            products: productList,
-            user: req.session.user,
-        });
-    } else {
-        res.render('../views/products/product',{
-            pagina: "Pagina",
-            styles: "/css/styles_detail.css",
-            products: productList,
-});
-}
-    },
-
-
-    /* productDetail:(req, res)=>{
-        let id= req.params.id;
-        producto = productList.find(producto => producto.id == id)
-        res.send('producto'+id),{
-            
-        }
-        
-    }, */
-    
-    productDetail: (req, res) => {
-        let id = req.params.id;
-        producto = productList.find(producto => producto.id == id)
-        res.render('products/productDetail', {
-            pagina: "Detalles de Producto",
-            styles: "/css/styles_detail.css",
-            product: producto
+        db.Products.findAll({
+            order: [
+                ['id', 'DESC']
+            ],
         })
+        .then(Products => {
+            res.render('../views/products/product', {
+                pagina: "Pagina",
+            styles: "/css/styles_detail.css",
+            products: Products,
+            user: req.session.user,
+            })
+        });
+    },    
+    productDetail:(req, res) => {
+        db.Products.findByPk(req.params.id)
+            .then(Products => {
+                res.render('products/productDetail', {
+                    pagina: "Detalles de Producto",
+                    styles: "/css/styles_detail.css",
+                    product: Products
+                });
+            });
     },   
     productCart: (req, res) => {
         if (req.session.user){
@@ -56,106 +57,95 @@ const productController = {
         });
     }
 },
-    newProduct: (req, res) => {
-        res.render('../views/products/newProduct',{
-            pagina: "Nuevo Producto",
-            styles: "/css/registro.css"
-        })
-        
-    },
-    
+    newProduct: function (req, res) {
+        categoria.findAll()
+            .then(function (categorias) {
+                res.render('../views/products/newProduct',{
+                    pagina: "Nuevo Producto",
+                    styles: "/css/registro.css",
+                    allCategorias: categorias
+                }) 
+            })
+            .catch(function (error) {
+                console.log("Sin conexion", error);
+            })
+        ;
+    },    
 // //POST QUE RECIBE Y PROCESA NUEVO PRODUCTO
      storeProduct: (req, res) => {
-         let product = req.body;
-         let image = req.file;
-        //  let images = req.files;
-
-         if (image) {
+        console.log(req.body);
+        product
+            .create({
+                nombre: req.body.nombre,
+                descripcion: req.body.descripcion,
+                uom: req.body.uom,
+                id_categoria: req.body.id_categoria,
+                precio: req.body.precio,
+                id:uuidv4()
+            })
+            .then(function (product) {
+                res.redirect('/product');
+            })
+            .catch(function (error) {
+                console.log("Sin conexion", error);
+            })
+        ;
+        /* if (image) {
             product.imagen = image.filename;
-        } 
-        
-        // else if (images) {
-        //     product.imagen = images.map(image => image.filename);
-        // }
-
-         
-         product.id = uuidv4();
-
-        
-
-        productList.push(product);
-        // console.log(product);
-        // console.log(productList);
-
-        fs.writeFileSync(productListPath, JSON.stringify(productList, null, 2));
-         res.redirect('/product');
-        
-
+        }*/
     },
 
-    modProduct: (req, res) => {
+    modProduct: async function(req, res){
         let id = req.params.id;
-        let product = productList.find(product => product.id == id)
-        res.render('../views/products/modProduct',{
-            pagina: "Modificar Producto",
-            styles: "/css/registro.css",
-            product: product
-        })
-        
+        let categorias = await categoria.findAll(); // espera a tener las categorias
+        let producto = product.findByPk(id, {
+            include: ['categoria']
+        });
+        producto
+            .then(function (producto) {
+                return res.render('../views/products/modProduct', { 
+                    pagina: "Modificar Producto",
+                    styles: "/css/registro.css",
+                    allCategorias: categorias,
+                    product: producto
+                });
+            })
+        ;
     },
     updateProduct: (req, res) => {
-        
-        let id = req.params.id;
-        let oldProduct= productList.find(product => product.id == id)
-        let newProduct={
-            id, 
-            nombre: req.body.nombre,
-            descripcion:req.body.descripcion,
-            uom:req.body.uom,
-            categoria: req.body.categoria,
-            precio: req.body.precio,
-            imagen: oldProduct.imagen 
-        }
-        console.log(oldProduct, newProduct)
-
-        let image= req.file
-
-        if (image) {
-            product.imagen = image.filename;
-            // console.log("updateProduct", product.imagen);
-        } 
-
-        newProduct.id = id
-
-        for (let index = 0; index< productList.length; index++){
-            const element = productList[index];
-            if (element.id == id) {
-                productList[index] = newProduct;
-            }
-        }
-        
-        fs.writeFileSync(productListPath, JSON.stringify(productList, null, 2));
-        
-        
-        
-        res.redirect('/product')        
+        let Productid = req.params.id; 
+        product
+            .update({
+                nombre: req.body.nombre,
+                descripcion: req.body.descripcion,
+                uom: req.body.uom,
+                id_categoria: req.body.id_categoria,
+                precio: req.body.precio
+            }, {
+                where: {
+                    id: Productid
+                }
+            })
+            .then(function (movie) {
+                res.redirect('/product');
+            })
+        ; 
     },
 
     deleteProduct: (req, res) => {
-        let id = req.params.id;
-        console.log("deleteProduct", id);
-        for (let index = 0; index < productList.length; index++) {
-            const element = productList[index];
-            if (element.id == id) {
-                productList.splice(index, 1);
-            }
-        }
-
-        fs.writeFileSync(productListPath, JSON.stringify(productList, null, 2));
-
-        res.redirect('/product');
+        let Productid = req.params.id;
+        product
+            .destroy({
+                where: {
+                    id: Productid
+                }
+            })
+            .then(() => {
+                res.redirect('/product');
+            });
     }
 
 }
+
 
 module.exports=productController;

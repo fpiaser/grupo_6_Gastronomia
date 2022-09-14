@@ -22,10 +22,10 @@ module.exports = (sequelize, dataTypes) => {
         password: {
             type: dataTypes.DATE,
             allowNull: false
-        },
+        }/*,
         image:{
             allowNull: false
-        },
+        }*/,
         Admin:{
             type: dataTypes.BOOLEAN,
             allowNull: false
