@@ -8,12 +8,21 @@ const { v4: uuidv4 } = require('uuid');
 let usuarioALoguearse = 0;
 let loggedIn = 0;
 
-const userModel = require('../models/UserModel');
+const db = require('../src/database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+const Users = require('../src/database/models/Users');
 
-const userController = 
-{
-    //Llamado al formulario de login
-    login: (req, res)=>{
+
+const user = db.Users;
+
+
+/*const userModel = require('../models/UserModel');*/
+
+const userController = {
+
+       //Llamado al formulario de login
+       login: (req, res)=>{
         res.render('../views/users/login',{
             pagina: "Ingreso",
             styles: "/css/registro.css"
@@ -139,8 +148,55 @@ const userController =
        
        fs.writeFileSync(registerListPath, JSON.stringify(registerList, null, 2));
         res.redirect('/');
-    }
+    },
+
+/*----------------AGREGADO PARA CRUD DATA BASE--------------------*/
+
+    'detail': (req, res) => {
+        db.User.findByPk(req.params.id)
+            .then(user => {
+                res.render('usersDetail.ejs', {user});
+            });
+    },
+
+    create: function (req,res) {
+        let image = req.file;
+        user
+            .create({    
+                id: uuidv4(),//genera automaticamenete un id
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                email: req.body.email,
+                password: bcrypt.hashSync(req.body.password, 10),
+                image: image.filename,
+                Admin: false,
+            })
+            .then(function (user) {res.redirect('/users');
+            })
+            .catch(function (error) {
+                console.log("Sin conexion", error);
+            })   
+    } , 
+    update: function (req,res) {
+        let userId = req.params.id;
+    
+        Users
+            .update({
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                email: req.body.email,
+                password: req.body.password,
+            }, {
+                where: {
+                    id: userId
+                }
+            })
+            .then(function (user) {
+                res.redirect('/users');
+            }) 
+   
 }
 
+}
 
 module.exports = userController;

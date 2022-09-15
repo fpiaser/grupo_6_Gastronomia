@@ -16,5 +16,14 @@
     "password": "$2b$10$I9YPWVw7eacoaai9gUKZ8.mRnxakuGGANdMxqB70oLB7cw8MGv71q",
     "image": "1662391360791.jpg",
     "isAdmin": true
+  },
+  {
+    "id": "a1057eb4-eeed-45bf-8991-e18dad879381",
+    "nombre": "Christian",
+    "apellido": "Caceres",
+    "email": "christian199415@gmail.com",
+    "password": "$2b$10$VAZUwvqM7n8lhW/rBR5YeeyXGGUzUSr1tgw4S9W1E0A9K3VUVeeDm",
+    "image": "1663250210567.CR2",
+    "isAdmin": false
   }
 ]

@@ -9,7 +9,7 @@ const guestMiddleware = require('../middlewares/guestMiddleware')
 //Ruta crear usuario
 // ACCESIBLE SOLO SIN LOGIN (sino redirige al perfil)
 router.get('/registro',guestMiddleware, userController.register);
-router.post('/',guestMiddleware, uploadFile.single('imagen'), userController.saveRegister);
+router.post('/',guestMiddleware, uploadFile.single('imagen'), userController.create);
 
 //Ruta login
 // ACCESIBLE SOLO SIN LOGIN (sino redirige al perfil)
