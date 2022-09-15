@@ -163,7 +163,7 @@ const userController = {
         let image = req.file;
         user
             .create({    
-                id: uuidv4(),//genera automaticamenete un id
+                //id: uuidv4(),//genera automaticamenete un id
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
                 email: req.body.email,
@@ -171,7 +171,7 @@ const userController = {
                 image: image.filename,
                 Admin: false,
             })
-            .then(function (user) {res.redirect('/users');
+            .then(function (user) {res.redirect('/user/login');
             })
             .catch(function (error) {
                 console.log("Sin conexion", error);
@@ -180,7 +180,7 @@ const userController = {
     update: function (req,res) {
         let userId = req.params.id;
     
-        Users
+        user
             .update({
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,

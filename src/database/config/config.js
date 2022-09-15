@@ -1,8 +1,8 @@
 module.exports={
   "development": {
-    "username": "vegan",
-    "password": "Vegana.2022*",
-    "database": "GastVegana",
+    "username": "root",
+    "password": "digitalhouse",
+    "database": "gastvegana",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

@@ -22,10 +22,11 @@ module.exports = (sequelize, dataTypes) => {
         password: {
             type: dataTypes.DATE,
             allowNull: false
-        }/*,
+        },
         image:{
+            type: dataTypes.STRING(100),
             allowNull: false
-        }*/,
+        },
         Admin:{
             type: dataTypes.BOOLEAN,
             allowNull: false
@@ -33,10 +34,10 @@ module.exports = (sequelize, dataTypes) => {
         
     };
     let config = {
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: 'delete_at'
+        timestamps: false
+        //createdAt: 'created_at',
+        //updatedAt: 'updated_at',
+        //deletedAt: 'delete_at'
     };
     const Users = sequelize.define(alias, cols, config);
 
