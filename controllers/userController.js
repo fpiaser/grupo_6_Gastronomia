@@ -34,7 +34,7 @@ const userController = {
             res.redirect('/user/login');
         })
     },
-    
+
     //Llamado al formulario de login
     login: (req, res)=>{
     res.render('../views/users/login',{
