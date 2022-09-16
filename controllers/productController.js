@@ -71,29 +71,27 @@ const productController = {
             })
         ;
     },    
-// //POST QUE RECIBE Y PROCESA NUEVO PRODUCTO
-     storeProduct: (req, res) => {
-        console.log(req.body);
-        product
-            .create({
+
+    storeProduct: (req, res) => {
+        let image = req.file;
+        let register = {
                 nombre: req.body.nombre,
                 descripcion: req.body.descripcion,
                 uom: req.body.uom,
                 id_categoria: req.body.id_categoria,
                 precio: req.body.precio,
-                id:uuidv4()
-            })
+                image: image.filename,
+            };
+            let newProduct = db.Products.create(register)
+
             .then(function (product) {
                 res.redirect('/product');
             })
             .catch(function (error) {
                 console.log("Sin conexion", error);
-            })
-        ;
-        /* if (image) {
-            product.imagen = image.filename;
-        }*/
+            });
     },
+
 
     modProduct: async function(req, res){
         let id = req.params.id;

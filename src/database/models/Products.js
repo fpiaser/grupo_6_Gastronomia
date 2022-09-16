@@ -26,11 +26,11 @@ module.exports = (sequelize, dataTypes) => {
         precio:{
             type: dataTypes.INTEGER,
             allowNull: false
-        }/*,
+        },
         image:{
             type: dataTypes.STRING(100),
             allowNull: false
-        }*/
+        }
         
     };
     let config = {
@@ -56,4 +56,4 @@ module.exports = (sequelize, dataTypes) => {
 
 
 return Products
-     };
+};

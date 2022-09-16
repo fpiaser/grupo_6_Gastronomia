@@ -22,7 +22,6 @@ router.post('/',authMiddleware, uploadFile.single('imagen'), productController.s
 //Ruta editar Producto
 // ACCESIBLE SOLO CON LOGIN (sino redirige al login)
 router.get('/modificarProducto/:id',authMiddleware, productController.modProduct);
-
 router.put('/:id',authMiddleware, productController.updateProduct);
 
 //Ruta de eliminar un producto

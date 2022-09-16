@@ -2,22 +2,9 @@ const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
-const registerListPath = path.resolve(__dirname, '../data/user.json');
-const registerList = JSON.parse(fs.readFileSync(registerListPath, 'utf8'));
-const { v4: uuidv4 } = require('uuid');
-let usuarioALoguearse = 0;
-let loggedIn = 0;
-
 const db = require('../src/database/models');
-const sequelize = db.sequelize;
-const { Op } = require("sequelize");
-const Users = require('../src/database/models/Users');
-
 
 const user = db.Users;
-
-
-const userModel = require('../models/UserModel');
 
 const userController = {
 
@@ -27,7 +14,6 @@ const userController = {
         pagina: "Registro",
         styles: "/css/registro.css"
         })
-            
     },
     
     //POST QUE RECIBE Y PROCESA REGISTROS
@@ -48,7 +34,7 @@ const userController = {
             res.redirect('/user/login');
         })
     },
-
+    
     //Llamado al formulario de login
     login: (req, res)=>{
     res.render('../views/users/login',{
@@ -72,7 +58,6 @@ const userController = {
 
         if (bcrypt.compareSync(
         currentUser.password, user.password)){
-            console.log (currentUser)
             req.session.user = user;
         res.redirect('/')
         };
@@ -84,7 +69,7 @@ const userController = {
         .then(Users => {
         res.render('../views/users/userdetail', {
         pagina: "Editar Usuario",
-        styles: "/css/registro.css",
+        styles: "/css/styles_detail.css",
         useredit: Users,
         user: req.session.user
         });
@@ -102,8 +87,6 @@ const userController = {
         useredit: Users,
         user: req.session.user
         });
-        //console.log (Users)
-        //console.log (useredit)
     })
 },
 
