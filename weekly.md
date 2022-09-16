@@ -68,3 +68,24 @@ Solución
 
 Solución
 -Compartimos pantalla y entre todos revisamos cada uno de los códigos, solicitamos ayuda del profesor y recibimos asesoría.
+
+13/09/2022
+
+ ¿Qué se hizo?
+ -Creación del crud de productos
+
+ ¿Impedimentos?
+ - Algunos inconvenientes al cargar las imágenes de los productos y con la vista de editar productos
+
+ Solución
+ -Compartimos pantalla y entre todos revisamos cada uno de los códigos, en la siguiente clase se solicitará ayuda del profesor.
+
+
+ ¿Qué se hizo?
+ -Creación del crud de usuarios
+
+ ¿Impedimentos?
+ - Visualización de errores en las nuevas vistas 
+
+ Solución
+ -Compartimos pantalla y entre todos revisamos cada uno de los códigos, solicitamos ayuda del profesor y recibimos asesoría.
