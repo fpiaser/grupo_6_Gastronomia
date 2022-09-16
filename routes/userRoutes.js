@@ -16,6 +16,15 @@ router.post('/',guestMiddleware, uploadFile.single('imagen'), userController.cre
 router.get('/login',guestMiddleware, userController.login);
 router.post('/login',guestMiddleware, userController.processLogin);
 
+//Ruta editar Usuario
+// ACCESIBLE SOLO CON LOGIN (sino redirige al login)
+router.get('/editarUsuario/:id',authMiddleware, userController.editUser);
+router.put('/:id',authMiddleware, userController.update);
+
+//Ruta detalle usuario
+// ACCESIBLE SOLO CON LOGIN (sino redirige al login)
+router.get('/detalle/:id',authMiddleware, userController.detail);
+
 //Logout
 router.get("/logout", userController.logout);
 

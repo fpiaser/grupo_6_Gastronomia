@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Page head -->
+
+<%- include('../partials/head') %>
+
+<body>
+    <!-- header -->
+    <%- include('../partials/header') %>
+    <!-- Page content -->
+    <main>
+        <form class="formulario" action="/user/<%= useredit.id ?? ''%>?_method=PUT" method="post">
+            <fieldset>
+                <legend>Editar Usuario</legend>
+                    <div class="campo">
+                        <label for="nombre">Nombre </label>
+                        <input type="text" 
+                        placeholder="Nombre de producto a mostrar" 
+                        name="nombre"
+                        value=" <%= useredit.nombre ?? '' %>"
+                        >
+                    </div>
+                    <div class="campo">
+                        <label for="Apellido">Apellido </label>
+                        <input type="text" 
+                        placeholder="Coloca tu apellido" 
+                        name="apellido"
+                        value=" <%= useredit.apellido ?? '' %>"
+                        >
+                    </div>
+                    <div class="campo">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" 
+                        placeholder="nombre@tucorreo" 
+                        name="email"
+                        value=" <%= useredit.email ?? '' %>"
+                        >
+                    </div>
+                    <div class="campo">
+                        <label for="password">Contraseña</label>
+                        <input type="password" 
+                        placeholder="Tu contraseña" 
+                        name="password"
+                        >
+                    </div>
+                    <div class="campo">
+                        <label for="imagen">Foto </label>
+                        <input type="file"  
+                        name="imagen" multiple
+                        value=" <%= useredit.image ?? '' %>"
+                        >
+                    </div>
+                    
+            </fieldset>
+            
+            <input type="submit" value="Modificar Usuario" class="btn">
+            
+        </form>
+
+    
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+ <!-- Page head -->
+ <%- include('../partials/head') %>
+ 
+<body>
+    <!-- header -->
+        
+    <%- include('../partials/header') %>
+    <!-- Page content -->
+    <main>
+        <h3>Detalle de Usuario #<%= useredit.id%></h3>
+
+        <section class="section-usuarios">
+            <div>
+    
+
+                <ul class="ul-usuario">
+                    <div class="foto">
+                        <img src="/images/<%= useredit.image%>" width= "100" alt="Foto Usuario">
+                    </div>
+                    <li>Nombre:  <%= useredit.nombre%></li>
+                    <br>
+                    <li>Apellido:  <%= useredit.apellido%></li>
+                    <br>
+                    <li>E-mail:     <%= useredit.email %></li>
+                    <br>
+                    <li>Admin:  <%= useredit.Admin%></li>
+                    <br>
+                </ul>
+    
+            </div>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

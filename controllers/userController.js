@@ -17,166 +17,97 @@ const Users = require('../src/database/models/Users');
 const user = db.Users;
 
 
-/*const userModel = require('../models/UserModel');*/
+const userModel = require('../models/UserModel');
 
 const userController = {
 
-       //Llamado al formulario de login
-       login: (req, res)=>{
-        res.render('../views/users/login',{
-            pagina: "Ingreso",
-            styles: "/css/registro.css"
-        })
-        
-    }, //cierre de session
-    logout: (req, res) => {
-        req.session.destroy();
-        res.clearCookie('user');
-        res.redirect("/");
-    }, //validacion del logeo
-    processLogin: (req, res) => {
-        try {
-            let currentUser = {
-                email: req.body.email,
-                password: req.body.password
-            }
-            
-            let validate = userModel.validateUser(currentUser);
-            //console.log('validate encontrado: ' + JSON.stringify(validate));
-            if (validate) {
-                req.session.user = validate;
-                //if (req.body.remember) {
-                    //res.cookie(
-                    //    'user', 
-                    //    validate.name, { 
-                    //        maxAge: 1000 * 60 * 60 * 24 * 7 
-                    //    });
-                //}
-                res.redirect('/');// a la ruta
-            }
-        } catch (error) {
-            res.json({
-                success: false,
-                error: error.message
-            });
-        }
-        console.log (req.session.user);
-    },
-
-    /* processLogin: function(req,res) {
-        const errors = validationResult(req); */
-
-        /* if (errors.isEmpty()) { 
-            res.render('../views/users/login',{
-                errors: errors.mapped(),
-                pagina: "Ingreso",
-                styles: "/css/registro.css",
-            }); */
-       /*  } else {
-
-        } */
-            
-            /* let usersJSON = fs.readFileSync(registerListPath, 'utf8')
-            let users;
-            if (usersJSON == "") {
-                users = [];
-            } else {
-                users = JSON.parse(usersJSON);
-            } */
-
-         /*    for (let i=0; i < users.length; i++) {
-                if (users[i].email == req.body.email) {
-                    //console.log ('User OK');
-                    if (req.body.password == users[i].password){
-                        //console.log ('Validacion OK');
-                        usuarioALoguearse = users[i];           
-                        loggedIn = 1;
-                        //console.log (usuarioALoguearse)
-                        //console.log (loggedIn)
-                        break;
-                    }
-                }
-            } */
-            //console.log ('for OK')
-            //console.log (usuarioALoguearse)
-            //console.log (loggedIn)
-            
-            //req.session.usuarioLogueado = usuarioALoguearse;
-
-            //console.log(req.session.usuarioLogueado)
-
-           /*  if (usuarioALoguearse == 0) {
-                return res.render('../views/users/login',{
-                    pagina: "Ingreso",
-                    styles: "/css/registro.css"
-                })  */
-                // AGREGAR MENSAJE CREDENCIALES INVALIDAS
-
-
-
-           /*  } else return res.redirect ('/'); */
-            //AGREGAR MENSAJE BIENVENIDO USUARIO X AL HEADER
-            
-        
-        
-
-
-/*     },
- */
-
+     // Llamado al form de registro
     register:(req, res)=>{
         res.render('../views/users/register',{
-            pagina: "Registro",
-            styles: "/css/registro.css"
+        pagina: "Registro",
+        styles: "/css/registro.css"
         })
-        
+            
     },
-//POST QUE RECIBE Y PROCESA REGISTROS
-    saveRegister:(req, res)=>{
+    
+    //POST QUE RECIBE Y PROCESA REGISTROS
+    create:(req, res)=>{
         let image = req.file;
         let register = {
-            id: uuidv4(),//genera automaticamenete un id
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10),
             image: image.filename,
-            isAdmin: false,
+            Admin: false,
         };
 
-       registerList.push(register);
-       
-       fs.writeFileSync(registerListPath, JSON.stringify(registerList, null, 2));
-        res.redirect('/');
+        let newUser = db.Users.create(register)
+        
+        .then (function (user) {
+            res.redirect('/user/login');
+        })
     },
 
-/*----------------AGREGADO PARA CRUD DATA BASE--------------------*/
+    //Llamado al formulario de login
+    login: (req, res)=>{
+    res.render('../views/users/login',{
+        pagina: "Ingreso",
+        styles: "/css/registro.css"
+        })
+    }, 
 
-    'detail': (req, res) => {
-        db.User.findByPk(req.params.id)
-            .then(user => {
-                res.render('usersDetail.ejs', {user});
-            });
+    //validacion del logeo
+    processLogin: async(req, res) => {
+        let currentUser = {
+        email: req.body.email,
+        password: req.body.password
+        }
+            
+        let user = await db.Users.findOne({
+        where: {
+        email: currentUser.email
+        }
+        })
+
+        if (bcrypt.compareSync(
+        currentUser.password, user.password)){
+            console.log (currentUser)
+            req.session.user = user;
+        res.redirect('/')
+        };
     },
 
-    create: function (req,res) {
-        let image = req.file;
-        user
-            .create({    
-                //id: uuidv4(),//genera automaticamenete un id
-                nombre: req.body.nombre,
-                apellido: req.body.apellido,
-                email: req.body.email,
-                password: bcrypt.hashSync(req.body.password, 10),
-                image: image.filename,
-                Admin: false,
-            })
-            .then(function (user) {res.redirect('/user/login');
-            })
-            .catch(function (error) {
-                console.log("Sin conexion", error);
-            })   
-    } , 
+    // detalle de usuario
+    detail: function (req, res){
+        db.Users.findByPk(req.params.id)
+        .then(Users => {
+        res.render('../views/users/userdetail', {
+        pagina: "Editar Usuario",
+        styles: "/css/registro.css",
+        useredit: Users,
+        user: req.session.user
+        });
+    })
+},
+
+   //Llamado al formulario de editar usuario
+
+    editUser: function (req, res){
+        db.Users.findByPk(req.params.id)
+        .then(Users => {
+        res.render('../views/users/useredit', {
+        pagina: "Editar Usuario",
+        styles: "/css/registro.css",
+        useredit: Users,
+        user: req.session.user
+        });
+        //console.log (Users)
+        //console.log (useredit)
+    })
+},
+
+    // Editar usuario
     update: function (req,res) {
         let userId = req.params.id;
     
@@ -192,10 +123,18 @@ const userController = {
                 }
             })
             .then(function (user) {
-                res.redirect('/users');
+                res.redirect('/');
             }) 
-   
-}
+
+    },
+
+    //cierre de session
+    logout: (req, res) => {
+        req.session.destroy();
+        res.clearCookie('user');
+        res.redirect("/");
+    }, 
+
 
 }
 

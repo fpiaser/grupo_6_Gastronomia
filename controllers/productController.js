@@ -25,7 +25,7 @@ const productController = {
         })
         .then(Products => {
             res.render('../views/products/product', {
-                pagina: "Pagina",
+            pagina: "Pagina",
             styles: "/css/styles_detail.css",
             products: Products,
             user: req.session.user,

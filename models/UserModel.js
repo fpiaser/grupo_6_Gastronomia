@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const uuid = require('uuid');
 const bcrypt = require('bcrypt');
+const db = require('../src/database/models');
 
 const userListPath = path.resolve(__dirname, '../data/user.json');
 
@@ -24,13 +25,20 @@ const User = {
 
         fs.writeFileSync(userListPath, JSON.stringify(userList, null, 2));
     },
-    validateUser: (viewUser) => {
-        let userList = User.getAll();
+    validateUser: async (viewUser) => {
+        console.log ('validate user', viewUser);
+        let user = await db.Users.findOne({
+            where: {
+                email: viewUser.email
+
+            }
+        })
+
+        //return user ? user.toJSON : null ;
+
         //console.log('userList: ' + JSON.stringify(userList));
         let currentUser = userList.find(user => {
-            if (user.email == viewUser.email
-                && 
-                bcrypt.compareSync(
+            if (bcrypt.compareSync(
                 viewUser.password, user.password)){
                 return user;
                 }

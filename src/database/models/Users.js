@@ -8,19 +8,19 @@ module.exports = (sequelize, dataTypes) => {
         },
         
         nombre: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING(50),
             allowNull: false
         },
         apellido: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING(50),
             allowNull: false
         },
         email: {
-            type: dataTypes.DATE,
+            type: dataTypes.STRING(50),
             allowNull: false
         },
         password: {
-            type: dataTypes.DATE,
+            type: dataTypes.STRING(100),
             allowNull: false
         },
         image:{
