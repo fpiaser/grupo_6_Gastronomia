@@ -8,6 +8,22 @@ const user = db.Users;
 
 const userController = {
 
+        user: (req, res)=>{
+            db.Users.findAll({
+                order: [
+                    ['id', 'DESC']
+                ],
+            })
+            .then(Users => {
+                res.render('../views/users/users', {
+                pagina: "Pagina",
+                styles: "/css/styles_detail.css",
+                users: Users,
+                user: req.session.user,
+                })
+            });
+        },   
+
      // Llamado al form de registro
     register:(req, res)=>{
         res.render('../views/users/register',{

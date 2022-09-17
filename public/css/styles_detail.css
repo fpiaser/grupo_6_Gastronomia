@@ -21,9 +21,9 @@ main{
 .flex_container{
     margin: 10px;
     display: flex;
-  
     flex-wrap: wrap;
     justify-content: space-around;
+    
 }
 .flex_container div{
     margin-top: 30px;

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Page head -->
+<%- include('../partials/head') %>
+
+  <body>
+    <!-- header -->
+
+    <%- include('../partials/header') %>
+      <!-- Page content -->
+      
+      <main>
+        
+        <div class="flex_container">
+
+          <% for(let index=0; index < users.length; index++) { %>
+            <div class="zoom">
+              <div class="productos_flex">
+                <a href="/user/<%= users[index].id %>">
+
+                  <h4 id="nombre">
+                    <%= users[index].nombre %>
+                  </h4>
+                </a>
+                <h3 class="contenedor_precio">
+                  <label for="apellido" class="apellido"></label>
+                  <%= users[index].apellido %>
+                </h3>
+                <img class="user-img" id="img" src="/images/<%= users[index].image %>" width="150px">
+              </img>
+              </div>
+
+          <% } %>
+        </div>
+
+
+
+      </main>
+      <%- include('../partials/footer') %>
+  </body>
+
+</html>
