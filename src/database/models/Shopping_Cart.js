@@ -34,6 +34,7 @@ module.exports = (sequelize, dataTypes) => {
         
     };
     let config = {
+        tableName: 'shopping_cart',
         timestamps: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
