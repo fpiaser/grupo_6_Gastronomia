@@ -1,9 +1,21 @@
+const dotenv = require('dotenv')
+dotenv.config({ path: '.env'});
+
+/* 
+Crear archivo en la raiz .env
+con las siguientes variables
+BD_NOMBRE=gastvegana
+BD_USER=usuario de la bd
+BD_PASS=contraseña de la bd
+BD_HOST=127.0.0.1
+*/
+
 module.exports={
   "development": {
-    "username": "vegan",
-    "password": "DH.2022",
-    "database": "gastvegana",
-    "host": "127.0.0.1",
+    "username": process.env.BD_USER,
+    "password": process.env.BD_PASS,
+    "database": process.env.BD_NOMBRE,
+    "host": process.env.BD_HOST,
     "dialect": "mysql"
   },
   "test": {
