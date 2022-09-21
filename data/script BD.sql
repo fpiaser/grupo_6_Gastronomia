@@ -5,62 +5,57 @@ USE gastvegana;
 DROP TABLE IF EXISTS gastvegana.categoria;
 
 CREATE TABLE gastvegana.categoria (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(50) NOT NULL
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
-ALTER TABLE gastvegana.categoria
-  ADD PRIMARY KEY (`id`);
+
 
 CREATE TABLE `unidad_medida` (
-  id int(11) NOT NULL,
-  nombre varchar(50) NOT NULL  
+  id int(11) NOT NULL AUTO_INCREMENT,
+  nombre varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
-;
-
-ALTER TABLE `unidad_medida`
-  ADD PRIMARY KEY (`id`);
 
 CREATE TABLE `users`(
-	id int(11) NOT NULL,
+	id int(11) NOT NULL AUTO_INCREMENT,
 	nombre varchar(50) NOT NULL,
 	apellido varchar(50) NOT NULL,
 	email varchar(50) NOT NULL,
 	password varchar(100) NOT NULL,
 	image varchar(100) NOT NULL,
-	Admin tinyint(1) NOT NULL) 
+	Admin tinyint(1) NOT NULL,
+	PRIMARY KEY (`id`)
+	) 
 	ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
-ALTER TABLE `users`
-	ADD PRIMARY KEY (`id`);
+
 
 CREATE TABLE `products` (
-  id int(11) NOT NULL,
+  id int(11) NOT NULL AUTO_INCREMENT,
   nombre varchar(100) NOT NULL,
   descripcion varchar(1000) NOT NULL,
   uom int(11) NOT NULL,
   id_categoria int(11) NOT NULL,
   precio int(11) NOT NULL,
-  image varchar(100) NOT NULL
+  image varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
 )  
   ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`);
 
 CREATE TABLE `shopping_cart` (
-  id int(11) NOT NULL,
+  id int(11) NOT NULL AUTO_INCREMENT,
   id_user int(11) NOT NULL,
   id_product int(11) NOT NULL,
   cantidad int(11) NOT NULL,
   fecha_compra date NOT NULL,
   valor_unitario int(11) NOT NULL,
-  valor_tota int(11) NOT NULL
+  valor_tota int(11) NOT NULL, 
+  PRIMARY KEY (`id`)
 )ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
-
-ALTER TABLE `shopping_cart`
-  ADD PRIMARY KEY (`id`);
 
 INSERT
 	INTO
