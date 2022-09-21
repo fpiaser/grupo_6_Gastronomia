@@ -35,20 +35,24 @@ const userController = {
     //POST QUE RECIBE Y PROCESA REGISTROS
     create:(req, res)=>{
         let image = req.file;
-        let register = {
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10),
-            image: image.filename,
-            Admin: false,
-        };
+        //let register = 
+        user
+        .create(
+            {
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                email: req.body.email,
+                password: bcrypt.hashSync(req.body.password, 10),
+                image: image.filename,
+                Admin: false,
+            }
+        )
 
-        let newUser = db.Users.create(register)
+        //let newUser = db.Users.create(register)
         
-        .then (function (user) {
-            res.redirect('/user/login');
-        })
+        .then (() => {
+            return res.redirect('/user/login')})
+        .catch(error => res.send(error))
     },
 
     //Llamado al formulario de login
