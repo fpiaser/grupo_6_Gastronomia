@@ -160,6 +160,6 @@ VALUES (1,
 'Admin',
 's',
 'admin@admin.com',
-'123456789',
+'$2b$10$G8x8O2DOSw6UMNNzKNaqCOzeE4Az29MBzOvw5/0qMAb6/F7MLX7LO',
 'admin.png',
 1)
