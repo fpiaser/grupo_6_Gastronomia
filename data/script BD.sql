@@ -25,7 +25,7 @@ CREATE TABLE `users`(
 	apellido varchar(50) NOT NULL,
 	email varchar(50) NOT NULL,
 	password varchar(100) NOT NULL,
-	image varchar(100) NOT NULL,
+	image varchar(100) NULL,
 	Admin tinyint(1) NOT NULL,
 	PRIMARY KEY (`id`)
 	) 

@@ -15,11 +15,17 @@
                 <legend>Nuevo Producto</legend>
                     <div class="campo">
                         <label for="nombre">Nombre de Producto</label>
-                        <input type="text" placeholder="Nombre de producto a mostrar" name="nombre">
+                        <input type="text" placeholder="Nombre de producto a mostrar" name="nombre"value="<%= locals.old && locals.old.nombre ? locals.old.nombre : '' %>">
+                        <% if (locals.errors && locals.errors.nombre) { %>
+                            <span class="error"><%= locals.errors.nombre.msg %></span>
+                        <% } %>
                     </div>
                     <div class="campo">
                         <label for="descripcion">Descripción</label>
                         <input type="text" placeholder="Descripción del Producto" name="descripcion">
+                        <% if (locals.errors && locals.errors.descripcion) { %>
+                            <span class="error"><%= locals.errors.descripcion.msg %></span>
+                        <% } %>
                     </div>
                     <div class="radio unidad-medida" >
                         <label for="uom">Unidad de Medida</label>
@@ -37,10 +43,16 @@
                     <div class="campo">
                         <label for="precio">Precio</label>
                         <input type="number" name="precio">
+                        <% if (locals.errors && locals.errors.precio) { %>
+                            <span class="error"><%= locals.errors.precio.msg %></span>
+                        <% } %>
                     </div>
                     <div class="campo">
                         <label for="imagen">Subir una foto</label>
                         <input type="file" name="imagen"  multiple>
+                        <% if (locals.errors && locals.errors.imagen) { %>
+                            <span class="error"><%= locals.errors.imagen.msg %></span>
+                        <% } %>
                     </div>
             </fieldset>
             

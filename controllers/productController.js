@@ -11,6 +11,8 @@ const Products = require('../src/database/models/Products');
 const Categoria = require('../src/database/models/Categoria');
 const Unidad_Medida = require('../src/database/models/Unidad_Medida');
 
+const { validationResult } = require('express-validator');
+
 const product = db.Products;
 const categoria = db.Categoria;
 const oum = db.Unidad_Medida;
@@ -25,7 +27,7 @@ const productController = {
         })
         .then(Products => {
             res.render('../views/products/product', {
-            pagina: "Pagina",
+                pagina: "Pagina",
             styles: "/css/styles_detail.css",
             products: Products,
             user: req.session.user,
@@ -71,27 +73,42 @@ const productController = {
             })
         ;
     },    
-
-    storeProduct: (req, res) => {
-        let image = req.file;
-        let register = {
+// //POST QUE RECIBE Y PROCESA NUEVO PRODUCTO
+     storeProduct: (req, res) => {
+        const resultValidation = validationResult(req);
+        if (!resultValidation.isEmpty()) {
+            categoria.findAll()
+                .then(function (categorias) {
+                    return res.render('../views/products/newProduct', {
+                    errors: resultValidation.mapped(),
+                    pagina: "Nuevo Producto",
+                    styles: "/css/registro.css",
+                    old: req.body,
+                    allCategorias: categorias
+                    }) 
+            });
+        }
+       
+        product
+            .create({
                 nombre: req.body.nombre,
                 descripcion: req.body.descripcion,
                 uom: req.body.uom,
                 id_categoria: req.body.id_categoria,
                 precio: req.body.precio,
-                image: image.filename,
-            };
-            let newProduct = db.Products.create(register)
-
+                id:uuidv4()
+            })
             .then(function (product) {
                 res.redirect('/product');
             })
             .catch(function (error) {
                 console.log("Sin conexion", error);
-            });
+            })
+        ;
+        /* if (image) {
+            product.imagen = image.filename;
+        }*/
     },
-
 
     modProduct: async function(req, res){
         let id = req.params.id;

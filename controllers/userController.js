@@ -7,7 +7,6 @@ const db = require('../src/database/models');
 const user = db.Users;
 
 const userController = {
-
         user: (req, res)=>{
             db.Users.findAll({
                 order: [
@@ -34,25 +33,34 @@ const userController = {
     
     //POST QUE RECIBE Y PROCESA REGISTROS
     create:(req, res)=>{
-        let image = req.file;
-        //let register = 
-        user
-        .create(
-            {
-                nombre: req.body.nombre,
-                apellido: req.body.apellido,
-                email: req.body.email,
-                password: bcrypt.hashSync(req.body.password, 10),
-                image: image.filename,
-                Admin: false,
-            }
-        )
-
-        //let newUser = db.Users.create(register)
+        const resultValidation = validationResult(req);
+       
+        console.log("errores: " + resultValidation.isEmpty());
+        if (!resultValidation.isEmpty()) {
+            return res.render('../views/users/register', {
+            errors: resultValidation.mapped(),
+            pagina: "Registro",
+            styles: "/css/registro.css",
+            old: req.body
+            });
+        }else{
+            let image = req.file;
+            user
+            .create(
+                {
+                    nombre: req.body.nombre,
+                    apellido: req.body.apellido,
+                    email: req.body.email,
+                    password: bcrypt.hashSync(req.body.password, 10),
+                    image: imagen.filename,
+                    Admin: false,
+                }
+            )        
+            .then (() => {
+                return res.redirect('/user/login')})
+            .catch(error => res.send(error)) 
+        }             
         
-        .then (() => {
-            return res.redirect('/user/login')})
-        .catch(error => res.send(error))
     },
 
     //Llamado al formulario de login
@@ -100,15 +108,15 @@ const userController = {
 
     editUser: function (req, res){
         db.Users.findByPk(req.params.id)
-        .then(Users => {
-        res.render('../views/users/useredit', {
-        pagina: "Editar Usuario",
-        styles: "/css/registro.css",
-        useredit: Users,
-        user: req.session.user
-        });
-    })
-},
+            .then(Users => {
+            res.render('../views/users/useredit', {
+            pagina: "Editar Usuario",
+            styles: "/css/registro.css",
+            useredit: Users,
+            user: req.session.user
+            });
+        })
+    },
 
     // Editar usuario
     update: function (req,res) {
