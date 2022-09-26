@@ -97,11 +97,14 @@
 	font-size: 15px;
 	color:rgb(197, 28, 28);
     position:absolute;
-    margin-top: 45px;
+    margin-top: 40px;
     margin-left:150px;
-	display: none;
+	display: none;  
 }
 
+.formulario__input-error-activado{
+    display: block;
+}
 .formulario__validacion-estado{
 
     position:absolute;
@@ -133,6 +136,11 @@
     text-align: center;
     display: none;
 }
+.formulario__mensaje-exito-activado {
+	
+    display: block;
+}
+
 
 /*-----------VALIACIONES---------*/
 
