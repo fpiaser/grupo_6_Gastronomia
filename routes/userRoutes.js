@@ -5,6 +5,7 @@ const uploadFile=  require('../middlewares/multer');
 const { body } = require('express-validator');
 const authMiddleware = require('../middlewares/authMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
+const path = require('path');
 
 const validationResult=[
     body('nombre')
@@ -18,15 +19,23 @@ const validationResult=[
     .isEmail().withMessage('Debe ingresa un Email válido'),
     body('password')
     .notEmpty().withMessage('Debe ingresar una contraseña')
-    .isLength({min:8}).withMessage('Su contraseña debe tener al menos 8 caracteres')
-    // body('imagen')
-    //     .custom((value, { req }) => {
-    //         if (req.files.length === 0) {
-    //             return false;
-    //         }
-    //         return true;
-    //     }
-    // ).withMessage('Debe subir una imagen')
+    .isLength({min:8}).withMessage('Su contraseña debe tener al menos 8 caracteres'),
+    body('imagen')
+        .custom((value, { req }) => {
+            let file= req.file;
+            let acceptedExtension= ['.jpg', '.jpeg', '.png', '.gif'];
+
+            if(!file){
+                throw new Error('Tienes que subir una imagen');
+            }else {
+                let fileExtension= path.extname(file.originalname);
+                if(!acceptedExtension.includes(fileExtension)){
+                    throw new Error('Las extensiones de archivo permitidas son:' + acceptedExtension.join(', ') )
+                }
+            }
+            return true;
+        }
+    )
 ]; 
 
 

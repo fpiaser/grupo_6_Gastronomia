@@ -89,7 +89,7 @@ const productController = {
                     }) 
             });
         }
-       
+        let image = req.file.filename;
         product
             .create({
                 nombre: req.body.nombre,
@@ -97,10 +97,9 @@ const productController = {
                 uom: req.body.uom,
                 id_categoria: req.body.id_categoria,
                 precio: req.body.precio,
+                image: image,
                 id:uuidv4(),
-                if (image) {
-                    product.imagen = image.filename
-                }
+                
             })
             .then(function (product) {
                 res.redirect('/product');

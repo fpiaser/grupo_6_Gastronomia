@@ -71,7 +71,7 @@ const userController = {
                 apellido: req.body.apellido,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
-                image: req.file.filename,
+                image: image.filename,
                 Admin: false,
             }
         )        
