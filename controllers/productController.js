@@ -76,6 +76,7 @@ const productController = {
 // //POST QUE RECIBE Y PROCESA NUEVO PRODUCTO
      storeProduct: (req, res) => {
         const resultValidation = validationResult(req);
+        console.log(req.body);
         if (!resultValidation.isEmpty()) {
             categoria.findAll()
                 .then(function (categorias) {
@@ -96,7 +97,10 @@ const productController = {
                 uom: req.body.uom,
                 id_categoria: req.body.id_categoria,
                 precio: req.body.precio,
-                id:uuidv4()
+                id:uuidv4(),
+                if (image) {
+                    product.imagen = image.filename
+                }
             })
             .then(function (product) {
                 res.redirect('/product');
@@ -128,23 +132,38 @@ const productController = {
         ;
     },
     updateProduct: (req, res) => {
-        let Productid = req.params.id; 
-        product
-            .update({
-                nombre: req.body.nombre,
-                descripcion: req.body.descripcion,
-                uom: req.body.uom,
-                id_categoria: req.body.id_categoria,
-                precio: req.body.precio
-            }, {
-                where: {
-                    id: Productid
-                }
-            })
-            .then(function (movie) {
-                res.redirect('/product');
-            })
-        ; 
+        const resultValidation = validationResult(req);
+        if (!resultValidation.isEmpty()) {
+            categoria.findAll()
+                .then(function (categorias) {
+                    return res.render('../views/products/modProduct', { 
+                        errors: resultValidation.mapped(),
+                        pagina: "Modificar Producto",
+                        styles: "/css/registro.css",
+                        allCategorias: categorias,
+                        product: req.body
+                    });
+            });
+        }else{
+            let Productid = req.params.id; 
+           
+            product
+                .update({
+                    nombre: req.body.nombre,
+                    descripcion: req.body.descripcion,
+                    uom: req.body.uom,
+                    id_categoria: req.body.id_categoria,
+                    precio: req.body.precio
+                }, {
+                    where: {
+                        id: Productid
+                    }
+                })
+                .then(function () {
+                    res.redirect('/product');
+                }); 
+        }
+        
     },
 
     deleteProduct: (req, res) => {

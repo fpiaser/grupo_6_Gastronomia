@@ -10,7 +10,6 @@ const validationResult=[
     body('nombre')
     .notEmpty().withMessage('Debe ingresar un nombre')
     .isLength({min:2}).withMessage('El nombre debe tener al menos 2 caracteres'),
-    
     body('apellido')
     .notEmpty().withMessage('Debe ingresar su apellido')
     .isLength({min:2}).withMessage('El apellido debe tener al menos 2 caracteres'),
@@ -19,15 +18,15 @@ const validationResult=[
     .isEmail().withMessage('Debe ingresa un Email válido'),
     body('password')
     .notEmpty().withMessage('Debe ingresar una contraseña')
-    .isLength({min:8}).withMessage('Su contraseña debe tener al menos 8 caracteres'),
-    body('imagen')
-        .custom((value, { req }) => {
-            if (req.files.length === 0) {
-                return false;
-            }
-            return true;
-        }
-    ).withMessage('Debe subir una imagen')
+    .isLength({min:8}).withMessage('Su contraseña debe tener al menos 8 caracteres')
+    // body('imagen')
+    //     .custom((value, { req }) => {
+    //         if (req.files.length === 0) {
+    //             return false;
+    //         }
+    //         return true;
+    //     }
+    // ).withMessage('Debe subir una imagen')
 ]; 
 
 
