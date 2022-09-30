@@ -82,3 +82,27 @@
 
      5. Dejar de hacer.
          - Atrasarse con las clases.
+
+
+# Retrospectiva Sprint 6
+
+     1. Comenzar a hacer.
+         - Planificar el uso del tiempo disponible en el sprint. 
+         - Estar al dia con la plataforma del Playground.
+
+     2. Hacer más.
+         -Realizar un trabajo ordenado para que tod el equipo pueda entenderlo con más facilidad.
+         -Cumplir en tiempo y en forma con la repartición de tareas que le corresponde a cada uno 
+
+     3. Continuar haciendo.
+         - Division de tareas.
+         - Reuniones grupales para el desarrollo del sprint.
+
+     4. Hacer menos.
+         - Tener menos entregables pendientes de completar los dias previos a la entrega del sprint.
+         - faltar a las reuniones grupales programadas.
+         - Trabajar de forma individual y realizar cambios sin avisarle al equipo. 
+
+     5. Dejar de hacer.
+         - Atrasarse con las clases.
+         - Dejar de hacer los ajustes del sprint a última hora.
