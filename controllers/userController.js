@@ -1,4 +1,5 @@
-const { validationResult } = require('express-validator');
+const { validationResult }  = require('express-validator');
+
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
@@ -92,22 +93,35 @@ const userController = {
 
     //validacion del logeo
     processLogin: async(req, res) => {
-        let currentUser = {
-        email: req.body.email,
-        password: req.body.password
+        const validation = validationResult(req);   
+        
+        if (!validation.isEmpty()) {
+            return res.render('../views/users/login', {
+            errors: validation.mapped(),
+            pagina: "Ingreso",
+            styles: "/css/registro.css",
+            old: req.body
+            });
+        }else{
+            let currentUser = {
+                email: req.body.email,
+                password: req.body.password
+                }
+                    
+                let user = await db.Users.findOne({
+                where: {
+                email: currentUser.email
+                }
+                })
+        
+                if (bcrypt.compareSync(
+                currentUser.password, user.password)){
+                    req.session.user = user;
+                res.redirect('/')
+                };
         }
-            
-        let user = await db.Users.findOne({
-        where: {
-        email: currentUser.email
-        }
-        })
 
-        if (bcrypt.compareSync(
-        currentUser.password, user.password)){
-            req.session.user = user;
-        res.redirect('/')
-        };
+       
     },
 
     // detalle de usuario

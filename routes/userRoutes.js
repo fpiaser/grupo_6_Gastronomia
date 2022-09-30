@@ -38,6 +38,18 @@ const validationResult=[
     )
 ]; 
 
+const validationLogin=[
+    
+    body('email')
+    .notEmpty().withMessage('Debe ingresar un Email')
+    .isEmail().withMessage('Debe ingresa un Email válido'),
+    body('password')
+    .notEmpty().withMessage('Debe ingresar una contraseña')
+    .isLength({min:8}).withMessage('Su contraseña debe tener al menos 8 caracteres'),
+    
+]; 
+
+
 
 //Ruta listado usuarios
 // ACCESIBLE SOLO CON LOGIN (sino redirige al login)s
@@ -51,7 +63,7 @@ router.post('/',guestMiddleware, uploadFile.single('imagen'),validationResult , 
 //Ruta login
 // ACCESIBLE SOLO SIN LOGIN (sino redirige al perfil)
 router.get('/login',guestMiddleware, userController.login);
-router.post('/login',guestMiddleware, userController.processLogin);
+router.post('/login',guestMiddleware, validationLogin, userController.processLogin);
 
 //Ruta editar Usuario
 // ACCESIBLE SOLO CON LOGIN (sino redirige al login)
