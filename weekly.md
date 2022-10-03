@@ -58,6 +58,7 @@ Solución
 Solución
 -Compartimos pantalla y entre todos revisamos cada uno de los códigos, solicitamos ayuda del profesor y recibimos asesoría.
 
+
 18/08/2022
 
 ¿Qué se hizo?
@@ -68,6 +69,7 @@ Solución
 
 Solución
 -Compartimos pantalla y entre todos revisamos cada uno de los códigos, solicitamos ayuda del profesor y recibimos asesoría.
+
 
 13/09/2022
 
@@ -81,6 +83,8 @@ Solución
  -Compartimos pantalla y entre todos revisamos cada uno de los códigos, en la siguiente clase se solicitará ayuda del profesor.
 
 
+16/09/2022
+
  ¿Qué se hizo?
  -Creación del crud de usuarios
 
@@ -89,3 +93,27 @@ Solución
 
  Solución
  -Compartimos pantalla y entre todos revisamos cada uno de los códigos, solicitamos ayuda del profesor y recibimos asesoría.
+
+
+ 26/09/2022
+
+ ¿Qué se hizo?
+ -Creación de validaciones de backend con express
+
+ ¿Impedimentos?
+ - Algunos inconvenientes al cargar las imágenes de los productos y y los usuarios
+
+ Solución
+ -Compartimos pantalla y entre todos revisamos cada uno de los códigos, vimos videos de apoyo en la plataforma de playground y pudimos solucionar los inconvenientes. 
+
+
+  28/09/2022
+
+ ¿Qué se hizo?
+ -Creación de validaciones de frontend con java 
+
+ ¿Impedimentos?
+ - 
+
+ Solución
+ -Compartimos pantalla y entre todos revisamos cada uno de los códigos, vimos videos de apoyo en la plataforma de playground y pudimos solucionar los inconvenientes. 

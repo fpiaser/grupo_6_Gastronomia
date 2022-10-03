@@ -21,7 +21,9 @@
                 <a href="/user/login">Login</a>
             </div>
             <% } else {%>
-            <h3><%= 'Bienvenido ' + user.nombre + ' ' + user.apellido %></h3>
+            <a href="/user">
+                <h3><%= 'Bienvenido ' + user.nombre + ' ' + user.apellido %></h3>
+            </a>
             <form action="/user/logout" method="GET">
                 <button type="submit">Cerrar Sesion</button>
               </form>

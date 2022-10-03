@@ -18,12 +18,17 @@
                         <input type="text" 
                         placeholder="Nombre de producto a mostrar" 
                         name="nombre"
-                        value=" <%= product.nombre ?? '' %>"
-                        >
+                        value=" <%= product.nombre ?? '' %>">
+                        <% if (locals.errors && locals.errors.nombre) { %>
+                            <span class="error"><%= locals.errors.nombre.msg %></span>
+                        <% } %>
                     </div>
                     <div class="campo">
                         <label for="descripcion">Descripción</label>
                         <input type="text" placeholder="Descripción del Producto" name="descripcion" value="<%= product.descripcion ?? '' %>">
+                        <% if (locals.errors && locals.errors.descripcion) { %>
+                            <span class="error"><%= locals.errors.descripcion.msg %></span>
+                        <% } %>
                     </div>
                     <div class="radio unidad-medida" >
                         <label for="uom">Unidad de Medida</label>
@@ -41,10 +46,16 @@
                     <div class="campo">
                         <label for="precio">Precio</label>
                         <input type="text" name="precio" value="<%= product.precio ?? '' %>">
+                        <% if (locals.errors && locals.errors.precio) { %>
+                            <span class="error"><%= locals.errors.precio.msg %></span>
+                        <% } %>
                     </div>
                     <div class="campo">
                         <label for="imagen">Subir una foto</label>
                         <input type="file" name="imagen" accept=".jpg" multiple>
+                        <% if (locals.errors && locals.errors.imagen) { %>
+                            <span class="error"><%= locals.errors.imagen.msg %></span>
+                        <% } %>
                     </div>
             </fieldset>
             

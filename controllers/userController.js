@@ -1,4 +1,5 @@
-const { validationResult } = require('express-validator');
+const { validationResult }  = require('express-validator');
+
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
@@ -7,7 +8,6 @@ const db = require('../src/database/models');
 const user = db.Users;
 
 const userController = {
-
         user: (req, res)=>{
             db.Users.findAll({
                 order: [
@@ -33,9 +33,38 @@ const userController = {
     },
     
     //POST QUE RECIBE Y PROCESA REGISTROS
-    create:(req, res)=>{
+    create:async(req, res)=>{
+        console.log("Datos ingresados" + req)
+        const resultValidation = validationResult(req);   
+        
+        if (!resultValidation.isEmpty()) {
+            return res.render('../views/users/register', {
+            errors: resultValidation.mapped(),
+            pagina: "Registro",
+            styles: "/css/registro.css",
+            old: req.body
+            });
+        }
+
+        const userInDB =  await db.Users.findOne({
+            where: {
+            email: req.body.email
+            }
+            });
+		if (userInDB) {
+			return res.render('../views/users/register', {
+				errors: {
+					email: {
+						msg: 'Este email ya está registrado'
+					}
+				},
+                pagina: "Registro",
+                styles: "/css/registro.css",
+				old: req.body
+			});
+		}
+
         let image = req.file;
-        //let register = 
         user
         .create(
             {
@@ -46,13 +75,12 @@ const userController = {
                 image: image.filename,
                 Admin: false,
             }
-        )
-
-        //let newUser = db.Users.create(register)
-        
+        )        
         .then (() => {
             return res.redirect('/user/login')})
-        .catch(error => res.send(error))
+        .catch(error => res.send(error)) 
+                
+        
     },
 
     //Llamado al formulario de login
@@ -65,22 +93,35 @@ const userController = {
 
     //validacion del logeo
     processLogin: async(req, res) => {
-        let currentUser = {
-        email: req.body.email,
-        password: req.body.password
+        const validation = validationResult(req);   
+        
+        if (!validation.isEmpty()) {
+            return res.render('../views/users/login', {
+            errors: validation.mapped(),
+            pagina: "Ingreso",
+            styles: "/css/registro.css",
+            old: req.body
+            });
+        }else{
+            let currentUser = {
+                email: req.body.email,
+                password: req.body.password
+                }
+                    
+                let user = await db.Users.findOne({
+                where: {
+                email: currentUser.email
+                }
+                })
+        
+                if (bcrypt.compareSync(
+                currentUser.password, user.password)){
+                    req.session.user = user;
+                res.redirect('/')
+                };
         }
-            
-        let user = await db.Users.findOne({
-        where: {
-        email: currentUser.email
-        }
-        })
 
-        if (bcrypt.compareSync(
-        currentUser.password, user.password)){
-            req.session.user = user;
-        res.redirect('/')
-        };
+       
     },
 
     // detalle de usuario
@@ -100,15 +141,15 @@ const userController = {
 
     editUser: function (req, res){
         db.Users.findByPk(req.params.id)
-        .then(Users => {
-        res.render('../views/users/useredit', {
-        pagina: "Editar Usuario",
-        styles: "/css/registro.css",
-        useredit: Users,
-        user: req.session.user
-        });
-    })
-},
+            .then(Users => {
+            res.render('../views/users/useredit', {
+            pagina: "Editar Usuario",
+            styles: "/css/registro.css",
+            useredit: Users,
+            user: req.session.user
+            });
+        })
+    },
 
     // Editar usuario
     update: function (req,res) {
