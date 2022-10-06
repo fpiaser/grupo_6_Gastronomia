@@ -1,154 +1,181 @@
-window.onload = function(){
+let errores=[];//cargamos las validacionesn
+window.onload=function(){
+  
+    console.log("hola")
 
+    let formulario =document.querySelector('.formulario');
+    let nombre= document.getElementById('nombre');
+    let apellido=document.getElementById('apellido');
+    let email=document.getElementById('email');
+    let password=document.getElementById('password');
+    let imagen=document.getElementById('imagen')
 
-    const formulario = document.getElementById('formulario')
-    const inputs=document.querySelectorAll('#formulario input')
+    let checkNombre=document.getElementById('check-nombre')
+    let checkApellido=document.getElementById('check-apellido')
+    let checkEmail=document.getElementById('check-email')//MAIL
+    let checkPassword=document.getElementById('check-password')
+
+    let errorNombre=document.getElementById('error-nombre1')
+    let errorApellido=document.getElementById('error-nombre2')
+    let errorPassword=document.getElementById('error-password')
+    let errorEmail=document.getElementById('error-correo')//MAIL
+    let errorImagen=document.getElementById('error-imagen')
+
+    nombre.focus()
+
+    //ESCUCHADOR PARA EL SUBMIT
     
-
-    const expresiones = {
-	
-	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-	password: /^.{4,12}$/, // 4 a 12 digitos.
-	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
-	
-}
+    formulario.addEventListener('submit',(evt)=>{
+        evt.preventDefault();//detiene el formulario (envio)
+        let errores=[];//cargamos las validacionesn
 
 
-
-
-const campos = {
-	
-	nombre: false,
-    apellido:false,
-	password: false,
-	correo: false
-	
-}
-
-
-
-    const validarFormulario = (evt)=>{
-
-        switch(evt.target.name){
-            case "nombre":
-
-            if(expresiones.nombre.test(evt.target.value) &&(evt.target.value.length>1)){
-                document.getElementById("nombre").classList.remove('campo-incorrecto')
-                document.getElementById("nombre").classList.add('campo-correcto')
-                document.querySelector('#nombre i').classList.add('fa-check-circle')
-                document.querySelector('#nombre i').classList.remove('fa-times-circle')
-                document.querySelector("#nombre .formulario__input-error").classList.remove('formulario__input-error-activado')
-                campos[nombre]=true;
-
-
-
-            }else{
-                document.getElementById("nombre").classList.add('campo-incorrecto')
-                document.getElementById("nombre").classList.remove('campo-correcto')
-                document.querySelector('#nombre i').classList.add('fa-times-circle')
-                document.querySelector('#nombre i').classList.remove('fa-check-circle')
-                document.querySelector("#nombre .formulario__input-error").classList.add('formulario__input-error-activado')
-
-
-            }
-                
-            break; 
-            
-            case "apellido":
-                if(expresiones.nombre.test(evt.target.value) &&(evt.target.value.length>1)){
-                    document.getElementById("apellido").classList.remove('campo-incorrecto')
-                    document.getElementById("apellido").classList.add('campo-correcto')
-                    document.querySelector('#apellido i').classList.add('fa-check-circle')
-                    document.querySelector('#apellido i').classList.remove('fa-times-circle')
-                    document.querySelector("#apellido .formulario__input-error").classList.remove('formulario__input-error-activado')
-                    campos[apellido]=true;
-
-
-    
-                }else{
-                    document.getElementById("apellido").classList.add('campo-incorrecto')
-                    document.getElementById("apellido").classList.remove('campo-correcto')
-                    document.querySelector('#apellido i').classList.add('fa-times-circle')
-                    document.querySelector('#apellido i').classList.remove('fa-check-circle')
-                    document.querySelector("#apellido .formulario__input-error").classList.add('formulario__input-error-activado')
-                }
-                
-            break; 
-            case "password":
-                if(expresiones.password.test(evt.target.value) &&(evt.target.value.length>7)){
-                    document.getElementById("grupo__password").classList.remove('campo-incorrecto')
-                    document.getElementById("grupo__password").classList.add('campo-correcto')
-                    document.querySelector('#grupo__password i').classList.add('fa-check-circle')
-                    document.querySelector('#grupo__password i').classList.remove('fa-times-circle')
-                    document.querySelector("#grupo__password .formulario__input-error").classList.remove('formulario__input-error-activado')
-                    campos[password]=true
-
-
-    
-                }else{
-                    document.getElementById("grupo__password").classList.add('campo-incorrecto')
-                    document.getElementById("grupo__password").classList.remove('campo-correcto')
-                    document.querySelector('#grupo__password i').classList.add('fa-times-circle')
-                    document.querySelector('#grupo__password i').classList.remove('fa-check-circle')
-                    document.querySelector("#grupo__password .formulario__input-error").classList.add('formulario__input-error-activado')
-                }
-                
-            break; 
-            case "correo":
-                if(expresiones.correo.test(evt.target.value)){
-                    document.getElementById("grupo__correo").classList.remove('campo-incorrecto')
-                    document.getElementById("grupo__correo").classList.add('campo-correcto')
-                    document.querySelector('#grupo__correo i').classList.add('fa-check-circle')
-                    document.querySelector('#grupo__correo i').classList.remove('fa-times-circle')
-                    document.querySelector("#grupo__correo .formulario__input-error").classList.remove('formulario__input-error-activado')
-                    campos[correo]=true;
-
-
-    
-                }else{
-                    document.getElementById("grupo__correo").classList.add('campo-incorrecto')
-                    document.getElementById("grupo__correo").classList.remove('campo-correcto')
-                    document.querySelector('#grupo__correo i').classList.add('fa-times-circle')
-                    document.querySelector('#grupo__correo i').classList.remove('fa-check-circle')
-                    document.querySelector("#grupo__correo .formulario__input-error").classList.add('formulario__input-error-activado')
-                }
-             
-            break;
-
+        if(! nombre.value.length){
+            errores.push("El campo no puede estar vacio")
+            nombre.style.borderColor='red'
+            errorNombre.style.display="block"
+        }else{
+            errorNombre.style.display="none"
+        }
+        if(! apellido.value.length){
+            errores.push("El campo no puede estar vacio")
+            apellido.style.borderColor='red'
+            errorApellido.style.display='block'
+        }
+        if(! email.value.length){
+            errores.push("El campo no puede estar vacio")
+            email.style.borderColor='red'
+            errorEmail.style.display='block'
+        }else{
+            errorEmail.style.display='none'
+        }
+        if(! password.value.length){
+            errores.push("El campo no puede estar vacio")
+            password.style.borderColor='red'
+            errorPassword.style.display='block'
+        }else{
+            errorPassword.style.display='none'
+        }
+        if(! imagen.value.length){
+            errores.push("El campo no puede estar vacio")
+            imagen.style.borderColor='red'
+            errorImagen.style.display="block"
+        }else{
+            imagen.style.borderColor="green"
         }
 
- 
-    }
+        if (errores.length){
+            evt.preventDefault();
 
+            //TO-DO: IMPLEMENTAR VALIDACION
+        }else{
 
-
-
-
-      inputs.forEach((input)=>{
-        input.addEventListener('keyup', validarFormulario);
-        input.addEventListener('blur', validarFormulario);
+            alert("Registro enviado")
+            
+        }
 
          
+
+
+    })
+    //ESCUCHADOR ONCHANGE, MUESTRA MENSAJES AL MOMENTO
+
+    nombre.addEventListener('blur', (evt)=>{
         
-      })
- 
+        let element=evt.target;
 
-        formulario.addEventListener("submit", (e)=>{
-            e.preventDefault();
+        if(nombre.value.length<2){
+            errores.push("El campo debe tener mas de dos letras");
+            nombre.style.borderColor='red'
+            checkNombre.style.display="none"
 
-            if(campos.nombre && campos.apellido && campos.password && campos.correo){
+        }else{
+            nombre.style.borderColor="green"
+            checkNombre.style.display="block"
+            errorNombre.style.display="none"
+            
+        }
+       
 
-                formulario.reset();
+        
+    })
+    
+    apellido.addEventListener('keyup', (evt)=>{
+        
+        if(apellido.value.length<2){
+            errores.push("El campo debe tener mas de dos letras")
+            apellido.style.borderColor='red'
+            checkApellido.style.display="none"
+           
+        }else{
+            apellido.style.borderColor="green"
+            checkApellido.style.display="block"
+            errorApellido.style.display="none"
+            
+            
+            
+        }
+    })
 
-                document.getElementById("formulario__mensaje-exito").classList.add("formulario__mensaje-exito-activado")
+    password.addEventListener('keyup', (evt)=>{
+        
+        if(password.value.length<8){
+            errores.push("El campo debe tener mas de dos letras")
+            password.style.borderColor='red'
+            
+            checkPassword.style.display="none"
+           
+        }else{
+            password.style.borderColor="green"
+            checkPassword.style.display="block"
+            errorPassword.style.display="none"
+            
+            
+            
+        }
 
-            }else{
-                
+        imagen.addEventListener('blur', (evt) => {
+            /*let errores = [];*/
+            let filePath = imagen.value;
+            let extensionPermitidas = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
+            console.log(filePath)
+            if(!extensionPermitidas.exec(filePath) ) {
+                errores.push("el campo no puede estar vacio")
+                imagen.style.borderColor="red"
+    
+               /* alert('Extensión no permitida. Utiliza: .jpeg/.jpg/.png/.gif.');*/
+                extensionPermitidas.value = '';
+                    return false;
+                //console.log(errores)
+            } else {
+                //alert('Extensión correcta.');
+                imagen.style.borderColor="green"
+                errorImagen.style.display="none"
+    
             }
+    
+        })
+    })
+     email.addEventListener('keyup', (evt)=>{
+        
+        if((email.value).includes("@")){
+            email.style.borderColor="green"
+            errorEmail.style.display="none"
+            checkEmail.style.display='block'
+        }else{
+            errores.push("El campo debe poseer mail valido")
+            email.style.borderColor='red'
+            checkEmail.style.display='none'
 
 
- 
+        }
+        
+
+     })
+
+
+       
+   
 }
-)}
 
+console.log("holaa")

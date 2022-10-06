@@ -92,6 +92,51 @@ header{
     align-items: center;
 }
 
+.incorrecto{
+    border-color: red;
+}
+
+/*PARA LAVIDACIONES FRONT
+.titulo{
+  text-align: center;
+}
+.botonAgregar , .botonModificar{
+  color: white;
+  background-color: green;
+  padding: 10px;
+  border-radius: 10px;
+}
+.botonBorrar{
+  color: white;
+  background-color: red;
+  padding: 10px;
+  border-radius: 10px;
+}
+.botonVolver{
+  color: white;
+  background-color: #00B7FF;
+  padding: 10px;
+  border-radius: 10px;
+}
+.formulario{
+  margin: auto;
+  width: 20%;
+}
+.is-invalid{
+ border: solid 2px red;
+}
+.is-valid{
+  border: solid 2px rgb(18, 182, 18);
+ }
+ .alert-warning {
+  color: rgb(221, 174, 86);
+}
+.error-form{
+  font-size: 12px;
+  color: red;
+}
+*/
+
 @media (min-width: 720px){
     body {
         font-size: 1.6rem;
