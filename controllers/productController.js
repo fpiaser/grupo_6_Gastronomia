@@ -121,7 +121,7 @@ const productController = {
         });
         producto
             .then(function (producto) {
-                return res.render('../views/products/modProduct', { 
+                return res.render('products/modProduct', { 
                     pagina: "Modificar Producto",
                     styles: "/css/registro.css",
                     allCategorias: categorias,
@@ -132,10 +132,15 @@ const productController = {
     },
     updateProduct: (req, res) => {
         const resultValidation = validationResult(req);
+        
+
         if (!resultValidation.isEmpty()) {
+            console.log("updateproduct")
+
             categoria.findAll()
+            
                 .then(function (categorias) {
-                    return res.render('../views/products/modProduct', { 
+                    return res.render('products/modProduct', { 
                         errors: resultValidation.mapped(),
                         pagina: "Modificar Producto",
                         styles: "/css/registro.css",
@@ -145,7 +150,7 @@ const productController = {
             });
         }else{
             let Productid = req.params.id; 
-           
+            console.log("Estoy en el else")
             product
                 .update({
                     nombre: req.body.nombre,
