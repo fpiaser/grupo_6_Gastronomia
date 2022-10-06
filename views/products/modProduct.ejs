@@ -10,7 +10,7 @@
         <!-- Page content -->
         
     <main>
-        <form class="formulario" action="/product/<%= product.id ?? ''%>?_method=PUT" method="post">
+        <form class="formulario" action="/product/<%= product.id ?? ''%>?_method=PUT" method="post" enctype="multipart/form-data">
             <fieldset>
                 <legend>Modificar Producto</legend>
                     <div class="campo">
@@ -50,13 +50,13 @@
                             <span class="error"><%= locals.errors.precio.msg %></span>
                         <% } %>
                     </div>
-                    <div class="campo">
+                    <!-- <div class="campo">
                         <label for="imagen">Subir una foto</label>
                         <input type="file" name="imagen" accept=".jpg" multiple>
                         <% if (locals.errors && locals.errors.imagen) { %>
                             <span class="error"><%= locals.errors.imagen.msg %></span>
                         <% } %>
-                    </div>
+                    </div> -->
             </fieldset>
             
             <input type="submit" value="Modificar Producto" class="btn">
