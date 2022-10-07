@@ -3,7 +3,7 @@ window.onload=function(){
   
     console.log("hola")
 
-    let formulario =document.querySelector('.formulario');
+    let formulario =document.getElementById('formulario');
     let nombre= document.getElementById('nombre');
     let apellido=document.getElementById('apellido');
     let email=document.getElementById('email');
@@ -70,7 +70,9 @@ window.onload=function(){
             //TO-DO: IMPLEMENTAR VALIDACION
         }else{
 
-            alert("Registro enviado")
+         alert("Registro enviado")
+
+            formulario.submit()
             
         }
 

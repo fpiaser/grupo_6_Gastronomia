@@ -3,7 +3,7 @@ window.onload=function(){
   
     console.log("hola")
 
-    let formulario =document.querySelector('.formulario');
+    let formulario =document.getElementById('formulario');
    
     
     let email=document.getElementById('email');
@@ -43,12 +43,9 @@ window.onload=function(){
             errorPassword.style.display='none'
         }
       
-        if (errores.length){
-            evt.preventDefault();
-
+        if (!errores.length){
+            formulario.submit()
             //TO-DO: IMPLEMENTAR VALIDACION
-        }else{
-            alert("Formulario enviado")
         }
 
          
