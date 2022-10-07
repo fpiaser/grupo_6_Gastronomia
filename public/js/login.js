@@ -45,10 +45,10 @@ window.onload=function(){
       
         if (!errores.length){
             formulario.submit()
+        
+             }
             //TO-DO: IMPLEMENTAR VALIDACION
-        }
-
-         
+        
 
 
     })
