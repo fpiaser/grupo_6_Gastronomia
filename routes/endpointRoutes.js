@@ -9,10 +9,12 @@ router.get('/products', apiController.allProducts);
 //Ruta Endpoint Users
 router.get('/users', apiController.allUsers);
 
-//Ruta Endpoint Last Product
+//Ruta Endpoint User Detail
+router.get('/users/:id', apiController.userDetail);
 
 
-//Ruta Endpoint Last User
+//Ruta Endpoint Product Detail
+router.get('/products/:id', apiController.productDetail);
 
 
 
