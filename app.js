@@ -10,6 +10,7 @@ const PORT= process.env.PORT || 3000
 const mainRoutes = require('./routes/mainRoutes');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
+const endpointRoutes = require('./routes/endpointRoutes');
 /*const logMiddleware = require('./middlewares/logMiddleware');*/
 
 
@@ -29,6 +30,7 @@ app.use(methodOverride('_method'));
 app.use('/', mainRoutes);
 app.use('/user', userRoutes);
 app.use('/product', productRoutes);
+app.use('/api', endpointRoutes);
 //const rememberMe = require('./middlewares/rememberMe');
 //const cookieParser = require('cookie-parser');
 

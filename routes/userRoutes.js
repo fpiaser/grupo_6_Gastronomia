@@ -5,12 +5,12 @@ const uploadFile=  require('../middlewares/multer');
 const { body } = require('express-validator');
 const authMiddleware = require('../middlewares/authMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
+const path = require('path');
 
 const validationResult=[
     body('nombre')
     .notEmpty().withMessage('Debe ingresar un nombre')
     .isLength({min:2}).withMessage('El nombre debe tener al menos 2 caracteres'),
-    
     body('apellido')
     .notEmpty().withMessage('Debe ingresar su apellido')
     .isLength({min:2}).withMessage('El apellido debe tener al menos 2 caracteres'),
@@ -22,13 +22,33 @@ const validationResult=[
     .isLength({min:8}).withMessage('Su contraseña debe tener al menos 8 caracteres'),
     body('imagen')
         .custom((value, { req }) => {
-            if (req.files.length === 0) {
-                return false;
+            let file= req.file;
+            let acceptedExtension= ['.jpg', '.jpeg', '.png', '.gif'];
+
+            if(!file){
+                throw new Error('Tienes que subir una imagen');
+            }else {
+                let fileExtension= path.extname(file.originalname);
+                if(!acceptedExtension.includes(fileExtension)){
+                    throw new Error('Las extensiones de archivo permitidas son:' + acceptedExtension.join(', ') )
+                }
             }
             return true;
         }
-    ).withMessage('Debe subir una imagen')
+    )
 ]; 
+
+const validationLogin=[
+    
+    body('email')
+    .notEmpty().withMessage('Debe ingresar un Email')
+    .isEmail().withMessage('Debe ingresa un Email válido'),
+    body('password')
+    .notEmpty().withMessage('Debe ingresar una contraseña')
+    .isLength({min:8}).withMessage('Su contraseña debe tener al menos 8 caracteres'),
+    
+]; 
+
 
 
 //Ruta listado usuarios
@@ -43,7 +63,7 @@ router.post('/',guestMiddleware, uploadFile.single('imagen'),validationResult , 
 //Ruta login
 // ACCESIBLE SOLO SIN LOGIN (sino redirige al perfil)
 router.get('/login',guestMiddleware, userController.login);
-router.post('/login',guestMiddleware, userController.processLogin);
+router.post('/login',guestMiddleware, validationLogin, userController.processLogin);
 
 //Ruta editar Usuario
 // ACCESIBLE SOLO CON LOGIN (sino redirige al login)

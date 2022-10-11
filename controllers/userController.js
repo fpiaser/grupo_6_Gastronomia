@@ -1,4 +1,5 @@
-const { validationResult } = require('express-validator');
+const { validationResult }  = require('express-validator');
+
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
@@ -32,10 +33,10 @@ const userController = {
     },
     
     //POST QUE RECIBE Y PROCESA REGISTROS
-    create:(req, res)=>{
-        const resultValidation = validationResult(req);
-       
-        console.log("errores: " + resultValidation.isEmpty());
+    create:async(req, res)=>{
+        console.log("Datos ingresados" + req)
+        const resultValidation = validationResult(req);   
+        
         if (!resultValidation.isEmpty()) {
             return res.render('../views/users/register', {
             errors: resultValidation.mapped(),
@@ -43,23 +44,42 @@ const userController = {
             styles: "/css/registro.css",
             old: req.body
             });
-        }else{
-            let image = req.file;
-            user
-            .create(
-                {
-                    nombre: req.body.nombre,
-                    apellido: req.body.apellido,
-                    email: req.body.email,
-                    password: bcrypt.hashSync(req.body.password, 10),
-                    image: imagen.filename,
-                    Admin: false,
-                }
-            )        
-            .then (() => {
-                return res.redirect('/user/login')})
-            .catch(error => res.send(error)) 
-        }             
+        }
+
+        const userInDB =  await db.Users.findOne({
+            where: {
+            email: req.body.email
+            }
+            });
+		if (userInDB) {
+			return res.render('../views/users/register', {
+				errors: {
+					email: {
+						msg: 'Este email ya está registrado'
+					}
+				},
+                pagina: "Registro",
+                styles: "/css/registro.css",
+				old: req.body
+			});
+		}
+
+        let image = req.file;
+        user
+        .create(
+            {
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                email: req.body.email,
+                password: bcrypt.hashSync(req.body.password, 10),
+                image: image.filename,
+                Admin: false,
+            }
+        )        
+        .then (() => {
+            return res.redirect('/user/login')})
+        .catch(error => res.send(error)) 
+                
         
     },
 
@@ -73,22 +93,35 @@ const userController = {
 
     //validacion del logeo
     processLogin: async(req, res) => {
-        let currentUser = {
-        email: req.body.email,
-        password: req.body.password
+        const validation = validationResult(req);   
+        
+        if (!validation.isEmpty()) {
+            return res.render('../views/users/login', {
+            errors: validation.mapped(),
+            pagina: "Ingreso",
+            styles: "/css/registro.css",
+            old: req.body
+            });
+        }else{
+            let currentUser = {
+                email: req.body.email,
+                password: req.body.password
+                }
+                    
+                let user = await db.Users.findOne({
+                where: {
+                email: currentUser.email
+                }
+                })
+        
+                if (bcrypt.compareSync(
+                currentUser.password, user.password)){
+                    req.session.user = user;
+                res.redirect('/')
+                };
         }
-            
-        let user = await db.Users.findOne({
-        where: {
-        email: currentUser.email
-        }
-        })
 
-        if (bcrypt.compareSync(
-        currentUser.password, user.password)){
-            req.session.user = user;
-        res.redirect('/')
-        };
+       
     },
 
     // detalle de usuario

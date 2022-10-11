@@ -1,10 +1,19 @@
-
+*{
+    box-shadow: none;
+    outline:none;
+}
 
 /* Formulario Ingreso */
 .formulario {
     width: 30rem;
     padding-top: 2.5rem;
     margin: 0 auto;
+}
+
+.formulario-error{
+    border-color: 1px solid red;
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgb(255, 0, 0);
+    outline: 0 none;
 }
 
 .formulario fieldset {
@@ -35,6 +44,30 @@
     flex: 1;
     border: 1px solid #9EB23B;
 }
+.fa-circle-check{
+    color:#46bb36;
+    position: absolute;
+    left:1000px;
+    margin-top: 9px;
+   
+    display: none;   
+}
+.error-nombre{
+    display: none;
+    font-size: 1.3rem;
+    position: absolute;
+    margin-left:15rem;
+    margin-top:2.5rem;
+    color:red
+}
+
+.campo input{
+    flex: 1;
+    border: 1px solid #9EB23B;
+}
+
+
+
 .campo input::first-line{
     border: 1px solid #CC9C75;
 }
@@ -87,12 +120,14 @@
 	transition: .3s ease all;
 }
 
+
+/*
 .formulario__input:focus {
 	border: 3px solid #0075FF;
 	outline: none;
 	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
 }
-
+*/
 .formulario__input-error {
 	font-size: 15px;
 	color:rgb(197, 28, 28);
@@ -145,7 +180,7 @@
 /*-----------VALIACIONES---------*/
 
 
-.campo-correcto .formulario__validacion-estado {
+/*.campo-correcto .formulario__validacion-estado {
 	color: #1ed12d;
 	opacity: 1;
 }
@@ -161,8 +196,11 @@
 
 .campo-incorrecto .formulario__input {
 	border: 3px solid #bb2929;
-}
+}*/
 
+.incorrecto{
+    border-color: red;
+}
 
 
 @media (min-width: 720px) {
