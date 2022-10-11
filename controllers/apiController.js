@@ -18,7 +18,9 @@ const { Sequelize } = require('../src/database/models');
 const apiEndpoint = {
 
     allProducts:(req,res)=>{
-        db.Products.findAll()
+        db.Products.findAll(
+            {include: ['categoria']}
+        )
         .then(products=>{
             let respuesta = {
                 meta: {
@@ -32,7 +34,7 @@ const apiEndpoint = {
                         id: product.id,
                         nombre: product.nombre,
                         descripcion: product.descripcion,
-                        categoria: product.id_categoria,
+                        categoria: product.categoria,
                         detail: "/api/products/" + product.id
                     }
                 })
@@ -42,7 +44,10 @@ const apiEndpoint = {
     },
 
     productDetail:(req,res)=>{
-        db.Products.findByPk(req.params.id)
+        db.Products.findByPk(
+            req.params.id,
+            {include: ['categoria','unidad_medida']}
+            )
         .then(product=>{
             let respuesta = {
                 meta:{
@@ -55,8 +60,8 @@ const apiEndpoint = {
                         nombre: product.nombre,
                         descripcion: product.descripcion,
                         precio: product.precio,
-                        uom: product.uom,
-                        categoria: product.id_categoria,
+                        uom: product.unidad_medida,
+                        categoria: product.categoria,
                         image: "/img/usersImg/" + product.image,
 }
             }

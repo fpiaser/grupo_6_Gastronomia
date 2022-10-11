@@ -47,14 +47,14 @@ module.exports = (sequelize, dataTypes) => {
 
         Products.belongsTo(models.Categoria,{
             as:'categoria',
-            foreignKey: 'id',
-            target_key: 'id_categoria'
+            foreignKey: 'id_categoria',
+            //target_key: 'id'
         }),
 
         Products.belongsTo(models.Unidad_Medida,{
             as:'unidad_medida',
-            foreignKey: 'id',
-            target_key: 'uom'
+            foreignKey: 'uom',
+            //target_key: 'uom'
 
         })
     }
