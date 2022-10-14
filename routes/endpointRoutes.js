@@ -16,6 +16,7 @@ router.get('/users/:id', apiController.userDetail);
 //Ruta Endpoint Product Detail
 router.get('/products/:id', apiController.productDetail);
 
-
+//Ruta Endpoint Categorias
+router.get('/categorias', apiController.categorias);
 
 module.exports = router;

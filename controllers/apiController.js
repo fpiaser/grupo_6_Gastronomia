@@ -26,7 +26,8 @@ const apiEndpoint = {
                 meta: {
                     status: 200,
                     total: products.length,
-                    url: "/api/products"
+                    url: "/api/products",
+                    last_url:"/api/products/" + products.length
                 },
                 
                 data: products.map(product => {
@@ -35,7 +36,9 @@ const apiEndpoint = {
                         nombre: product.nombre,
                         descripcion: product.descripcion,
                         categoria: product.categoria,
-                        detail: "/api/products/" + product.id
+                        detail: "/api/products/" + product.id,
+                        image: "/images/" + product.image,
+                        url: "/product/" + product.id
                     }
                 })
             }
@@ -53,7 +56,6 @@ const apiEndpoint = {
                 meta:{
                     status: 200,
                     total: product.id.length,
-                    url: "/api/products/" + product.id
                 },
                 data: {
                         id: product.id,
@@ -62,7 +64,8 @@ const apiEndpoint = {
                         precio: product.precio,
                         uom: product.unidad_medida,
                         categoria: product.categoria,
-                        image: "/img/usersImg/" + product.image,
+                        image: "/images/" + product.image,
+                        url: "/product/" + product.id
 }
             }
             res.json(respuesta)
@@ -112,7 +115,24 @@ const apiEndpoint = {
             }
             res.json(respuesta)
         })
-    }
+    },
+
+    categorias:(req,res)=>{
+        db.Categoria.findAll()
+        .then(categoria=>{
+            let respuesta = {
+                meta: {
+                    status: 200,
+                    total: categoria.length,
+                    url: "/api/categorias"
+                },
+                
+                data: categoria
+                
+            }
+            res.json(respuesta)
+        })
+    },
 }
 
 module.exports=apiEndpoint;
