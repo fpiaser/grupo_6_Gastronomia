@@ -17,10 +17,10 @@ module.exports = (sequelize, dataTypes) => {
     };
     let config = {
         tableName: 'unidad_medida',
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: 'delete_at'
+        timestamps: false,
+        // createdAt: 'created_at',
+        // updatedAt: 'updated_at',
+        // deletedAt: 'delete_at'
     };
     const Unidad_Medida = sequelize.define(alias, cols, config);
 

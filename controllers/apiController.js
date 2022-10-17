@@ -18,13 +18,16 @@ const { Sequelize } = require('../src/database/models');
 const apiEndpoint = {
 
     allProducts:(req,res)=>{
-        db.Products.findAll()
+        db.Products.findAll(
+            {include: ['categoria']}
+        )
         .then(products=>{
             let respuesta = {
                 meta: {
                     status: 200,
                     total: products.length,
-                    url: "/api/products"
+                    url: "/api/products",
+                    last_url:"/api/products/" + products.length
                 },
                 
                 data: products.map(product => {
@@ -32,8 +35,10 @@ const apiEndpoint = {
                         id: product.id,
                         nombre: product.nombre,
                         descripcion: product.descripcion,
-                        categoria: product.id_categoria,
-                        detail: "/api/products/" + product.id
+                        categoria: product.categoria,
+                        detail: "/api/products/" + product.id,
+                        image: "/images/" + product.image,
+                        url: "/product/" + product.id
                     }
                 })
             }
@@ -42,22 +47,25 @@ const apiEndpoint = {
     },
 
     productDetail:(req,res)=>{
-        db.Products.findByPk(req.params.id)
+        db.Products.findByPk(
+            req.params.id,
+            {include: ['categoria','unidad_medida']}
+            )
         .then(product=>{
             let respuesta = {
                 meta:{
                     status: 200,
                     total: product.id.length,
-                    url: "/api/products/" + product.id
                 },
                 data: {
                         id: product.id,
                         nombre: product.nombre,
                         descripcion: product.descripcion,
                         precio: product.precio,
-                        uom: product.uom,
-                        categoria: product.id_categoria,
-                        image: "/img/usersImg/" + product.image,
+                        uom: product.unidad_medida,
+                        categoria: product.categoria,
+                        image: "/images/" + product.image,
+                        url: "/product/" + product.id
 }
             }
             res.json(respuesta)
@@ -107,7 +115,24 @@ const apiEndpoint = {
             }
             res.json(respuesta)
         })
-    }
+    },
+
+    categorias:(req,res)=>{
+        db.Categoria.findAll()
+        .then(categoria=>{
+            let respuesta = {
+                meta: {
+                    status: 200,
+                    total: categoria.length,
+                    url: "/api/categorias"
+                },
+                
+                data: categoria
+                
+            }
+            res.json(respuesta)
+        })
+    },
 }
 
 module.exports=apiEndpoint;
