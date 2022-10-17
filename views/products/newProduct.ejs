@@ -10,7 +10,7 @@
         <!-- Page content -->
         
     <main>
-        <form class="formulario" action="/product" method="post" enctype="multipart/form-data">
+        <form class="formulario" action="/product" method="post" enctype="multipart/form-data" id="formulario">
             <fieldset>
                 <legend>Nuevo Producto</legend>
                     <div class="campo">
@@ -19,26 +19,27 @@
                         value="<%= locals.old && locals.old.nombre ? locals.old.nombre : '' %>">
                         <p class="error-form" id="error-title"></p> 
                         <i class="fa-regular fa-circle-check" id="check-nombre"></i>
-                        <p class="error-producto" id="error-producto">El producto debe tener mas de 5 letras</p>
+                        <p class="error-nombre" id="error-nombre1">El producto debe tener mas de 5 letras</p>
                         <% if (locals.errors && locals.errors.nombre) { %>
                             <span class="error"><%= locals.errors.nombre.msg %></span>
                         <% } %>
                     </div>
                     <div class="campo">
                         <label for="descripcion">Descripción</label>
-                        <input type="text" placeholder="Descripción del Producto" name="descripcion"
+                        <input type="text" placeholder="Descripción del Producto" id='descripcion' name="descripcion"
                         value="<%= locals.old && locals.old.descripcion ? locals.old.descripcion : '' %>">
-                        <i class="fa-regular fa-circle-check" id="check-nombre"></i>
-                        <p class="error-producto" id="error-producto">La descripcion debe tener minimo 20 letras</p>
+                        <i class="fa-regular fa-circle-check" id="check-descripcion"></i>
+                        <p class="error-nombre" id="error-descripcion">La descripcion debe tener minimo 20 letras</p>
                         <% if (locals.errors && locals.errors.descripcion) { %>
                             <span class="error"><%= locals.errors.descripcion.msg %></span>
                         <% } %>
                     </div>
-                    <div class="radio unidad-medida" >
+                    <div class="campo radio unidad-medida" >
                         <label for="uom">Unidad de Medida</label>
                         <p><input type="radio" name="uom" value=1>Unidad</p>
                     </div>
-                    <div class="radio categoria">
+                    <!-- radio categoria -->
+                    <div class="campo">
                         <label for="categoria">Categoría</label>
                         <select name="id_categoria" id="" required>
                             <option value="" disabled selected>- select category - </option>
@@ -49,16 +50,18 @@
                     </div>
                     <div class="campo">
                         <label for="precio">Precio</label>
-                        <input type="number" name="precio" 
+                        <input type="number" name="precio" id="precio"
                         value="<%= locals.old && locals.old.precio ? locals.old.precio : '' %>">
+                        <i class="fa-regular fa-circle-check" id="check-precio"></i>
+                        <p class="error-nombre" id="error-precio">La descripcion debe tener minimo 20 letras</p>
                         <% if (locals.errors && locals.errors.precio) { %>
                             <span class="error"><%= locals.errors.precio.msg %></span>
                         <% } %>
                     </div>
                     <div class="campo">
                         <label for="imagen">Subir una foto</label>
-                        <input type="file" name="imagen"  multiple 
-                        value="<%= locals.old && locals.old.imagen ? locals.old.imagen : '' %>">
+                        <input type="file" name="imagen" id="imagen" multiple >
+                        <p class="error-nombre" id="error-imagen">Obligatorio imagen con formato especifico</p>
                         <% if (locals.errors && locals.errors.imagen) { %>
                             <span class="error"><%= locals.errors.imagen.msg %></span>
                         <% } %>
