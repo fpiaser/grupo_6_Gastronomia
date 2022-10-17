@@ -117,6 +117,11 @@ const userController = {
                 if (bcrypt.compareSync(
                 currentUser.password, user.password)){
                     req.session.user = user;
+                    console.log("Es admin",user)
+                    if (req.body.remember != undefined) {
+                        res.cookie('recordarme',
+                        user.id, { maxAge: 60000 })
+                    }
                 res.redirect('/')
                 };
         }
@@ -175,7 +180,7 @@ const userController = {
     //cierre de session
     logout: (req, res) => {
         req.session.destroy();
-        res.clearCookie('user');
+        res.clearCookie('recordarme');
         res.redirect("/");
     }, 
 
