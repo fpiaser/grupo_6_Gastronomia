@@ -15,8 +15,11 @@
                 <legend>Nuevo Producto</legend>
                     <div class="campo">
                         <label for="nombre">Nombre de Producto</label>
-                        <input type="text" placeholder="Nombre de producto a mostrar" name="nombre"
+                        <input type="text" placeholder="Nombre de producto a mostrar" id="nombre" name="nombre"
                         value="<%= locals.old && locals.old.nombre ? locals.old.nombre : '' %>">
+                        <p class="error-form" id="error-title"></p> 
+                        <i class="fa-regular fa-circle-check" id="check-nombre"></i>
+                        <p class="error-producto" id="error-producto">El producto debe tener mas de 5 letras</p>
                         <% if (locals.errors && locals.errors.nombre) { %>
                             <span class="error"><%= locals.errors.nombre.msg %></span>
                         <% } %>
@@ -25,6 +28,8 @@
                         <label for="descripcion">Descripción</label>
                         <input type="text" placeholder="Descripción del Producto" name="descripcion"
                         value="<%= locals.old && locals.old.descripcion ? locals.old.descripcion : '' %>">
+                        <i class="fa-regular fa-circle-check" id="check-nombre"></i>
+                        <p class="error-producto" id="error-producto">La descripcion debe tener minimo 20 letras</p>
                         <% if (locals.errors && locals.errors.descripcion) { %>
                             <span class="error"><%= locals.errors.descripcion.msg %></span>
                         <% } %>
@@ -67,6 +72,7 @@
     
     </main>
     <%- include('../partials/footer') %>
+    <Script src="/js/product.js"></Script>
 </body>
 </html>
 

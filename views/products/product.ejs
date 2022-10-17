@@ -9,6 +9,7 @@
     <%- include('../partials/header') %>
       <!-- Page content -->
       <a href="/product/nuevoProducto" class="boton_eliminar">Añadir Producto </a>
+         
       
       <main>
         
@@ -32,12 +33,15 @@
               </div>
 
                 <!-- eliminar producto -->
-              <form action="/product/<%= products[index].id %>?_method=DELETE" method="post">
-                <button type="submit" class="boton_eliminar">
-                  <i class="fa-solid fa-trash-can"></i>
-                </button> <a href="/product/modificarProducto/<%= products[index].id %>" class="boton_eliminar">
-                  <i class="fa-solid fa-pen-to-square"></i></a> 
-              </form>
+              
+            <form action="/product/<%= products[index].id %>?_method=DELETE" method="post">
+              <button type="submit" class="boton_eliminar">
+                <i class="fa-solid fa-trash-can"></i>
+              </button> <a href="/product/modificarProducto/<%= products[index].id %>" class="boton_eliminar">
+                <i class="fa-solid fa-pen-to-square"></i></a> 
+            </form>
+            
+              
               
 
             </div>          
@@ -50,5 +54,5 @@
       </main>
       <%- include('../partials/footer') %>
   </body>
-
+  <script src="/js/productos.js"></script>
 </html>
