@@ -97,8 +97,8 @@ const productController = {
                 uom: req.body.uom,
                 id_categoria: req.body.id_categoria,
                 precio: req.body.precio,
-                image: image,
-                id:uuidv4(),
+                image: image
+                /* id:uuidv4(), */
                 
             })
             .then(function (product) {
