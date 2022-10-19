@@ -19,7 +19,9 @@ const oum = db.Unidad_Medida;
 
 
 const productController = {
-    product: (req, res)=>{
+    product: async (req, res)=>{
+
+        let userLoggued = await req.session.user
         db.Products.findAll({
             order: [
                 ['id', 'DESC']
@@ -30,7 +32,7 @@ const productController = {
                 pagina: "Pagina",
             styles: "/css/styles_detail.css",
             products: Products,
-            user: req.session.user,
+            user: userLoggued,
             })
         });
     },    
@@ -65,7 +67,8 @@ const productController = {
                 res.render('../views/products/newProduct',{
                     pagina: "Nuevo Producto",
                     styles: "/css/registro.css",
-                    allCategorias: categorias
+                    allCategorias: categorias,
+                    user: req.session.user
                 }) 
             })
             .catch(function (error) {
@@ -125,7 +128,8 @@ const productController = {
                     pagina: "Modificar Producto",
                     styles: "/css/registro.css",
                     allCategorias: categorias,
-                    product: producto
+                    product: producto,
+                    user: req.session.user
                 });
             })
         ;
@@ -145,7 +149,8 @@ const productController = {
                         pagina: "Modificar Producto",
                         styles: "/css/registro.css",
                         allCategorias: categorias,
-                        product: req.body
+                        product: req.body,
+                        user: req.session.user
                     });
             });
         }else{

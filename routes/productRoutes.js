@@ -73,13 +73,13 @@ router.get('/carrito', productController.productCart);
 
 //Ruta crear producto
 // ACCESIBLE SOLO CON LOGIN (sino redirige al login)
-router.get('/nuevoProducto',authMiddleware, productController.newProduct);
-router.post('/',authMiddleware, uploadFile.single('imagen'),validationResult, productController.storeProduct);
+router.get('/nuevoProducto' ,authMiddleware ,productController.newProduct);
+router.post('/' ,uploadFile.single('imagen'),validationResult, productController.storeProduct);
 
 //Ruta editar Producto
 // ACCESIBLE SOLO CON LOGIN (sino redirige al login)
 router.get('/modificarProducto/:id',authMiddleware, productController.modProduct);
-router.put('/:id',authMiddleware, uploadFile.single('imagen'), validationMod, productController.updateProduct);
+router.put('/:id', uploadFile.single('imagen'), validationMod, productController.updateProduct);
 
 //Ruta de eliminar un producto
 // ACCESIBLE SOLO CON LOGIN (sino redirige al login)

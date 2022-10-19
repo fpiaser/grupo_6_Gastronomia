@@ -120,7 +120,7 @@ const userController = {
                     console.log("Es admin",user)
                     if (req.body.remember != undefined) {
                         res.cookie('recordarme',
-                        user.id, { maxAge: 60000 })
+                        user.email, { maxAge: 60000 })
                     }
                 res.redirect('/')
                 };
