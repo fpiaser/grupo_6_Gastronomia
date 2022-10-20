@@ -10,48 +10,50 @@
       <!-- Page content -->
 
 <main>
-    <div class="bloque_1"> 
-        <img src= "/images/<%=product.image%>"  height="250px"></img>
-        <h4> Categoría: <%- product.categoria  %>  </h4>
-        <p><%- product.descripcion  %></p>
-    </div>  
-    <div class="bloque_2">
-        <h2><%- product.nombre  %></h2>
-        <p>Ingredientes 100% naturales</p>
-        <h4>Cantidad :<%- product.uom  %></h4>
+    <div class="contenedor-principal">
+        <div class="bloque_1"> 
+            <img src= "/images/<%=product.image%>"  height="250px"></img>
+            <h4> Categoría: <%- product.categoria  %>  </h4>
+            <p><%- product.descripcion  %></p>
+        </div>  
+        <div class="bloque_2">
+            <h2><%- product.nombre  %></h2>
+            <p>Ingredientes 100% naturales</p>
+            <h4>Cantidad :<%- product.uom  %></h4>
 
-        
+            
 
-        <h2 class="precio">USD $ <%- product.precio %> </h2>
+            <h2 class="precio">USD $ <%- product.precio %> </h2>
 
-    <div class="carrito">
-        <div>
-            <form>
-            <label for="Cantidad" class="description">Cantidad: </label>
-            <select name="Cantidad" class="description">
-                <option value="1"> </option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
+        <div class="carrito">
+            <div>
+                <form>
+                <label for="Cantidad" class="description">Cantidad: </label>
+                <select name="Cantidad" class="description">
+                    <option value="1"> </option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div>
+                <!-- <label for="Eliminar" class="description"> </label> -->
+            <button type="reset"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+        </form>
+            <a href="/product/carrito"> <input type="submit" value="Agregar al carrito" class="agregar_al_carrito"> </a>
         </div>
-        <div>
-            <!-- <label for="Eliminar" class="description"> </label> -->
-           <button type="reset"><i class="fa-solid fa-trash-can"></i></button>
+
+
+            <h4 class="subtotal">Subtotal $ <%- product.precio %> </h4>
+
+            <p class="alerta">Importante: Chequea en la imagen del producto si debe ser refrigerado</p>
+
         </div>
-    </form>
-        <a href="/product/carrito"> <input type="submit" value="Agregar al carrito"> </a>
-    </div>
-
-
-        <h4 class="subtotal">Subtotal $ <%- product.precio %> </h4>
-
-        <p class="alerta">Importante: Chequea en la imagen del producto si debe ser refrigerado</p>
-
     </div>
 </main>
 <%- include('../partials/footer') %>
 </body>
-</html>
+</html> 

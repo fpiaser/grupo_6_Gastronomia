@@ -1,224 +1,229 @@
-
-
-/*main*/
-
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     bottom: 0;
-    
-}
-main{
-    font-size: 13px;
-    
-}
-
-.img{
+  }
+  .contenedor-principal {
+      margin: 0 auto;
+      display: flex;
+  }
+  .bloque_1 {
+    background-color: #d57e7e;
+    font-size: 20px;
+    margin: 0 auto;
+    color: rgb(245, 237, 228);
+    border-radius: 8px;
+    padding: 10px;
+  }
+  
+  .bloque_1 img {
+    border-radius: 5px;
+  }
+  
+  .bloque_2 {
+    padding: 10px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .img {
     display: flex;
     justify-content: center;
-    
-}
-
-.container{
+  }
+  
+  .carrito div {
+    display: flex;
+  }
+  .agregar_al_carrito {
+    font-family: "Lobster Two";
+    border: none;
+    padding: 5px;
+    background-color: rgb(18, 125, 212);
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+  .agregar_al_carrito:hover {
+    background-color: blue;
+    transition: 0.5s;
+  }
+  
+  .container {
     margin: 30px;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     justify-content: center;
-    
-   
-    
-}
-.cuadrado_contenedor{
+  }
+  .cuadrado_contenedor {
     background-color: rgb(150, 197, 149);
     margin: 10px;
     border-radius: 3px;
     height: 350px;
     width: 250px;
     padding: 2px;
-}
-
-.cuadrado_contenedor:hover{
-    background-color:rgb(174, 216, 173); 
-    transition: .5s;
-}
-.productos_flex h4{
+  }
+  
+  .cuadrado_contenedor:hover {
+    background-color: rgb(174, 216, 173);
+    transition: 0.5s;
+  }
+  .productos_flex h4 {
     color: whitesmoke;
     display: flex;
     font-size: 25px;
     justify-content: center;
-    border-radius: 5px
-
-}
-
-h4:hover{
-    color:whitesmoke;
-    transition: .5s;
-   
-    background-color: #D57E7E;
-    
-}
-
-
-
-.product-img{
-    
-    border-radius: .5rem;
+    border-radius: 5px;
+  }
+  
+  h4:hover {
+    color: whitesmoke;
+    transition: 0.5s;
+  
+    background-color: #d57e7e;
+  }
+  
+  .product-img {
+    border-radius: 0.5rem;
     display: block;
     margin: 0px auto;
     width: 500;
-    height: 300;   
-}
-
-.bloque_1{
+    height: 300;
+  }
+  
+  .bloque_1 {
     width: 45%;
     text-align: center;
-    margin-top: 30px;   
-}
-
-.bloque_2{
+    margin-top: 30px;
+  }
+  
+  .bloque_2 {
     text-align: center;
-    margin-top: 10px
-}
-
-.bloque_2 ul{
+    margin-top: 10px;
+  }
+  
+  .bloque_2 ul {
     text-align: justify;
-}
-
-.contenedor_precio {
+  }
+  
+  .contenedor_precio {
     color: whitesmoke;
     margin: 2%;
-}
-.precio{
-    color: #D57E7E;
+  }
+  .precio {
+    color: #d57e7e;
     font-weight: bold;
     font-size: 25px;
     text-align: justify;
-    margin-top: 20px
-}
-
-.carrito{
-    display: flex; 
-    margin-top: 20px
-}
-
-
-.subtotal{
+    margin-top: 20px;
+  }
+  
+  .carrito {
+    display: flex;
+    margin-top: 20px;
+  }
+  
+  .subtotal {
     color: rgb(15, 105, 38);
     text-align: justify;
-    margin-top: 40px
-}
-
-main input{
+    margin-top: 40px;
+  }
+  
+  main input {
     background-color: rgb(216, 250, 153);
     width: 190%;
     font-weight: bold;
     padding: 3px;
-    margin-left: 30px ;
-   
-}
-
-.alerta{
+    margin-left: 30px;
+  }
+  
+  .alerta {
     border: dashed 3px rgb(78, 138, 78);
     font-weight: bold;
-    margin-top: 60px
-   
-}
-
-.boton_eliminar{
-    
-    background-color: #D57E7E;
+    margin-top: 60px;
+  }
+  
+  .boton_eliminar {
+    background-color: #d57e7e;
     border: none;
     padding: 3px;
     border-radius: 5px;
     color: white;
-    font-family: 'Lobster Two';
+    font-family: "Lobster Two";
     font-size: 16px;
-
-
-}
-.anadir-flex{
+  }
+  .anadir-flex {
     display: flex;
     justify-content: center;
-}
-.anadir{
-    
+  }
+  .anadir {
     margin-top: 10px;
-    background-color: #D57E7E;
+    background-color: #d57e7e;
     padding: 1rem;
     border-radius: 2px;
     font-size: 20px;
-}
-
-.boton_eliminar:hover {
+  }
+  
+  .boton_eliminar:hover {
     transition: 0.5s;
     background-color: #f44336;
-
-}
-
-@media (max-width: 1378px){
-    .container{
-        margin: 30px;
-        display: grid;
-        grid-template-columns: auto auto auto  ;
-        justify-content: center;
-   
-    }
-}
-
-@media (max-width: 840px){
-    .container{
-        margin: 30px;
-        display: grid;
-        grid-template-columns: auto auto   ;
-        justify-content: center;
-   
-    }
-}
-@media (max-width: 375px){
-
-    .container{
-        margin: 30px;
-        display: grid;
-        grid-template-columns: auto    ;
-        justify-content: center;
-   
-    }
-
-
-}
-
-@media (max-width: 720px){
+  }
+  
+  @media (max-width: 1378px) {
     
-
-   .cabecera .menu{
-    display: flex;
-
-    padding-left: 3rem;
-    padding-right: 3rem;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-   }
-
-   .cart{
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-   }
-
-   .burger-menu{
-    display: flex;
-    justify-content: end;
-    margin-top: 2rem;
-    
-   }
-    .fa-bars{
-        color: white;
-        font-size: 4rem;
-        margin-right: 2rem;
-
+    .container {
+      margin: 30px;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      justify-content: center;
     }
-   
-
-}
+  }
+  
+  @media (max-width: 840px) {
+    
+    .container {
+      margin: 30px;
+      display: grid;
+      grid-template-columns: auto auto;
+      justify-content: center;
+    }
+  }
+  @media (max-width: 375px) {
+    
+    .container {
+      margin: 30px;
+      display: grid;
+      grid-template-columns: auto;
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 720px) {
+      
+    .cabecera .menu {
+      display: flex;
+  
+      padding-left: 3rem;
+      padding-right: 3rem;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+    }
+  
+    .cart {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+    }
+  
+    .burger-menu {
+      display: flex;
+      justify-content: end;
+      margin-top: 2rem;
+    }
+    .fa-bars {
+      color: white;
+      font-size: 4rem;
+      margin-right: 2rem;
+    }
+  }
