@@ -11,27 +11,36 @@
       
       <main>
         
-        <div class="flex_container">
+        <div class="contenedor">
+          
+          <div class="flex_container">
 
-          <% for(let index=0; index < users.length; index++) { %>
-            <div class="zoom">
-              <div class="productos_flex">
-                <a href="/user/detalle/<%= users[index].id %>">
+            <% for(let index=0; index < users.length; index++) { %>
+              <!-- <div class= contenedor_de_usuarios> -->
+                <div class="detalle_de_usuario">
+                  <div class="usuario-nombre">
+                    <a href="/user/detalle/<%= users[index].id %>">
+                  
+                      <h4 id="nombre">
+                        <%= users[index].nombre + " " + users[index].apellido%>
+                      </h4>
+                    </a>
+                  </div>
+                  <!-- <div class="apellido">
+                    <h3 class=>
+                      <label for="apellido" class="apellido"></label>
+                     
+                    </h3>
+                  </div> -->
+                  <div class="imagen-usuario">
+                     <img class="user-img" id="img" src="/images/<%= users[index].image %>" width="200px" height="190px">
+                    </img>
+                  </div>
+                </div>
 
-                  <h4 id="nombre">
-                    <%= users[index].nombre %>
-                  </h4>
-                </a>
-                <h3 class="contenedor_precio">
-                  <label for="apellido" class="apellido"></label>
-                  <%= users[index].apellido %>
-                </h3>
-                <img class="user-img" id="img" src="/images/<%= users[index].image %>" width="150px">
-              </img>
-              </div>
-
-          <% } %>
-        </div>
+            <% } %>
+            </div>
+      </div>
 
 
 

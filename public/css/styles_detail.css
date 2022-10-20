@@ -6,6 +6,7 @@
     box-sizing: border-box;
     margin: 0;
     bottom: 0;
+    
 }
 main{
     font-size: 13px;
@@ -18,21 +19,28 @@ main{
     
 }
 
-.flex_container{
-    margin: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.container{
+    margin: 30px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    justify-content: center;
+    
+   
     
 }
-.flex_container div{
-    margin-top: 30px;
-    padding: 5px;
-    background-color: #809A6F;
-    border-radius: 8px;
-    flex-wrap: wrap;    
+.cuadrado_contenedor{
+    background-color: rgb(150, 197, 149);
+    margin: 10px;
+    border-radius: 3px;
+    height: 350px;
+    width: 250px;
+    padding: 2px;
 }
 
+.cuadrado_contenedor:hover{
+    background-color:rgb(174, 216, 173); 
+    transition: .5s;
+}
 .productos_flex h4{
     color: whitesmoke;
     display: flex;
@@ -44,23 +52,17 @@ main{
 
 h4:hover{
     color:whitesmoke;
-    transition: 0.5s;
+    transition: .5s;
+   
     background-color: #D57E7E;
-    border-radius: 3rem;
+    
 }
 
-.zoom{
-    transition: transform .4s;
-}
 
-.zoom:hover{
-    transform: scale(1.1);
-
-}
 
 .product-img{
-    border: 2px solid #D57E7E;
-    border-radius: 30rem;
+    
+    border-radius: .5rem;
     display: block;
     margin: 0px auto;
     width: 500;
@@ -126,12 +128,25 @@ main input{
     
     background-color: #D57E7E;
     border: none;
+    padding: 3px;
     border-radius: 5px;
     color: white;
     font-family: 'Lobster Two';
     font-size: 16px;
 
 
+}
+.anadir-flex{
+    display: flex;
+    justify-content: center;
+}
+.anadir{
+    
+    margin-top: 10px;
+    background-color: #D57E7E;
+    padding: 1rem;
+    border-radius: 2px;
+    font-size: 20px;
 }
 
 .boton_eliminar:hover {
@@ -140,27 +155,70 @@ main input{
 
 }
 
+@media (max-width: 1378px){
+    .container{
+        margin: 30px;
+        display: grid;
+        grid-template-columns: auto auto auto  ;
+        justify-content: center;
+   
+    }
+}
 
-@media (min-width: 720px){
-    main{
-        display: flex;
-        justify-content: space-around;
-        font-size: 18px;
+@media (max-width: 840px){
+    .container{
+        margin: 30px;
+        display: grid;
+        grid-template-columns: auto auto   ;
+        justify-content: center;
+   
+    }
+}
+@media (max-width: 375px){
+
+    .container{
+        margin: 30px;
+        display: grid;
+        grid-template-columns: auto    ;
+        justify-content: center;
+   
     }
 
-    .bloque_1{
-        margin-right: 50px;
+
+}
+
+@media (max-width: 720px){
+    
+
+   .cabecera .menu{
+    display: flex;
+
+    padding-left: 3rem;
+    padding-right: 3rem;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+   }
+
+   .cart{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+   }
+
+   .burger-menu{
+    display: flex;
+    justify-content: end;
+    margin-top: 2rem;
+    
+   }
+    .fa-bars{
+        color: white;
+        font-size: 4rem;
+        margin-right: 2rem;
+
     }
-
-    main input{
-        padding: 5px
-    }
-
-    .ps-btn-danger {
-        background-color: #f44336 !important;
-        border-color: #f44336 !important;
-      }
-
    
 
 }

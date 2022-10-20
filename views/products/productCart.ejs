@@ -8,27 +8,28 @@
         
         <%- include('../partials/header') %>
         <!-- Page content -->
-        <form action="/" method="get" class="newProduct">
+       <!--<form action="/" method="get" class="newProduct">--> 
             <main>
                 <section>
-                    <h3>Nuevo Producto</h3>
+                <div class="centrar">
+                    <h3 class="nuevo">Nuevo Producto</h3>
+                </div>
                     <div>
                         <article class="producto">
                             <img src="/images/galleta-chocolate.jpg"  alt="Producto 1" class="product_img">
                             <div class="main-article">
                                 <div class="img_carrito">
                                     <i class="fas fa-truck"></i>
-                                </div>
-                                <div class="price">
-                                    <label for="price">Precio: </label>
-                                    <p name="price">$1111111</p>
+                                </div class='precio'>
+                                
+                                    <p class="precio">Precio: $30 </p>
+                                    
                                 </div>
                                 <div class="description">
-                                    <label for="description">Descripción: </label>
+                                    <label for="description">Descripción!: </label>
                                     <h4 name="description">Galleta raices de chocolate</h4>
-                                </div>
                                 <div>
-                                    <label for="Cantidad" class="description">Cantidad: </label>
+                                    <label for="Cantidad" class="description"> </label>
                                     <select name="Cantidad" class="description">
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -37,12 +38,14 @@
                                         <option value="5">5</option>
                                     </select>
                                 </div>
-                                <div>
-                                    <label for="Eliminar" class="description">Eliminar: </label>
-                                    <i class="fa-solid fa-trash-can"></i>
-                                </div>
+                               
                             </div>
                         </article>
+                    </div>
+                    <div class="contenedor-botones">
+                        <h3 class="nuevo_producto">Eliminar</h3>
+                        <h3 class="nuevo_producto">Comprar Ahora!</h3>
+                        <h3 class="nuevo_producto">Guardar para después</h3>
                     </div>
                 </section>
             </main>

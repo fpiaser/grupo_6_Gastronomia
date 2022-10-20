@@ -1,0 +1,74 @@
+/* productos_flex {
+    display: grid;
+    grid-template-columns: auto auto auto;
+} */
+
+main {
+    display: block;
+    justify-content: center;
+}
+.contenedor {
+    max-width: 120rem;
+    margin: 20px 20px;
+    
+}
+
+.flex_container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+}
+
+.detalle_de_usuario {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    background-color: rgb(150, 197, 149);
+    margin: 10px;
+    border-radius: 3px;
+    height: 350px;
+    width: 250px;
+    padding: 2px;
+}
+
+.usuario-nombre a  {
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    padding: 1px;
+}
+.imagen-usuario img {
+    padding-top: 15px;
+    border-radius: .5rem;
+    display: block;
+    margin: 0px auto;
+     
+}
+.usuario-justificacion {
+    background-color: rgb(150, 197, 149);
+    height: 200px;
+    width: 450px;
+    border-radius: 5px;
+}
+
+.datos {
+    font-size: 25px;
+    padding-left: 15px;
+}
+.foto {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    
+}
+.foto img {
+    border-radius: 20%;
+    
+}
+.user-info {
+    display: flex;
+    flex-direction: row;
+    color: beige;
+}
+
+
+

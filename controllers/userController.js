@@ -16,8 +16,8 @@ const userController = {
             })
             .then(Users => {
                 res.render('../views/users/users', {
-                pagina: "Pagina",
-                styles: "/css/styles_detail.css",
+                pagina: "Usuarios",
+                styles: "/css/user.css",
                 users: Users,
                 user: req.session.user,
                 })
@@ -135,7 +135,7 @@ const userController = {
         .then(Users => {
         res.render('../views/users/userdetail', {
         pagina: "Editar Usuario",
-        styles: "/css/styles_detail.css",
+        styles: "/css/user.css",
         useredit: Users,
         user: req.session.user
         });

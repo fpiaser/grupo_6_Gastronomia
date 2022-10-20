@@ -8,18 +8,22 @@
 
     <%- include('../partials/header') %>
       <!-- Page content -->
-      <% if (user && user.Admin == true) { %>
-        <a href="/product/nuevoProducto" class="boton_eliminar">Añadir Producto </a>
-      <% } %>
+ 
         
          
+  <% if (user && user.Admin == true) { %>
+      <div class="anadir-flex">
+            <a href="/product/nuevoProducto" class="anadir">Añadir Producto </a>
+      </div> 
+      <% } %>
+
       
       <main>
         
-        <div class="flex_container">
+        <div class="container">
 
           <% for(let index=0; index < products.length; index++) { %>
-            <div class="zoom">
+            <div class="cuadrado_contenedor">
               <div class="productos_flex">
                 <a href="/product/<%= products[index].id %>">
 

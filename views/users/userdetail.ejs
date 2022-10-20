@@ -9,22 +9,31 @@
     <%- include('../partials/header') %>
     <!-- Page content -->
     <main>
-        <h3> <%= useredit.nombre%> <%= useredit.apellido%></h3> 
+        <h2>Detalle de Usuario</h2>
+         
+        <div class="contenedor">
+        
+            <div class="usuario-justificacion">
+                
+            
+
+                    <section class="section-usuarios">
         
 
-        <section class="section-usuarios">
-    
-
-                <h2 class="detalle-usuario"></h2>
-                <div class="user-info">
-                    <div class="foto">
-                        <img src="/images/<%= useredit.image%>" width= "100" alt="Foto Usuario">
-                    </div>
-                    <p>Nombre:  <%= useredit.nombre%></p>
-                    <p>Apellido:  <%= useredit.apellido%></p>
-                    <p>E-mail:     <%= useredit.email %></p>
-                    <p>Admin:  <%= useredit.Admin%></p>
-                </div>
+                        <h2 class="detalle-usuario"></h2>
+                        <div class="user-info">
+                            <div class="foto">
+                                <img src="/images/<%= useredit.image%>" width= "120" alt="Foto Usuario">
+                            </div>
+                            <div class="datos">
+                                <p>Nombre:  <%= useredit.nombre%></p>
+                                <p>Apellido:  <%= useredit.apellido%></p>
+                                <p>E-mail:     <%= useredit.email %></p>
+                                <p>Admin:  <%= useredit.Admin%></p> 
+                            </div>
+                        </div>
+            </div>
+        </div>
     </main>
     <%- include('../partials/footer') %>
 </body>
